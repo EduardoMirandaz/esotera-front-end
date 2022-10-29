@@ -1,0 +1,32 @@
+.student a {
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.65rem;
+    background: transparent;
+    color: var(--blue-500);
+    border: 1px solid var(--blue-500);
+    border-radius: 8px;
+    height: 25px;
+    padding: 0 0.20rem;
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+
+
+.student a:hover{
+    background: var(--blue-500);
+    color: var(--white);
+}
+
+
+@media (max-width: 1040px){
+    .student a {
+        height: 2.8rem;
+    }
+}

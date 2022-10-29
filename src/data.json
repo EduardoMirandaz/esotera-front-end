@@ -1,0 +1,149 @@
+{
+	"sections":[
+		{
+			"title": "Pipeline do MIPS",
+			"projects": [
+				{
+					"year":2018,
+					"projectTitle":"Simulador do algoritmo de Scoreboarding",
+					"image":"https://i.imgur.com/4FAS7WY.png",
+					"description": "Simulação do algoritmo Scoreboarding para escalonamento de instruções em um pipeline, de forma centralizada, apresentado pela Profa. Dra. Sarita Bruschi durante a disciplina de Arquitetura de Computadores - 2018/2.",
+					"downloadLink":"../repos/2018/turma1/GABRIEL HENRIQUE CAMPOS SCALICI_9579706_assignsubmission_file_.zip",
+					"githubLink":"https://github.com/felipecustodio/computer_architecture",
+					"students":[
+						{
+							"name":"Caio Eduardo Cerquiaro"
+						},
+						{
+							"name":"Felipe Scrochio Custódio",
+							"githubProfile":"https://github.com/felipecustodio"
+						},
+						{
+							"name":"Gabriel Henrique Scalici",
+							"githubProfile":"https://github.com/GabrielScalici"
+						},
+						{
+							"name":"Rodrigo Noventa Jr."
+						}
+					]
+				},
+				{
+					"year":2017,
+					"projectTitle":"Desenvolvimento de um Recurso Educacional para ensinar Pipeline do MIPS",
+					"image":"https://i.imgur.com/PhEk9ta.png",
+					"description": "O projeto foi feito utilizando a linguagem C++. A fim de criar uma interface gráfica para o simulador, foi utilizado o framework Qt. O projeto pode ser aberto e compilado por meio da IDE Qt Creator, utilizando o arquivo .pro contido no diretório.",
+					"downloadLink":"../repos/Allan Silva Domingues_9040713_assignsubmission_file_(Grupo6)-20220702T143754Z-001.zip",
+					"githubLink":"https://github.com/elisasaltori/SimuladorMIPS",
+					"students":[
+						{
+							"name":"Allan Silva Domingues",
+							"githubProfile":"https://github.com/asdomingues-zz"
+						},
+						{
+							"name":"Chan Ken Chen",
+							"githubProfile":"https://github.com/kenchen12"
+						},
+						{
+							"name":"Elisa Saltori Trujillo",
+							"githubProfile":"https://github.com/elisasaltori"
+						},
+						{
+							"name":"Gustavo Moreira Pereira",
+							"githubProfile":"https://github.com/gugation"
+						}
+					]
+				},
+				{
+					"year":2017,
+					"projectTitle":"Simulador de Pipeline 2.0",
+					"image":"https://i.imgur.com/7MuDreR.png",
+					"description": "Simulador de Pipeline MIPS (utilizando como base o livro Organização e Projeto de Computadores - 4 ª Ed. 2014 - Hennessy, John L. / Patterson, David A.).",
+					"downloadLink":"../repos/Bernardo Barcellos de Castro Cunha_9040687_assignsubmission_file_(Grupo9)-20220702T163837Z-001.zip",
+					"githubLink":"https://github.com/pierolc/SimuladorPipeline2.0",
+					"students":[
+						{
+							"name":"Bernardo Barcellos de Castro Cunha",
+							"githubProfile":"https://github.com/bernardoc5000"
+						},
+						{
+							"name":"Eduardo Santos Carlos de Souza"
+						},
+						{
+							"name":"Gustavo Cabral de Barros"
+						},
+						{
+							"name":"Piero Lima Capelo",
+							"githubProfile":"https://github.com/opiero"
+						}
+					]
+				},
+				{
+					"year":2017,
+					"projectTitle":"Simulador de pipeline de uma arquitetura MIPS",
+					"image":"https://i.imgur.com/ed1icfx.png",
+					"description": "O programa em questão é um simulador de pipeline de uma arquitetura MIPS implementado em Java.",
+					"downloadLink":"Douglas Seiti Kodama_9040706_assignsubmission_file_(Grupo8)-20220703T030433Z-001.zip",
+					"students":[
+						{
+							"name":"Douglas Seiti Kodama"
+						}
+					]
+				},
+				{
+					"year":2017,
+					"projectTitle":"Simulador de pipeline MIPS no navegador",
+					"image":"https://i.imgur.com/wg2m44M.png",
+					"downloadLink":"Grupo3(NOVO)-20220703T034658Z-001.zip",
+					"students":[
+						{
+							"name":"Luiz Eduardo Dorici"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title":"Arquiteturas paralelas",
+			"projects":[
+				{
+					"year":2018,
+					"projectTitle":"Recurso educacional aberto para visualização de um programa em CUDA",
+					"image":"https://i.imgur.com/3oMhRcZ.png",
+					"description": "O objetivo de absorver o conhecimento adquirido na disciplina arquitetura de computadores, desenvolvemos um REA o qual permite realizar a simulação da execução de um código CUDA e observar o paralelismo.",
+					"downloadLink":"../repos/2018/turma1/Kauê Lopes de Moraes_9579738_assignsubmission_file_.zip",
+					"students":[
+						{
+							"name": "Kauê Lopes de Moraes"
+						},
+						{
+							"name": "Werik Amaral Fachim"
+						}
+					]
+				}
+			]
+		},
+		{
+			"title":"Execução fora de ordem",
+			"projects":[
+				{
+					"year":2018,
+					"projectTitle":"Simulador do algoritmo scoreboarding",
+					"image":"https://i.imgur.com/ayezQ2q.png",
+					"description": "o desenvolvimento de um material no contexto de paralelismo, a fim da utilização com material educacional, ou análise de desempenho de diferentes arquiteturas através da obtenção de métricas utilizando benchmarks. Esse trabalho se trata da primeira opção e nele foi implementado um simulador interativo do algoritmo de scoreboarding.",
+					"downloadLink":"../repos/2018/turma1/Gustavo Sutter Pessurno de Carvalho_9579709_assignsubmission_file_.zip",
+					"students":[
+						{
+							"name": "Gustavo Sutter Pessurno de Carvalho"
+						},
+						{
+							"name": "Matheus Marzola Gomes"
+						},
+						{
+							"name": "Rodrigo Geurgas Zavarizz"
+						}
+					]
+				}
+			]
+		}
+	]
+}
