@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom/client'
 
 import './global.css'
 import { Header } from "./components/Header"
-import { Content } from "./components/Content"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import Card from './components/Card';
-
+import { Footer } from "./components/Footer";
 
 import Carrossel1 from './assets/Carrossel1.png'
 import Carrossel2 from './assets/Carrossel2.png'
@@ -31,9 +30,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <img src={Carrossel4} />
                 </div>
             </Carousel>
-    <Content/>
     <>
     <Card/>
     </>
+    <Footer/>
   </React.StrictMode>
 )

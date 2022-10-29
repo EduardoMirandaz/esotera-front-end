@@ -1,5 +1,20 @@
 import React from 'react'
 
 export default function Card(){
-    return <h1>Card</h1>
+    return (
+    <div>
+        <h1>Card</h1>
+        <h1>Card</h1>
+        <h1>Card</h1>
+        <h1>Card</h1>
+        <h1>Card</h1>
+        <h1>Card</h1>
+        <h1>Card</h1>
+        <h1>Card</h1>
+        <h1>Card</h1>
+        <h1>Card</h1>
+        <h1>Card</h1>
+        <h1>Card</h1>
+    </div>
+    )
 }

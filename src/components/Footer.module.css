@@ -1,4 +1,4 @@
-.header{
+.footer{
     height: 108px;
     width: 100%;
     font-size: 1.5rem;
@@ -7,6 +7,8 @@
     justify-content: space-between;
     padding: 1.25rem 2rem;
     align-items: center;
+    position:absolute;
+    bottom:0;
 }
 
 
