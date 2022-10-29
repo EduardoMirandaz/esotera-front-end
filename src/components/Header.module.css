@@ -68,6 +68,10 @@
     margin-left: 16px;
 }
 
+.botoes{
+    
+}
+
 @media (max-width: 1040px){
     .header{
         font-size: 1.2rem;
