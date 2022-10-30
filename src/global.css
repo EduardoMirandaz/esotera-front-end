@@ -18,7 +18,7 @@
     --purple-400: #7B2CBF;
     --purple-300: #9D4EDD;
     --purple-200: #C77DFF;
-    --purple-100: #11002B;
+    --purple-100: #E0AAFF;
 
     --green-500: #30591D;
 
@@ -31,8 +31,8 @@
 }
 
 body{
-    background: var(--gray-900);
-    color: var(--gray-300);
+    background: var(--white);
+    color: var(--black);
     -webkit-font-smoothing: antialiased;
     position: relative;
     padding-bottom: 228px;

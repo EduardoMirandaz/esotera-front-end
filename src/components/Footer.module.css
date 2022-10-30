@@ -1,135 +1,53 @@
 .footer{
-    height: 108px;
+    height: 228px;
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 14px;
+    color: var(--purple-100);
     background: var(--purple-500);
-    display: flex;
     justify-content: space-between;
-    padding: 1.25rem 2rem;
     align-items: center;
     position:absolute;
     bottom:0;
+    flex-direction: column;
 }
 
-
-.logo{
-    padding: 0 1rem;
-    height: auto;
+.marca{
+    background-color: red;
+    flex-grow: 1;
+    padding-top: 2.9%;
+    padding-left: 2.4%;
 }
 
-.funcoes{
-    display: flex;
+.informacoes{
+    background-color: cornflowerblue;
+    flex-grow: 1;
+    padding-right: 19.86%;
+    padding-top: 3.75%; 
 }
 
-.pesquisa{
-    display: flex;
-    height: 60px;
-    margin: 0 2rem 0 0;
-    align-items: center;
+.informacoes ul{
+    list-style-type: none;
 }
 
-.pesquisa input{
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: 0;
-    border-radius: 100px;
-    width: 600px;
-    height: 60px;
-    font-size: 18px;
-    color: var(--purple-700);
-    padding: 16px;
+.informacoes a{
+    color: var(--purple-100) ;
+    text-decoration: none;
 }
 
-.pesquisa img{
-    height: 24px;
-    margin-left: -50px;
-    margin-right: 2rem;
+.informacoes a:hover{
+    text-decoration: underline;
 }
 
-.icones{
-    display: flex;
-    margin-right: 0.5rem;
-    align-items: center;
-}
-
-.carrinho{
-    display: flex;
-}
-
-.carrinhoImg{
-    height: 32px;
-}
-
-.perfilImg{
-    height: 32px;
-    margin-left: 16px;
-}
-
-.coracaoImg{
-    height: 32px;
-    margin-left: 16px;
-}
-
-.botoes{
-    height: 32px;
-    width: 100%;
-    font-size: 1.5rem;
-    background: var(--purple-500);
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
-
-button {
-    transition: 0.25s;
-    border: none;
-    border-radius: 4px 4px 0 0;
+.informacoes h1{
     color: var(--white);
-    background-color: transparent;
-    position: relative;
-    width: 120px;
-    height: 100%;
+    font-size: 20px;
 }
 
-button:hover {
-    background-color: var(--white);
+.redes{
+    background-color: beige;
 }
 
-/*isso precisa ser ativado quando a página estiver sendo visulizada
-Por exemplo, se o user está na home, essa classe deve estar atribuida ao botão home*/
-button:active {
-    border-width: 0 0 2px 0;
-    border-color: var(--white);
-    border-style: solid;
-}
-
-.botaoPromo {
-    background-color: var(--purple-800);
-}
-
-.botaoPromo:hover {
-    color: var(--purple-800);
-}
-
-.botaoRegular:after{
-    content: '';
-    height: 60%;
-    width: 1px;
-    position: absolute;
-    right: 0;
-    top: 20%;
-    background-color: var(--white); 
-}
-
-.botaoRegular:hover{
-    color: var(--purple-500);
-}
-
-@media (max-width: 1040px){
-    .header{
-        font-size: 1.2rem;
-    }
-    .header img{
-        height: 4rem;
-    }
+.container{
+    display: flex;
+    gap: 30%;
 }
