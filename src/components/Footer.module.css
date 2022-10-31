@@ -12,14 +12,17 @@
 }
 
 .marca{
-    background-color: red;
     flex-grow: 1;
     padding-top: 2.9%;
     padding-left: 2.4%;
 }
 
+.marca p{
+    padding-top: 21.5px;
+    padding-bottom: 21px;
+}
+
 .informacoes{
-    background-color: cornflowerblue;
     flex-grow: 1;
     padding-right: 19.86%;
     padding-top: 3.75%; 
@@ -41,10 +44,16 @@
 .informacoes h1{
     color: var(--white);
     font-size: 20px;
+    padding-bottom: 12px;
 }
 
 .redes{
-    background-color: beige;
+    margin-bottom: 40px;
+    width: 107px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2.4%;
+    align-items: center;
 }
 
 .container{
