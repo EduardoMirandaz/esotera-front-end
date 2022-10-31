@@ -5,13 +5,16 @@ import './global.css'
 import { Header } from "./components/Header"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import Card from './components/Card';
+import { Card } from './components/Card';
 import { Footer } from "./components/Footer";
 
 import Carrossel1 from './assets/Carrossel1.png'
 import Carrossel2 from './assets/Carrossel2.png'
 import Carrossel3 from './assets/Carrossel3.png'
 import Carrossel4 from './assets/Carrossel4.png'
+
+import {cards} from "./data.json"
+import { Vitrine } from './components/Vitrine';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -31,7 +34,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 </div>
             </Carousel>
     <>
-    <Card/>
+    <Vitrine data={cards}/>
     </>
     <Footer/>
   </React.StrictMode>
