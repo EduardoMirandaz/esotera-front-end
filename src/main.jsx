@@ -13,6 +13,9 @@ import Carrossel2 from './assets/Carrossel2.png'
 import Carrossel3 from './assets/Carrossel3.png'
 import Carrossel4 from './assets/Carrossel4.png'
 
+import {cards} from "./data.json"
+import { Vitrine } from './components/Vitrine';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Header/>
@@ -31,12 +34,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 </div>
             </Carousel>
     <>
-    <div>
-        <Card descricao='Kit de incenso para ambientização e reenergização por quartzo rosa' valor={21.50} imagem={"https://i.imgur.com/WiedpMF.png"} categoria='Incensos'/>
-        <Card descricao='Kit de incenso para ambientização e reenergização por quartzo rosa' valor={21.50} imagem={"https://i.imgur.com/WiedpMF.png"} categoria='Incensos'/>
-        <Card descricao='Kit de incenso para ambientização e reenergização por quartzo rosa' valor={21.50} imagem={"https://i.imgur.com/WiedpMF.png"} categoria='Incensos'/>
-
-    </div>
+    <Vitrine data={cards}/>
     </>
     <Footer/>
   </React.StrictMode>
