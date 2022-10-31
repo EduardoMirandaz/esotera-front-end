@@ -5,7 +5,7 @@ import './global.css'
 import { Header } from "./components/Header"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import Card from './components/Card';
+import { Card } from './components/Card';
 import { Footer } from "./components/Footer";
 
 import Carrossel1 from './assets/Carrossel1.png'
@@ -31,7 +31,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 </div>
             </Carousel>
     <>
-    <Card/>
+    <div>
+        <Card descricao='Kit de incenso para ambientização e reenergização por quartzo rosa' valor={21.50} imagem={"https://i.imgur.com/WiedpMF.png"} categoria='Incensos'/>
+        <Card descricao='Kit de incenso para ambientização e reenergização por quartzo rosa' valor={21.50} imagem={"https://i.imgur.com/WiedpMF.png"} categoria='Incensos'/>
+        <Card descricao='Kit de incenso para ambientização e reenergização por quartzo rosa' valor={21.50} imagem={"https://i.imgur.com/WiedpMF.png"} categoria='Incensos'/>
+
+    </div>
     </>
     <Footer/>
   </React.StrictMode>
