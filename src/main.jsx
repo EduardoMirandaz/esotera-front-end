@@ -8,6 +8,6 @@ import { Principal } from './pages/Principal';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Principal carrosseis={carrosseis} cards={cards} filtro={"Cristais"}/>
+    <Principal carrosseis={carrosseis} cards={cards}/>
   </React.StrictMode>
 )
