@@ -1,16 +1,32 @@
 import styles from './Header.module.css'
-
+import React, {useState, useEffect} from 'react';
 import headerLogo from '../assets/logo.svg'
 import headerLupa from '../assets/lupa.svg'
 import headerCarrinho from '../assets/carrinho.svg'
 import headerPerfil from '../assets/perfil.svg'
 import headerCoracao from '../assets/coracao.svg'
+import NavButtons from './NavButtons'
+import Burger from './Burger'
+
 
 
 export function Header(){
+
+    const [isMobile, setIsMobile] = useState(false)
+    const handleResize = () => {
+        if (window.innerWidth < 760) {
+            setIsMobile(true)
+        } else {
+            setIsMobile(false)
+        }
+      }
+
+      useEffect(() => {
+        window.addEventListener("resize", handleResize)
+      })
     return(
         <>
-            <header className={styles.header}>
+            {!isMobile && <header className={styles.header}>
                 <img className={styles.logo} src={headerLogo} alt="Logo" />
                 <div className={styles.funcoes}>
                     <div className={styles.pesquisa}>
@@ -34,16 +50,10 @@ export function Header(){
                         </a>
                     </div>
                 </div>
-            </header>
-            <div className={styles.botoes}>
-                <button className={styles.botaoPromo}>Promoções</button>
-                <button className={styles.botaoRegular}>Home</button>
-                <button className={styles.botaoRegular}>Incensos</button>
-                <button className={styles.botaoRegular}>Cristais</button>
-                <button className={styles.botaoRegular}>Signos</button>
-                <button className={styles.botaoRegular}>Cartas</button>
-                <button className={styles.botaoRegular}>Artefatos</button>
-            </div>
+            </header>}
+            {!isMobile && <NavButtons className={styles.navButtons}/>}
+            {isMobile && <Burger className={styles.burger}/>}
+            
         </>
     )
 }

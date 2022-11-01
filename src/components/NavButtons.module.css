@@ -1,0 +1,74 @@
+.botoes{
+    height: 32px;
+    width: 100%;
+    font-size: 1.5rem;
+    background: var(--purple-500);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.botoes button {
+    transition: 0.25s;
+    border: none;
+    border-radius: 4px 4px 0 0;
+    color: var(--white);
+    background-color: transparent;
+    position: relative;
+    width: 120px;
+    height: 100%;
+}
+
+.botoes button:hover {
+    background-color: var(--white);
+}
+
+/*isso precisa ser ativado quando a página estiver sendo visulizada
+Por exemplo, se o user está na home, essa classe deve estar atribuida ao botão home*/
+.botoes button:active {
+    border-width: 0 0 2px 0;
+    border-color: var(--white);
+    border-style: solid;
+}
+
+.botoes .botaoPromo {
+    background-color: var(--purple-800);
+}
+
+.botoes .botaoPromo:hover {
+    color: var(--purple-800);
+} 
+
+.botoes .botaoRegular:after{
+    content: '';
+    height: 60%;
+    width: 1px;
+    position: absolute;
+    right: 0;
+    top: 20%;
+    background-color: var(--white); 
+}
+
+.botoes .botaoRegular:hover{
+    color: var(--purple-500);
+}
+
+/*@media(max-width: 1200px){
+    .botoes{
+        display: none;
+        justify-content: start;
+        position: top;
+        flex-flow: column nowrap;
+        height: 100vh;
+    }
+
+    .botaoRegular:after{
+        display: none;
+    }
+
+    button {
+        padding: 4px 0;
+        border-radius: 0;
+        width: 100vw;
+    }
+}*/
