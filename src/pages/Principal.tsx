@@ -7,19 +7,29 @@ import { Header } from "../components/Header";
 import { Vitrine } from "../components/Vitrine";
 
 export function Principal(props){
+  let cards = props.cards 
+  
+  if(props.filtro){
+    cards = cards.filter((card) => card.categoria == props.filtro)
+  }
+  console.log(cards) 
+  
     return(
       <>
         <Header/>
-        <Carousel autoPlay infiniteLoop showStatus={false} showThumbs={false}>
-          {props.carrosseis.map((carrossel) => {
-            return(
-                <div>
-                  <img src={carrossel.imagem} />
-                </div>
-            )
-          })}
-        </Carousel>
-        <Vitrine data={props.cards}/>
+        {props.carrosseis &&
+            <Carousel autoPlay infiniteLoop showStatus={false} showThumbs={false}>
+              {props.carrosseis.map((carrossel) => {
+                return(
+                    <div>
+                      <img src={carrossel.imagem} />
+                    </div>
+                )
+              })}
+            </Carousel>
+        }
+        
+        <Vitrine data={cards}/>
         <Accessibility/>
         <Footer/>
       </>

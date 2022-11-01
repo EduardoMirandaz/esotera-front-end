@@ -10,7 +10,6 @@ interface Card {
 }
 
 export function Vitrine(props){
-    console.log(props.data)
     return(
       <div className={styles.container}>
         {props.data.map((card) => {
