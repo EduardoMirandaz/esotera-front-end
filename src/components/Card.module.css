@@ -10,7 +10,6 @@
     height: 360px;
     width: 360px;
     background: no-repeat center;
-    background-size: cover;   
     border-radius: 20px 20px 0px 0px;
     object-fit: cover;
 }
@@ -70,4 +69,8 @@
 
 .button:hover{
     background-color: var(--purple-500);
+}
+
+.coracao{
+    cursor: pointer;
 }

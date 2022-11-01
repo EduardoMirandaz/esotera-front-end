@@ -1,9 +1,15 @@
 .header{
+    display: flex;
+    flex-direction: column;
+}
+
+.topHeader{
     height: 108px;
     width: 100%;
     font-size: 1.5rem;
     background: var(--purple-500);
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding: 1.25rem 2rem;
     align-items: center;
@@ -13,6 +19,8 @@
 .logo{
     padding: 0 1rem;
     height: auto;
+    width: 26%;
+    min-width: 260px;
 }
 
 .funcoes{
@@ -136,4 +144,10 @@
         border-radius: 0;
         width: 100vw;
     }*/
+}
+
+@media (max-width: 600px){
+    .topHeader{
+        padding: 1rem 0.5rem;
+    }
 }

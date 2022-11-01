@@ -26,7 +26,8 @@ export function Header(){
       })
     return(
         <>
-            {!isMobile && <header className={styles.header}>
+            {!isMobile &&  <header className={styles.header}>
+            <div className={styles.topHeader}>
                 <img className={styles.logo} src={headerLogo} alt="Logo" />
                 <div className={styles.funcoes}>
                     <div className={styles.pesquisa}>
@@ -50,10 +51,11 @@ export function Header(){
                         </a>
                     </div>
                 </div>
-            </header>}
+            </div>}
+        
             {!isMobile && <NavButtons className={styles.navButtons}/>}
             {isMobile && <Burger className={styles.burger}/>}
             
-        </>
+        </header>
     )
 }
