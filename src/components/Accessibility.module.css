@@ -1,3 +1,11 @@
+.container{
+    display: flex;
+    justify-content: end;
+    position: sticky;
+    bottom: 0;
+}
+
+
 .accessibility{
     background-color: var(--purple-500);
     height: 122px;
@@ -6,11 +14,9 @@
     flex-direction: column;
     align-items: center ;
     border-radius: 8px;
-    position: sticky;
-    bottom: 10px;
-    margin-left: 94.6%;
     margin-bottom: 10px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-right: 10px;
 }
 
 .accessibility img:active{

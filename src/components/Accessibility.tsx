@@ -5,10 +5,12 @@ import accessContraste from '../assets/iconeContraste.svg'
 
 export function Accessibility(){
     return(
-        <div className={styles.accessibility}>
-            <img className={styles.tamFonte} src={accessFonte} alt="Aumentar a fonte" />
-            <hr className={styles.linha}/>
-            <img className={styles.contraste} src={accessContraste} alt="Aumentar o contraste" />
+        <div className={styles.container}>
+            <div className={styles.accessibility}>
+                <img className={styles.tamFonte} src={accessFonte} alt="Aumentar a fonte" />
+                <hr className={styles.linha}/>
+                <img className={styles.contraste} src={accessContraste} alt="Aumentar o contraste" />
+            </div>
         </div>
     )
 }
