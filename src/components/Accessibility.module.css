@@ -1,0 +1,31 @@
+.accessibility{
+    background-color: var(--purple-500);
+    height: 122px;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    border-radius: 8px;
+    position: sticky;
+    bottom: 10px;
+    margin-left: 94%;
+    /* margin-bottom: 10px; */
+}
+
+.accessibility img:active{
+    transform: translateY(1px);
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.2));
+}
+
+.accessibility img{
+    padding: 14px;
+}
+
+.linha{
+    background-color: var(--white);
+    width: 52px;
+    /* height: 1.5px; */
+    border: 0;
+    border-top: 1px solid var(--white);
+    align-self: center;
+}

@@ -5,7 +5,7 @@ import './global.css'
 import { Header } from "./components/Header"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import { Card } from './components/Card';
+import { Accessibility } from "./components/Accessibility";
 import { Footer } from "./components/Footer";
 
 import Carrossel1 from './assets/Carrossel1.png'
@@ -33,9 +33,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                     <img src={Carrossel4} />
                 </div>
             </Carousel>
+    
     <>
     <Vitrine data={cards}/>
     </>
+    <Accessibility/>
     <Footer/>
   </React.StrictMode>
 )
