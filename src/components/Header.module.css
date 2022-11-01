@@ -19,6 +19,8 @@
 .logo{
     padding: 0 1rem;
     height: auto;
+    width: 26%;
+    min-width: 260px;
 }
 
 .funcoes{
@@ -132,5 +134,11 @@ button:active {
 @media (max-width: 1040px){
     .pesquisa{
         display: none;
+    }
+}
+
+@media (max-width: 600px){
+    .topHeader{
+        padding: 1rem 0.5rem;
     }
 }

@@ -62,7 +62,19 @@
     gap: 30%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 870px) {
+    .informacoes{ 
+        padding-right: 10%; 
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .informacoes{ 
+        padding-right: 10px; 
+    }
+}
+
+@media screen and (max-width: 610px) {
     .footer{
         height: 270px;
     }
