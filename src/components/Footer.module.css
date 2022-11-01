@@ -9,6 +9,7 @@
     position:absolute;
     bottom:0;
     flex-direction: column;
+    margin-top: 10px;
 }
 
 .marca{
@@ -59,4 +60,22 @@
 .container{
     display: flex;
     gap: 30%;
+}
+
+@media screen and (max-width: 600px) {
+    .footer{
+        height: 270px;
+    }
+    .informacoes {
+        padding-left: 1rem;
+    }
+    .container {
+        flex-direction: column;
+    }
+    .redes{
+        margin-left: 65%;
+    }
+    .marca{
+        margin-left: 1px;
+    }
 }
