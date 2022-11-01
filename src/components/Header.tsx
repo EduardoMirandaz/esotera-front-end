@@ -27,35 +27,36 @@ export function Header(){
     return(
         <>
             {!isMobile &&  <header className={styles.header}>
-            <div className={styles.topHeader}>
-                <img className={styles.logo} src={headerLogo} alt="Logo" />
-                <div className={styles.funcoes}>
-                    <div className={styles.pesquisa}>
-                        <input type="text" placeholder="Pesquisar"/>
-                        <a href="">
-                            <img src={headerLupa} alt="Buscar item" />
-                        </a>
+                <div className={styles.topHeader}>
+                    <img className={styles.logo} src={headerLogo} alt="Logo" />
+                    <div className={styles.funcoes}>
+                        <div className={styles.pesquisa}>
+                            <input type="text" placeholder="Pesquisar"/>
+                            <a href="">
+                                <img src={headerLupa} alt="Buscar item" />
+                            </a>
+                        </div>
+                        <div className={styles.icones}>
+                            <a href="">
+                                <div className={styles.carrinho}>
+                                    <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
+                                    <div></div>
+                                </div>
+                            </a>
+                            <a href="">
+                                <img className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
+                            </a>
+                            <a href="">
+                                <img className={styles.coracaoImg} src={headerCoracao} alt="Ir para os favoritos" />
+                            </a>
+                        </div>
                     </div>
-                    <div className={styles.icones}>
-                        <a href="">
-                            <div className={styles.carrinho}>
-                                <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
-                                <div></div>
-                            </div>
-                        </a>
-                        <a href="">
-                            <img className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
-                        </a>
-                        <a href="">
-                            <img className={styles.coracaoImg} src={headerCoracao} alt="Ir para os favoritos" />
-                        </a>
-                    </div>
-                </div>
-            </div>}
-        
-            {!isMobile && <NavButtons className={styles.navButtons}/>}
-            {isMobile && <Burger className={styles.burger}/>}
+                </div>}
             
-        </header>
+                {!isMobile && <NavButtons className={styles.navButtons}/>}
+                {isMobile && <Burger className={styles.burger}/>}
+                
+            </header>
+        </>
     )
 }
