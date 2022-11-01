@@ -9,8 +9,8 @@ import headerCoracao from '../assets/coracao.svg'
 
 export function Header(){
     return(
-        <>
-            <header className={styles.header}>
+        <header className={styles.header}>
+            <div className={styles.topHeader}>
                 <img className={styles.logo} src={headerLogo} alt="Logo" />
                 <div className={styles.funcoes}>
                     <div className={styles.pesquisa}>
@@ -34,7 +34,7 @@ export function Header(){
                         </a>
                     </div>
                 </div>
-            </header>
+            </div>
             <div className={styles.botoes}>
                 <button className={styles.botaoPromo}>Promoções</button>
                 <button className={styles.botaoRegular}>Home</button>
@@ -44,6 +44,6 @@ export function Header(){
                 <button className={styles.botaoRegular}>Cartas</button>
                 <button className={styles.botaoRegular}>Artefatos</button>
             </div>
-        </>
+        </header>
     )
 }

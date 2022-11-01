@@ -1,9 +1,15 @@
 .header{
+    display: flex;
+    flex-direction: column;
+}
+
+.topHeader{
     height: 108px;
     width: 100%;
     font-size: 1.5rem;
     background: var(--purple-500);
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     padding: 1.25rem 2rem;
     align-items: center;
