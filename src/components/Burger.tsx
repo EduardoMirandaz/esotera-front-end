@@ -1,7 +1,10 @@
 import styles from './Burger.module.css';
 import React, {useState} from 'react';
 import {CgMenu, CgClose} from 'react-icons/cg'
-
+import headerCarrinho from '../assets/carrinho.svg'
+import headerPerfil from '../assets/perfil.svg'
+import headerCoracao from '../assets/coracao.svg'
+import headerLogo from '../assets/logo.svg'
 
 export function Burger(){
     const [open, setOpen] = useState(false);
@@ -13,6 +16,20 @@ export function Burger(){
             <div className={styles.burgerBar}>
                 <div className={styles.burgerContainer}>
                     {open ? closeIcon : hamburgerIcon}
+                </div>
+                <img className={styles.logo} src={headerLogo} alt="Logo" />
+                <div className={styles.icones}>
+                    <a href="">
+                        <div className={styles.carrinho}>
+                            <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
+                        </div>
+                    </a>
+                    <a href="">
+                        <img className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
+                    </a>
+                    <a href="">
+                        <img className={styles.coracaoImg} src={headerCoracao} alt="Ir para os favoritos" />
+                    </a>
                 </div>
             </div>
             {open && <div className={styles.dropMenu}>
