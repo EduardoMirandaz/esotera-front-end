@@ -6,6 +6,7 @@
     display: flex;
     justify-content: start;
     align-items: center;
+    z-index: 0;
 }
 
 .botoes button {

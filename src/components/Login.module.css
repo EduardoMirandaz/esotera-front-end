@@ -1,0 +1,207 @@
+.background {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.customModal {
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background: #b2dbbf;
+}
+
+.modalWrapper {
+    width: 400px;
+    height: 400px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+    background: var(--white);
+    position: relative;
+    z-index: 1090;
+    border-radius: 10px;
+}
+
+.closeModalButton {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    z-index: 1090;
+}
+
+.modalBody {
+    overflow-y: auto;
+    padding-right: 35px;
+    padding-bottom: 35px;
+    padding-left: 35px;
+}
+.modalBody h2 { 
+    font-size: 24px;
+}
+
+.subtitle {
+    margin: 15px 0;
+}
+
+.inputWrapper {
+    padding: 0 0 15px 0;
+}
+
+.modalHeader {
+    padding: 15px 0;
+    color: var(--purple-800);
+}
+
+label {
+    color: var(--purple-800);
+}
+
+input {
+    border-radius: 4px;
+    font-size: 1em;
+    border: 1px solid #666;
+    width: 100%;
+    height: 40px;
+    padding: 10px 8px;
+    margin: 8px 0;
+}
+
+input:focus-visible {
+    outline-offset: 0px;
+    outline: 0cm;
+}
+
+.esqueceuSenha {
+    color: var(--purple-800);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.button{
+    font-size: 14px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    display: inline-block;
+    background-color: var(--purple-600);
+    border-radius: 4px;
+    width: 100%;
+    padding: 0.75em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white);
+    transition: 0.2s;
+}
+
+.button:hover{
+    background-color: var(--purple-500);
+}
+
+.cadastrar{
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.cadastrar a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.divider {
+    color: #666;
+    font-size: .875em;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    margin: 16px 0;
+    height: 12px;
+}
+
+.divider span {
+    font-size: 14px;
+    background: #fff;
+    position: relative;
+    display: inline-block;
+    padding: 0 25px;
+    z-index: 2;
+    line-height: 1;
+    top: -.1875em;
+}
+
+hr {
+    border: 0;
+    border-bottom: 1px solid #D8D8D8;
+    position: relative;
+    top: -9px;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.socialNetworkWrapper {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+.socialNetworkButton {
+    width: auto;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 20px;
+    padding: 0;
+    height: 40px;
+    background-color: #fff;
+    color: #757575;
+    margin-right: 2px;
+    border: 1px solid #dbdbdb;
+    flex-basis: 100px;
+    letter-spacing: -.7px;
+    flex-grow: 1;
+    font-weight: bold;
+}
+
+.socialNetworkButton:hover{
+    background: #f7f7f7;
+}
+
+.socialButtonIconGoogle{
+    width: 18px;
+    display: inline-block;
+    margin-right: 8px;
+    background: url(https://login.globo.com/pc/cf/images/svg/google_logo.svg) no-repeat;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 18px;
+}
+
+.socialButtonIconFacebook{
+    width: 18px;
+    display: inline-block;
+    margin-right: 8px;
+    background: url(https://login.globo.com/pc/cf/images/svg/facebook_logo.svg) no-repeat;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 18px;
+}

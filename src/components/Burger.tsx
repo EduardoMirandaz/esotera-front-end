@@ -5,8 +5,14 @@ import headerCarrinho from '../assets/carrinho.svg'
 import headerPerfil from '../assets/perfil.svg'
 import headerCoracao from '../assets/coracao.svg'
 import headerLogo from '../assets/logo.svg'
+import Login from './Login';
 
 export function Burger(){
+    const [showModal, setShowModal] = useState(false)
+    const openModal = () => {
+        setShowModal(prev => !prev)
+    }
+
     const [open, setOpen] = useState(false);
 
     const hamburgerIcon = <CgMenu className={styles.burgerIcon} size='26px' color='white' onClick={() =>setOpen(!open)}/>
@@ -24,9 +30,7 @@ export function Burger(){
                             <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
                         </div>
                     </a>
-                    <a href="">
-                        <img className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
-                    </a>
+                    <img  onClick={openModal} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
                     <a href="">
                         <img className={styles.coracaoImg} src={headerCoracao} alt="Ir para os favoritos" />
                     </a>
@@ -41,6 +45,7 @@ export function Burger(){
                 <button className={styles.botaoRegular}>Cartas</button>
                 <button className={styles.botaoRegular}>Artefatos</button>
             </div>}
+            <Login showModal={showModal} setShowModal={setShowModal} />
         </>
     )
 }
