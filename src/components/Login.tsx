@@ -6,7 +6,6 @@ import { Modal } from 'react-responsive-modal';
 
 export function Login({showModal, setShowModal}){
    
-
     return(
         <>
         {showModal ? (
@@ -46,12 +45,7 @@ export function Login({showModal, setShowModal}){
                 </div>
                 
             </Modal>
-        /*<div className={styles.background}>
-            <div className={styles.modalWrapper} showModal={showModal}>
-                <div>MEU TEXTO AAQUI</div>
-            <CgClose className={styles.closeModalButton} onClick={() => {setShowModal(prev => !prev)}}/>
-            </div>
-        </div>*/) : null}
+        ) : null}
         </>
     )
 }
