@@ -17,7 +17,7 @@ export function Login({showModal, setShowModal}){
                     <form novalidate="novalidate">
                         <div className={styles.inputWrapper}>
                             <label htmlFor="email">E-mail</label>
-                            <input type="email" name="email" placeholder="" required="" autocomplete="off" aria-required="true" />
+                            <input type="email" name="email" placeholder="" required="true" autocomplete="off" aria-required="true" />
                         </div>
                         <div className={styles.inputWrapper}>
                             <label htmlFor="senha">Senha</label>

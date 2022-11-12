@@ -7,7 +7,7 @@ import { Vitrine } from "../components/Vitrine";
 import React, {useState, useEffect} from 'react';
 
 export function Principal(props){
-  let cards = props.cards 
+  let cards = props.produto 
   const [isMobile, setIsMobile] = useState(false)
     const handleResize = () => {
         if (window.innerWidth < 760) {
