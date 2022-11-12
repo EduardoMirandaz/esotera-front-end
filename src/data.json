@@ -13,91 +13,103 @@
 			"imagem":"https://imgur.com/6iv829L.png"
 		}
 	],
-	"cards":[
+	"produto":[
 		{
 			"descricao":"Kit de incenso para ambientização e reenergização por quartzo rosa Kit de incenso para ambientização e reenergização por quartzo rosa",
 			"valor":21.50,
 			"imagem":"https://i.imgur.com/WiedpMF.png",
 			"categoria":"Incensos",
-			"isPromocao": true 
+			"isPromocao": true,
+			"idProduto": 0 
 		},
 		{
 			"descricao":"Cartas de Tarô brancas e amarelas",
 			"valor":35.90,
 			"imagem":"https://i.imgur.com/TdmGKqC.png",
 			"categoria":"Cartas",
-			"isPromocao": false 
+			"isPromocao": false,
+			"idProduto": 1 
 		},
 		{
 			"descricao":"Candelabro de suporte para três velas com estrela de cinco pontas",
 			"valor":118.50,
 			"imagem":"https://i.imgur.com/lF3iMsJ.png",
 			"categoria":"Artefatos",
-			"isPromocao": true 
+			"isPromocao": true,
+			"idProduto": 2 
 		},
 		{
 			"descricao":"Kit de cristais da Lua (vela não inclusa)",
 			"valor":51.00,
 			"imagem":"https://i.imgur.com/CaAvmhf.png",
 			"categoria":"Cristais",
-			"isPromocao": true 
+			"isPromocao": true,
+			"idProduto": 3 
 		},
 		{
 			"descricao":"Conjunto de 10 cristais de quartzo ativados",
 			"valor":14.21,
 			"imagem":"https://i.imgur.com/3zHhJMC.png",
 			"categoria":"Cristais",
-			"isPromocao": true 
+			"isPromocao": true,
+			"idProduto": 4 
 		},
 		{
 			"descricao":"Guia de mapa astral (em inglês)",
 			"valor":124.99,
 			"imagem":"https://i.imgur.com/zKYxMNA.png",
 			"categoria":"Artefatos",
-			"isPromocao": false 
+			"isPromocao": false,
+			"idProduto": 5 
 		},
 		{
 			"descricao":"Guia de mapa astral (em inglês)",
 			"valor":124.99,
 			"imagem":"https://i.imgur.com/zKYxMNA.png",
 			"categoria":"Artefatos",
-			"isPromocao": false 
+			"isPromocao": false,
+			"idProduto": 6 
 		},
 		{
 			"descricao":"Guia de mapa astral (em inglês)",
 			"valor":124.99,
 			"imagem":"https://i.imgur.com/zKYxMNA.png",
 			"categoria":"Artefatos",
-			"isPromocao": false 
+			"isPromocao": false,
+			"idProduto": 7 
 		},
 		{
 			"descricao":"Guia de mapa astral (em inglês)",
 			"valor":124.99,
 			"imagem":"https://i.imgur.com/zKYxMNA.png",
 			"categoria":"Artefatos",
-			"isPromocao": false 
+			"isPromocao": false,
+			"idProduto": 8 
 		},
 		{
 			"descricao":"Guia de mapa astral (em inglês)",
 			"valor":124.99,
 			"imagem":"https://i.imgur.com/zKYxMNA.png",
 			"categoria":"Artefatos",
-			"isPromocao": false 
+			"isPromocao": false,
+			"idProduto": 9 
 		},
 		{
 			"descricao":"Guia de mapa astral (em inglês)",
 			"valor":124.99,
 			"imagem":"https://i.imgur.com/zKYxMNA.png",
 			"categoria":"Artefatos",
-			"isPromocao": false 
+			"isPromocao": false,
+			"idProduto": 10 
 		},
 		{
 			"descricao":"Guia de mapa astral (em inglês)",
 			"valor":124.99,
 			"imagem":"https://i.imgur.com/zKYxMNA.png",
 			"categoria":"Artefatos",
-			"isPromocao": false 
+			"isPromocao": false,
+			"idProduto": 11 
 		}
-	
+		
 	]
 }

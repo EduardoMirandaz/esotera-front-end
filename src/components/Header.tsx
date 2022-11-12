@@ -7,10 +7,15 @@ import headerPerfil from '../assets/perfil.svg'
 import headerCoracao from '../assets/coracao.svg'
 import NavButtons from './NavButtons'
 import Burger from './Burger'
+import Login from './Login';
 
 
 
 export function Header(){
+    const [showModal, setShowModal] = useState(false)
+    const openModal = () => {
+        setShowModal(prev => !prev)
+    }
 
     const [isMobile, setIsMobile] = useState(false)
     const handleResize = () => {
@@ -26,6 +31,7 @@ export function Header(){
       })
     return(
         <>
+        
                 {!isMobile &&  <header className={styles.header}>
                 <div className={styles.topHeader}>
                     <img className={styles.logo} src={headerLogo} alt="Logo" />
@@ -43,9 +49,7 @@ export function Header(){
                                     <div></div>
                                 </div>
                             </a>
-                            <a href="">
-                                <img className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
-                            </a>
+                            <img  onClick={openModal} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
                             <a href="">
                                 <img className={styles.coracaoImg} src={headerCoracao} alt="Ir para os favoritos" />
                             </a>
@@ -54,7 +58,7 @@ export function Header(){
                 </div>
             
                 <NavButtons className={styles.navButtons}/>
-                
+                <Login showModal={showModal} setShowModal={setShowModal} />
             </header> }
             {isMobile && <Burger className={styles.burger}/>}
             </>
