@@ -5,7 +5,7 @@ import coracaoCheio from '../assets/coracaoCheio.svg'
 import coracaoVazio from '../assets/coracaoVazio.svg'
 
 interface Card {
-  imagem?: string;
+  imagemPrincipal?: string;
   categoria?: string;
   descricao: string;
   valor:number;
@@ -15,10 +15,10 @@ export function Card(props:Card){
     const [isClick, setClick] = useState(false);
     return(
       <div className={styles.fundo}>
-        {props.imagem &&
-            <img className={styles.imagem} src={props.imagem}/>
+        {props.imagemPrincipal &&
+            <img className={styles.imagem} src={props.imagemPrincipal}/>
         }
-        {!props.imagem &&
+        {!props.imagemPrincipal &&
             <img className={styles.imagem} src={semImagem}/>
         }
         {props.categoria &&
