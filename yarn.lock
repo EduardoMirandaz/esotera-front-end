@@ -826,7 +826,7 @@ react-responsive-carousel@^3.2.23:
 
 react-responsive-modal@^6.2.0:
   version "6.2.0"
-  resolved "https://registry.npmjs.org/react-responsive-modal/-/react-responsive-modal-6.2.0.tgz"
+  resolved "https://registry.yarnpkg.com/react-responsive-modal/-/react-responsive-modal-6.2.0.tgz#339226b911d8ffaba4e0afce83387a65221b8e29"
   integrity sha512-i3Or4ixdDnLOeZbOQltgayOj69zg6Pbd8IF+RMi6gG1hyZvXHL39QvMvXBuG7poEaBMHspXNDtCzbTBJpOmdfw==
   dependencies:
     "@bedrock-layout/use-forwarded-ref" "^1.1.4"
