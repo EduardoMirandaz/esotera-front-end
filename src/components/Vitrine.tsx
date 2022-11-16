@@ -3,7 +3,7 @@ import { Card } from "./Card";
 import styles from './Vitrine.module.css'
 
 interface Card {
-  imagem?: string;
+  imagemPrincipal?: string;
   categoria?: string;
   descricao: string;
   valor:number;
@@ -16,7 +16,7 @@ export function Vitrine(props){
                 return(
                     <Card
                       descricao={card.descricao} 
-                      imagem={card.imagem}
+                      imagemPrincipal={card.imagemPrincipal}
                       valor={card.valor}
                       categoria={card.categoria}
                     />
