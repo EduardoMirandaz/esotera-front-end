@@ -61,11 +61,11 @@
     color: var(--purple-800);
 }
 
-label {
+.inputWrapper label {
     color: var(--purple-800);
 }
 
-input {
+.inputWrapper input {
     border-radius: 4px;
     font-size: 1em;
     border: 1px solid #666;
@@ -75,7 +75,7 @@ input {
     margin: 8px 0;
 }
 
-input:focus-visible {
+.inputWrapper input:focus-visible {
     outline-offset: 0px;
     outline: 0cm;
 }
@@ -144,7 +144,7 @@ input:focus-visible {
     top: -.1875em;
 }
 
-hr {
+.divider hr {
     border: 0;
     border-bottom: 1px solid #D8D8D8;
     position: relative;
