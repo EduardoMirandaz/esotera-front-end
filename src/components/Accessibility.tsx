@@ -5,7 +5,7 @@ import accessContraste from '../assets/iconeContraste.svg'
 
 export function Accessibility(){
     return(
-        <div className={styles.container}>
+        <div className={styles.containerAccessibility}>
             <div className={styles.accessibility}>
                 <img className={styles.tamFonte} src={accessFonte} alt="Aumentar a fonte" />
                 <hr className={styles.linha}/>

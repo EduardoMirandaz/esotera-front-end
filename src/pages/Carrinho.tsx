@@ -3,12 +3,13 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Accessibility } from "../components/Accessibility";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
+import { Pagamento } from "../components/pagamento";
 
 export function Carrinho(){
   return(
     <>
-        <h1>Carrinho!!</h1>
         <Header/>
+        <Pagamento/>
         <Accessibility/>
         <Footer/>
     </>
