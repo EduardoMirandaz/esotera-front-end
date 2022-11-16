@@ -1,0 +1,8 @@
+.containerFormulario{
+    /* background-color: pink; */
+    width: 715px;
+}
+
+.formulario fieldset{
+    border: 0;
+}
