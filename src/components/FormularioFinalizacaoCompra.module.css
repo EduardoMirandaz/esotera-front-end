@@ -1,8 +1,47 @@
 .containerFormulario{
-    /* background-color: pink; */
-    width: 715px;
+    background-color: pink;
+    width: 720px;
 }
 
 .formulario fieldset{
     border: 0;
 }
+
+.formulario input{
+    margin-top: 8.5px;
+    margin-bottom: 8.5px;
+    padding-top: 23.5px;
+    padding-bottom: 23.5px;
+    padding-left: 23px;
+    
+    font-size: 18px;
+
+    border: 1px solid #111111;
+    border-radius: 25px;
+
+    width: 100%;
+}
+
+.formulario input:focus{
+    outline-style: none;
+}
+
+.enderecoEntrega{
+    display: flex;
+    /* flex-flow: row wrap; */
+    /* align-items: stretch; */
+}
+
+#cidade{
+    /* flex-grow: 2; */
+    background-color: navy;
+}
+
+.enderecoEntrega input{
+    flex-grow: 1;
+    /* background-color: seagreen; */
+
+}
+
+
+

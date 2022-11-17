@@ -15,7 +15,7 @@ export function FormularioFinalizacaoCompra(){
 
                 <fieldset className={styles.enderecoEntrega}>
                     <legend>Endereço de Entrega</legend>
-                    <input type="text" id="cidade" name="cidade" placeholder="Cidade" required/>
+                    <input type="text" id={styles.cidade} name="cidade" placeholder="Cidade" required/>
                     <input type="text" id="estado" name="estado" placeholder="Estado" required/>
                     <input type="text" id="logradouro" name="logradouro" placeholder="Logradouro" required/>
                     <input type="text" id="numero" name="numero" placeholder="Número" required/>
