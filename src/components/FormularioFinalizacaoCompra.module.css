@@ -1,6 +1,10 @@
 .containerFormulario{
-    background-color: pink;
     width: 720px;
+}
+
+.formulario legend{
+    padding-bottom: 12px;
+    color: var(--purple-800);
 }
 
 .formulario fieldset{
@@ -8,40 +12,50 @@
 }
 
 .formulario input{
-    margin-top: 8.5px;
-    margin-bottom: 8.5px;
     padding-top: 23.5px;
     padding-bottom: 23.5px;
     padding-left: 23px;
-    
+
     font-size: 18px;
 
     border: 1px solid #111111;
     border-radius: 25px;
-
-    width: 100%;
 }
 
 .formulario input:focus{
     outline-style: none;
 }
 
-.enderecoEntrega{
+.dadosPessoais{
     display: flex;
-    /* flex-flow: row wrap; */
-    /* align-items: stretch; */
+    flex-direction: column;
+    gap: 17px 0px;
+    margin-bottom: 42px;
 }
 
-#cidade{
-    /* flex-grow: 2; */
-    background-color: navy;
+.enderecoEntrega{
+    display: flex;
+    gap: 17px 12px;
+    flex-flow: row wrap;
 }
 
 .enderecoEntrega input{
     flex-grow: 1;
-    /* background-color: seagreen; */
-
+    /* 50% 50% pros inputs com tamanhos não especificados abaixo */
 }
 
+input#logradouro{
+    width: calc(70% - 12px);
+}
 
+input#numero{
+    width: 30%;
+}
 
+input#cep{
+    width: calc(38.75% - 12px);
+}
+
+input#complemento{
+    width: 61.25%;
+}
