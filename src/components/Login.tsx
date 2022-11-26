@@ -9,22 +9,22 @@ export function Login({showModal, setShowModal}){
     return(
         <>
         {showModal ? (
-            <Modal open={showModal} onClose={() => {setShowModal(prev => !prev)}} showModal={showModal} classNames={{ modal: 'customModal' }}  center>
+            <Modal open={showModal} onClose={() => {setShowModal(prev => !prev)}} showModal={showModal} classNames={{ modal: styles.customModal }}  center>
                 <div className={styles.modalBody}>
                     <div className={styles.modalHeader}>
-                        <h2>Login</h2>
+                        <h2>Entrar</h2>
                     </div>
-                    <form novalidate="novalidate">
+                    <form>
                         <div className={styles.inputWrapper}>
                             <label htmlFor="email">E-mail</label>
-                            <input type="email" name="email" placeholder="" required="true" autocomplete="off" aria-required="true" />
+                            <input type="email" name="email" placeholder="" autocomplete="off" aria-required="true" required/>
                         </div>
                         <div className={styles.inputWrapper}>
                             <label htmlFor="senha">Senha</label>
-                            <input type="password" name="senha" placeholder="" required="" autocomplete="off" aria-required="true" />
+                            <input type="password" name="senha" placeholder="" autocomplete="off" aria-required="true" required/>
                             <a className={styles.esqueceuSenha} href="">Esqueceu sua senha?</a>
                         </div>
-                        <a href="" className={styles.button}>ENTRAR</a>
+                        <button type="submit" className={styles.button}>ENTRAR</button>
                         <div className={styles.cadastrar}>
                             <span>Não possui conta?&nbsp;&nbsp;</span>
                             <a href="">CADASTRE-SE</a>
@@ -34,7 +34,7 @@ export function Login({showModal, setShowModal}){
                             <hr/>
                         </div>
                         <div className={styles.socialNetworkWrapper}>
-                            <button className={styles.socialNetworkButton} type="button" metrics-funnel-click="facebookAuth()" metrics-funnel-id="facebook-sign-in">
+                            <button className={styles.socialNetworkButton} type="button">
                                 <span className={styles.socialButtonIconFacebook}>&nbsp;</span>Facebook
                             </button>
                             <button type="button" className={styles.socialNetworkButton}>
