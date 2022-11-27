@@ -1,0 +1,44 @@
+.container{
+    display: flex;
+}
+.right{
+    margin-top: 125px;
+    margin-left: 60px;
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+}
+
+.left{
+    width:45%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-top: 125px;
+    margin-right: 60px;
+}
+
+h1.titulo{
+    font-size: 36px;
+    color: var(--purple-800);
+    font-weight: normal;
+    margin-bottom: 29px;
+}
+
+h2.titulo{
+    font-size: 30px;
+    color: var(--purple-800);
+    font-weight: normal;
+    margin-bottom: 29px;
+}
+
+.boxCardsCompras{
+    width: 530px;
+    height: 696px;
+    background-color: #c4c4c4;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
