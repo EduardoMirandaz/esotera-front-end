@@ -8,7 +8,7 @@
 
 .accessibility{
     background-color: var(--purple-500);
-    height: 122px;
+    height: 184px;
     width: 60px;
     display: flex;
     flex-direction: column;
@@ -51,5 +51,9 @@
         width: 62px;
         border-radius: 8px;
         margin-bottom: 52px;
+    }
+
+    .containerAccessibility{
+        align-items: flex-end;
     }
 }
