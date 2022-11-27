@@ -38,7 +38,7 @@ export function Burger(){
             </div>
             {open && <div className={styles.dropMenu}>
                 <button className={styles.botaoPromo}>Promoções</button>
-                <button className={styles.botaoRegular}>Home</button>
+                <button className={styles.botaoRegular}>Página Inicial</button>
                 <button className={styles.botaoRegular}>Incensos</button>
                 <button className={styles.botaoRegular}>Cristais</button>
                 <button className={styles.botaoRegular}>Signos</button>

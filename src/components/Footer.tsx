@@ -16,7 +16,7 @@ export function Footer(){
                         <p>A Esotera é um site de venda de produtos esotéricos desenvolvido em 2022 por um grupo de  alunos do ICMC.</p>
                     </section>
                     <section className={styles.informacoes}>
-                        <h1>INFORMAÇÕES</h1>
+                        <h1>Informações</h1>
                         <ul>
                             <li>
                                 <a href="">Dúvidas Frequentes</a>

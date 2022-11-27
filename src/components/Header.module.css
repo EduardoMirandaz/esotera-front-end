@@ -69,6 +69,7 @@
 .perfilImg{
     height: 32px;
     margin-left: 16px;
+    cursor: pointer;
 }
 
 .coracaoImg{
