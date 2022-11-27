@@ -13,8 +13,8 @@ interface CardCompra {
 
 
 export function CardCompra(props:CardCompra){
-    //const [isClick, setClick] = useState(false);
-    const [contador, setCount] = useState(0); // useState returns a pair. 'count' is the current state. 'setCount' is a function we can use to update the state.
+    const [contador, setCount] = useState(0); 
+    // useState returns a pair. 'count' is the current state. 'setCount' is a function we can use to update the state.
     
     function incrementar() {
       //setCount(prevCount => prevCount+=s1);
