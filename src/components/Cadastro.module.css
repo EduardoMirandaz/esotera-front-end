@@ -33,7 +33,7 @@
 .modalBody {
     overflow-y: auto;
     padding-right: 35px;
-    padding-bottom: 35px;
+    padding-bottom: 15px;
     padding-left: 35px;
 }
 .modalBody h2 { 
@@ -45,7 +45,7 @@
 }
 
 .inputWrapper {
-    padding: 0 0 15px 0;
+    padding: 0 0 7px 0;
 }
 
 .modalHeader {
@@ -104,18 +104,6 @@
     background-color: var(--purple-500);
 }
 
-.cadastrar{
-    text-align: center;
-    justify-content: center;
-    margin-bottom: 8px;
-}
-
-.cadastre{
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    color: var(--purple-700);
-}
 
 .divider {
     color: #666;
@@ -152,7 +140,6 @@
 .socialNetworkWrapper {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
