@@ -7,18 +7,26 @@ import { FormularioFinalizacaoCompra } from "../components/FormularioFinalizacao
 import { Header } from "../components/Header";
 import { Pagamento } from "../components/Pagamento";
 import { CardCompra } from "../components/CardCompra"
+import trianguloLogo from "../assets/trianguloLogoRoxo.svg"
 
 export function Carrinho(props) {
   return (
     <>
       <Header />
       <div className={styles.container}>
-        <div className={styles.right}>
+        <div className={styles.left}>
           <h1 className={styles.titulo}>Finalizar compra</h1>
           <FormularioFinalizacaoCompra />
           <Pagamento />
+          <div className={styles.compreEGanhe}>
+            <div className={styles.compreEGanheTexto}>
+              <h1 className={styles.titulo}>Compre e ganhe</h1>
+              <p>Ao finalizar essa compra você recebe 161 esoteracoins para usar em suas próximas compras :)</p>
+            </div>
+            <img className={styles.esoteraCoins} src={trianguloLogo} alt="Logo Esotera Coins" />
+          </div>
         </div>
-        <div className={styles.left}>
+        <div className={styles.right}>
           <h2 className={styles.titulo}>Itens do Carrinho</h2>
           <div className={styles.boxCardsCompras}>
             {props.produto.map((card) => {

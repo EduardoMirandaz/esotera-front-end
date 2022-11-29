@@ -1,7 +1,7 @@
 .container{
     display: flex;
 }
-.right{
+.left{
     margin-top: 125px;
     margin-left: 60px;
     width: min-content;
@@ -10,7 +10,7 @@
     gap: 37px;
 }
 
-.left{
+.right{
     width:45%;
     display: flex;
     flex-direction: column;
@@ -41,4 +41,17 @@ h2.titulo{
     padding: 30px;
     display: flex;
     justify-content: center;
+}
+
+.compreEGanheTexto p{
+    width: 400px;
+    font-size: 26px;
+}
+
+.compreEGanhe {
+    display: flex;
+}
+
+.esoteraCoins{
+    margin-left: 80px;
 }
