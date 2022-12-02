@@ -81,3 +81,23 @@
     background-color: var(--white);
     cursor: pointer;
 }
+
+@media (max-width: 800px){
+    .fundo{
+        display: flex;
+        flex-direction: row;
+    }
+
+
+    .descricao{
+        margin-left: 0px;
+    }
+
+    .valor{
+        margin-left: 0px;
+    }
+
+    .contador{
+        margin-left: 0px;
+    }
+}

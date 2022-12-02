@@ -16,7 +16,6 @@ import pagGooglePay from '../assets/logosPagamento/logoGooglePay.svg'
 export function Pagamento({openModal}){
     return(
         <div className={styles.containerPagamento}>
-            <h1>Decida sua forma de pagamento</h1>
             <div className={styles.pagamento}>
                 <form>
                     <label htmlFor="pix">

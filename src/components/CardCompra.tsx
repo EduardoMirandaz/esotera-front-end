@@ -13,7 +13,7 @@ interface CardCompra {
 
 
 export function CardCompra(props:CardCompra){
-    const [contador, setCount] = useState(0); 
+    const [contador, setCount] = useState(1); 
     // useState returns a pair. 'count' is the current state. 'setCount' is a function we can use to update the state.
     
     function incrementar() {
@@ -25,10 +25,10 @@ export function CardCompra(props:CardCompra){
     
     function decrementar() {
       setCount(function (prevCount) {
-        if (prevCount > 0) {
+        if (prevCount > 1) {
           return (prevCount -= 1); 
         } else {
-          return (prevCount = 0);
+          return (prevCount = 1);
         }
       });
     }
@@ -41,13 +41,17 @@ export function CardCompra(props:CardCompra){
         {!props.imagemPrincipal &&
             <img className={styles.imagem} src={semImagem}/>
         }
-        <h1 className={styles.descricao}>{props.descricao}</h1>
-        <h2 className={styles.valor}>R${props.valor.toFixed(2)}</h2>
-        <div className={styles.contador}>
-          <button className={styles.decrementar} onClick={decrementar}>−</button>
-          <h1>{contador}</h1>
-          <button className={styles.incrementar} onClick={incrementar}>+</button>
+
+        <div className={styles.informacoes}>
+          <h1 className={styles.descricao}>{props.descricao}</h1>
+          <h2 className={styles.valor}>R${props.valor.toFixed(2)}</h2>
+          <div className={styles.contador}>
+            <button className={styles.decrementar} onClick={decrementar}>−</button>
+            <h1>{contador}</h1>
+            <button className={styles.incrementar} onClick={incrementar}>+</button>
+          </div>
         </div>
+        
       </div>
     )
 }

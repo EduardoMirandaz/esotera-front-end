@@ -7,7 +7,7 @@
 
 .pagamento{
     width: 88.23%;
-    align-self: flex-end;
+    align-self: flex-start;
 }
 
 .pagamento img{
@@ -49,4 +49,31 @@
 .pagamento input:checked + img{
     border: 3px solid var(--purple-500);
     background-color: #e0aaff1a; /* roxo 100 com opacidade baixa */
+}
+
+@media (max-width: 1200px){
+    .containerPagamento{
+        display: flex;
+        flex-direction: column;
+        width: 345px;
+    }   
+
+    .pagamento{
+        width: 100%;
+        align-self: flex-start;
+    }
+    
+}
+
+@media (max-width: 600px){
+    .containerPagamento{
+        display: flex;
+        flex-direction: column;
+        width: 252px;
+    }
+    
+    .pagamento{
+        width: 100%;
+        align-self: flex-start;
+    }
 }

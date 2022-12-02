@@ -1,6 +1,11 @@
 .container{
     display: flex;
+    justify-content: center;
+    max-width: auto;
 }
+
+
+
 .left{
     margin-top: 125px;
     margin-left: 60px;
@@ -9,6 +14,9 @@
     flex-direction: column;
     gap: 37px;
 }
+
+
+
 
 .right{
     width:45%;
@@ -27,6 +35,7 @@ h1.titulo{
 }
 
 h2.titulo{
+    text-align: center;
     font-size: 30px;
     color: var(--purple-800);
     font-weight: normal;
@@ -35,12 +44,14 @@ h2.titulo{
 
 .boxCardsCompras{
     width: 530px;
-    height: 696px;
+    height: 720px;
     background-color: #c4c4c4;
     border-radius: 20px;
     padding: 30px;
     display: flex;
-    justify-content: center;
+    justify-content: first baseline;
+    flex-direction: column;
+    gap: 21px;
 }
 
 .compreEGanheTexto p{
@@ -54,4 +65,259 @@ h2.titulo{
 
 .esoteraCoins{
     margin-left: 80px;
+}
+
+.pagamentoLabel{
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    color: var(--purple-800);
+}
+
+.button{
+    background-color: var(--purple-600);
+    border-radius: 8px;
+    width: 530px;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white);
+    transition: 0.2s;
+}
+
+.button:hover{
+    background-color: var(--purple-500);
+}
+
+.cartao{
+    margin-left: 16px;
+}
+
+.totalCompra{
+    text-align: right;
+    margin-right: 16px;
+}
+
+
+.totalCompraLabel{
+    margin-top: 40px;
+    margin-bottom: 16px;
+    font-size: 26px;
+}
+
+.valorItensBox{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.valorItensLabel{
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #494949;
+}
+
+.valorItens{
+    font-size: 28px;
+    color:  var(--purple-800);
+    
+}
+
+.valorFreteBox{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.valorFreteLabel{
+    font-size: 16px;
+    color: #494949;
+}
+
+
+.valorFrete{
+    font-size: 28px;
+    color:  var(--purple-800);
+}
+
+.valorTotalBox{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 32px;
+    align-items: center;
+}
+
+.valorTotalLabel{
+    font-size: 20px;
+    color: #494949;
+
+}
+
+.valorTotal{
+    font-size: 36px;
+    color:  var(--purple-800);
+}
+
+.buttonsCards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.buttonRemove{
+    background-color: var(--purple-700);
+    border-radius: 8px;
+    width: 48%;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white);
+    transition: 0.2s;
+}
+
+.buttonRemove:hover{
+    background-color: var(--purple-600);
+}
+
+.buttonContinue{
+    background-color: var(--purple-600);
+    border-radius: 8px;
+    width: 48%;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white);
+    transition: 0.2s;
+}
+
+.buttonContinue:hover{
+    background-color: var(--purple-500);
+}
+
+
+@media (max-width: 1200px){
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left{
+        margin-left: 0;
+        margin-top: 50px;
+        align-items: center;
+    }
+
+    .right{
+        margin-right: 0;
+        margin-top: 100px;
+        align-items: center;
+    }
+
+    h1.titulo{
+        text-align: center;
+    }
+
+    h2.titulo{
+        font-size: 40px;
+        color: var(--purple-800);
+        font-weight: normal;
+        margin-bottom: 29px;
+        width: 400px;
+    }
+
+    .compreEGanhe {
+        justify-content: space-between;
+    }
+
+    .containerPagamento{
+        width: 1111px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        max-width: auto;
+    }
+
+    .pagamentoLabel{
+        text-align: center;
+    }
+}
+
+@media (max-width: 800px){
+    .boxCardsCompras{
+        width: 300px;
+        height: 720px;
+        background-color: #c4c4c4;
+        border-radius: 20px;
+        padding: 30px;
+        display: flex;
+        justify-content: first baseline;
+        flex-direction: column;
+        gap: 21px;
+    }
+
+    .button{
+        width: 300px;
+        height: 72px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        color: var(--white);
+        transition: 0.2s;
+    }
+    
+    .button:hover{
+        background-color: var(--purple-500);
+    }
+    
+    .cartao{
+        margin-left: 16px;
+    }
+}
+
+@media (max-width: 600px){
+    h2.titulo{
+        font-size: 40px;
+        width: 400px;
+    }
+
+    .esoteraCoins{
+        display: none;
+    }
+
+    .compreEGanhe {
+        justify-content: center;
+        align-items: center;
+    }
+
+    
 }
