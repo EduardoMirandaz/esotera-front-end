@@ -44,7 +44,7 @@ export function CardCompra(props:CardCompra){
         <h1 className={styles.descricao}>{props.descricao}</h1>
         <h2 className={styles.valor}>R${props.valor.toFixed(2)}</h2>
         <div className={styles.contador}>
-          <button className={styles.decrementar} onClick={decrementar}>-</button>
+          <button className={styles.decrementar} onClick={decrementar}>−</button>
           <h1>{contador}</h1>
           <button className={styles.incrementar} onClick={incrementar}>+</button>
         </div>
