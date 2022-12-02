@@ -2,8 +2,15 @@ import styles from './Cadastro.module.css';
 import React from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
+import {Routes, Route, useNavigate} from 'react-router-dom';
+import { PrincipalLogado } from '../pages/PrincipalLogado';
 
 export function Cadastro({showModalCad, setShowModalCad}){
+    const navigate = useNavigate();
+
+    const navigateToPrincipalLogado = () => {
+      navigate('/PrincipalLogado');
+    };
     return(
         <>
         {showModalCad ? (
@@ -33,7 +40,7 @@ export function Cadastro({showModalCad, setShowModalCad}){
                             <label htmlFor="senha">Redigite sua senha</label>
                             <input type="password" name="redigite" placeholder="Digite sua senha novamente" aria-required="true" required/>
                         </div>
-                        <button type="submit" className={styles.button}>CADASTRAR</button>
+                        <button type="submit" className={styles.button} onClick={navigateToPrincipalLogado}>CADASTRAR</button>
                         <div className={styles.divider}>
                             <span role="text" aria-label="Ou cadastre-se com uma dessas opções">ou cadastre-se com</span>
                             <hr/>
@@ -51,6 +58,9 @@ export function Cadastro({showModalCad, setShowModalCad}){
                 
             </Modal>
         ) : null}
+        <Routes>
+          <Route path="/PrincipalLogado" element={<PrincipalLogado />} />
+        </Routes>
         </>
     )
 }

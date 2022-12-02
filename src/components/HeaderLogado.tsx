@@ -1,4 +1,4 @@
-import styles from './Header.module.css'
+import styles from './HeaderLogado.module.css'
 import React, {useState, useEffect} from 'react';
 import headerLogo from '../assets/logo.svg'
 import headerLupa from '../assets/lupa.svg'
@@ -6,12 +6,13 @@ import headerCarrinho from '../assets/carrinho.svg'
 import headerPerfil from '../assets/perfil.svg'
 import headerCoracao from '../assets/coracao.svg'
 import NavButtons from './NavButtons'
-import Burger from './Burger'
+import BurgerLogado from './BurgerLogado'
 import Login from './Login';
 import {Routes, Route, useNavigate} from 'react-router-dom';
+import { Carrinho } from '../pages/Carrinho';
 import { PrincipalLogado } from '../pages/PrincipalLogado';
 
-export function Header(){
+export function HeaderLogado(){
     const [showModal, setShowModal] = useState(false)
     const openModal = () => {
         setShowModal(prev => !prev)
@@ -32,12 +33,17 @@ export function Header(){
 
       const navigate = useNavigate();
 
+      const navigateToCarrinho = () => {
+        navigate('/Carrinho');
+      };
+
       const navigateToPrincipalLogado = () => {
         navigate('/PrincipalLogado');
       };
       
     return(
         <>
+        
                 {!isMobile &&  <header className={styles.header}>
                 <div className={styles.topHeader}>
                     <img onClick={navigateToPrincipalLogado} className={styles.logo} src={headerLogo} alt="Logo" />
@@ -49,10 +55,13 @@ export function Header(){
                             </a>
                         </div>
                         <div className={styles.icones}>
-                            <div  onClick={openModal} className={styles.carrinho}>
-                                <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
+                                <div className={styles.carrinho} onClick={navigateToCarrinho}>
+                                    <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
+                                </div>
+                            <div className={styles.usuario}>
+                                <img  onClick={openModal} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
+                                <div className={styles.nomeUsuario}><a href="" >Hugo</a></div>
                             </div>
-                            <img  onClick={openModal} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
                             <a href="">
                                 <img className={styles.coracaoImg} src={headerCoracao} alt="Ir para os favoritos" />
                             </a>
@@ -63,10 +72,12 @@ export function Header(){
                 <NavButtons className={styles.navButtons}/>
                 <Login showModal={showModal} setShowModal={setShowModal} />
             </header> }
-            {isMobile && <Burger className={styles.burger}/>}
+            {isMobile && <BurgerLogado className={styles.burger}/>}
             <Routes>
+                <Route path="/Carrinho" element={<Carrinho />} />
                 <Route path="/PrincipalLogado" element={<PrincipalLogado />} />
             </Routes>
             </>
+        
     )
 }

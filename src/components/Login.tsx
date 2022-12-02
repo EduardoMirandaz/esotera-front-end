@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import Cadastro from './Cadastro';
+import {Routes, Route, useNavigate} from 'react-router-dom';
+import { PrincipalLogado } from '../pages/PrincipalLogado';
 
 export function Login({showModal, setShowModal}){
     const [showModalCad, setShowModalCad] = useState(false)
@@ -10,6 +12,12 @@ export function Login({showModal, setShowModal}){
         setShowModalCad(prev => !prev)
         setShowModal(prev => !prev)
     }
+
+    const navigate = useNavigate();
+
+    const navigateToPrincipalLogado = () => {
+      navigate('/PrincipalLogado');
+    };
     return(
         <>
         {showModal ? (
@@ -28,7 +36,7 @@ export function Login({showModal, setShowModal}){
                             <input type="password" name="senha" placeholder="Digite sua senha" aria-required="true" required/>
                             <a className={styles.esqueceuSenha} href="">Esqueceu sua senha?</a>
                         </div>
-                        <button type="submit" className={styles.button}>ENTRAR</button>
+                        <button type="submit" className={styles.button} onClick={navigateToPrincipalLogado}>ENTRAR</button>
                         <div onClick={openModalCad} className={styles.cadastrar}>
                             <span>Não possui conta?&nbsp;&nbsp;</span>
                             <span className={styles.cadastre}>CADASTRE-SE</span>
@@ -52,6 +60,9 @@ export function Login({showModal, setShowModal}){
             
         ) : null}
         <Cadastro showModalCad={showModalCad} setShowModalCad={setShowModalCad} />
+        <Routes>
+          <Route path="/PrincipalLogado" element={<PrincipalLogado />} />
+        </Routes>
         </>
     )
 }
