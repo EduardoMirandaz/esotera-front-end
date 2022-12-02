@@ -5,12 +5,13 @@ import { Accessibility } from "../components/Accessibility";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Vitrine } from "../components/Vitrine";
+import { SumarioProduto } from "../components/SumarioProduto";
 
 export function Produto(){
   return(
     <>
-        <h1>PRODUTO!!</h1>
         <Header/>
+        <SumarioProduto/>
         <Accessibility/>
         <Footer/>
     </>

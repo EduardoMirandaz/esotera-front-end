@@ -1,0 +1,136 @@
+.containerSumario{
+    width: 47.6%;
+}
+
+.titulo{
+    font-size: 44px;
+    font-weight: normal;
+    margin-bottom: 45px;
+}
+
+.subCategorias{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.estrelas{
+    display: flex;
+    align-items: center;
+}
+
+.estoque{
+    background-color: #30591D;
+    color: var(--white);
+    line-height: 35px;
+    border-radius: 320px;
+    padding: 0 13px;
+}
+
+.comprados{
+    font-size: 20px;
+}
+
+.avaliacao{
+    font-size: 26.25px;
+    margin-left: 7px;
+}
+
+.preco{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.texto{
+    font-size: 23px;
+    margin: 56px 0;
+    text-align: justify;
+    /* height: 278px; */
+}
+
+.botoesProduto{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contador{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+}
+
+.contador h1{
+    color: var(--purple-800);
+    font-size: 27px;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.decrementar{
+    color: #C8372D;
+    border: 2px solid #FAA9A3;
+    font-size: 32px;
+}
+
+.incrementar{
+    color: #37833B;
+    border: 2px solid #A9D3AB;
+    font-size: 32px;
+
+}
+
+.contador button{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 0px;
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+.botaoCarrinho{
+    background-color: var(--purple-600);
+    border-radius: 8.27586px;
+    border: none;
+    color: var(--white);
+    font-size: 18px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.botaoCarrinho img{
+    width: 26.75px;
+    margin-left: 5px;
+}
+
+.botaoFrete{
+    background-color: var(--white);
+    border-radius: 8.27586px;
+    border: 3px solid var(--purple-500);    
+    color: var(--purple-500);
+    font-size: 18px;
+    font-weight: bold;
+    padding: 17px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.botaoFrete img{
+    width: 26.75px;
+    margin-left: 5px;
+}
+
+.botaoFavorito{
+    background-color: var(--white);
+    border-radius: 8.27586px;
+    border: 3px solid var(--purple-500);    
+    padding: 17px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
