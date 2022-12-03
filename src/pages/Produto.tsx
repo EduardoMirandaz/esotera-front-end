@@ -7,13 +7,17 @@ import { Header } from "../components/Header";
 import { Vitrine } from "../components/Vitrine";
 import { SumarioProduto } from "../components/SumarioProduto";
 import Breadcrumb from "../components/Breadcrumb";
+import { DetalhesProduto } from "../components/DetalhesProduto";
+
+
 
 export function Produto(){
   return(
     <>
         <Header/>
-        <Breadcrumb/>
+        <Breadcrumb idProduto={0}/>
         <SumarioProduto/>
+        <DetalhesProduto idProduto={0}/>
         <Accessibility/>
         <Footer/>
     </>

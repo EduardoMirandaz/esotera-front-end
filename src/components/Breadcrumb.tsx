@@ -1,9 +1,9 @@
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import React from 'react';
 import 'react-responsive-modal/styles.css';
+import { produto } from "../data.json";
 
-
-export function Breadcrumb() {
+export function Breadcrumb(props) {
     return (
             <Breadcrumbs aria-label="breadcrumb" sx={{
                 mb: 5,
@@ -18,7 +18,7 @@ export function Breadcrumb() {
                 >
                     Produto
                 </Link>
-                <Typography color="text.primary">Kit de incenso para ambientização e reenergização por quartzo rosa</Typography>
+                <Typography color="text.primary">{produto[props.idProduto].descricao}</Typography>
             </Breadcrumbs>
             
     )
