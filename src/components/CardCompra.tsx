@@ -35,13 +35,14 @@ export function CardCompra(props:CardCompra){
 
     return(
       <div className={styles.fundo}>
-        {props.imagemPrincipal &&
-            <img className={styles.imagem} src={props.imagemPrincipal}/>
-        }
-        {!props.imagemPrincipal &&
-            <img className={styles.imagem} src={semImagem}/>
-        }
-
+        <div className={styles.boxImage}>
+          {props.imagemPrincipal &&
+              <img className={styles.imagem} src={props.imagemPrincipal}/>
+          }
+          {!props.imagemPrincipal &&
+              <img className={styles.imagem} src={semImagem}/>
+          }
+        </div>
         <div className={styles.informacoes}>
           <h1 className={styles.titulo}>{props.titulo}</h1>
           <h2 className={styles.valor}>R${props.valor.toFixed(2)}</h2>
@@ -52,7 +53,7 @@ export function CardCompra(props:CardCompra){
           </div>
         </div>
         
-      </div>
+      </div> 
     )
 }
 

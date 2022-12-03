@@ -12,9 +12,7 @@
 }
 
 .formulario input{
-    padding-top: 23.5px;
-    padding-bottom: 23.5px;
-    padding-left: 23px;
+    padding: 23px;
 
     font-size: 18px;
 
@@ -66,7 +64,7 @@ input#complemento{
     }    
 }
 
-@media (max-width: 600px){
+@media (max-width: 650px){
     .containerFormulario{
         width: 300px;
         display: flex;

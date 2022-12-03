@@ -60,10 +60,6 @@ h2.titulo{
     display: flex;
 }
 
-.esoteraCoins{
-    margin-left: 80px;
-}
-
 .pagamentoLabel{
     font-weight: 400;
     font-size: 36px;
@@ -190,6 +186,7 @@ h2.titulo{
     text-decoration: none;
     color: var(--white);
     transition: 0.2s;
+    padding: 0 50px;
 }
 
 .buttonRemove:hover{
@@ -217,8 +214,19 @@ h2.titulo{
     background-color: var(--purple-500);
 }
 
+@media (max-width: 1575px){
+    .button{
+        width: 498px;
+        margin-right: 32px;
+    }
 
-@media (max-width: 1200px){
+    .totalCompra{
+        text-align: right;
+        margin-right: 32px;
+    }
+}
+
+@media (max-width: 1250px){
     .container{
         flex-direction: column;
         align-items: center;
@@ -300,9 +308,17 @@ h2.titulo{
     .cartao{
         margin-left: 16px;
     }
+
+    .buttonRemove{
+        font-size: 12px;
+    }
+    
+    .buttonContinue{
+        font-size: 12px;
+    }
 }
 
-@media (max-width: 600px){
+@media (max-width: 650px){
     h2.titulo{
         font-size: 40px;
         width: 400px;
@@ -317,5 +333,7 @@ h2.titulo{
         align-items: center;
     }
 
-    
+    .button{
+        margin-bottom: 100px;
+    }
 }
