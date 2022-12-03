@@ -7,7 +7,7 @@ import coracaoVazio from '../assets/coracaoVazio.svg'
 interface Card {
   imagemPrincipal?: string;
   categoria?: string;
-  descricao: string;
+  titulo: string;
   valor:number;
 }
 
@@ -27,10 +27,10 @@ export function Card(props:Card){
         {!props.categoria &&
             <p className={styles.categoria}>Outros</p>
         }
-        <h1 className={styles.descricao}>{props.descricao}</h1>
+        <h1 className={styles.titulo}>{props.titulo}</h1>
         <h2 className={styles.valor}>R${props.valor.toFixed(2)}</h2>
         <div className={styles.funcoes}>
-          <a href="" className={styles.button}>VER DETALHES</a>
+          <a href="/produto" className={styles.button}>VER DETALHES</a>
           <div className={styles.coracao}>
             {isClick &&
               <img src={coracaoCheio} isClick={isClick} onClick={() => setClick(!isClick)}/>

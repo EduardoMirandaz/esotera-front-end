@@ -5,7 +5,7 @@ import styles from './Vitrine.module.css'
 interface Card {
   imagemPrincipal?: string;
   categoria?: string;
-  descricao: string;
+  titulo: string;
   valor:number;
 }
 
@@ -15,7 +15,7 @@ export function Vitrine(props){
         {props.data.map((card) => {
                 return(
                     <Card
-                      descricao={card.descricao} 
+                      titulo={card.titulo} 
                       imagemPrincipal={card.imagemPrincipal}
                       valor={card.valor}
                       categoria={card.categoria}

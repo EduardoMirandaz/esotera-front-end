@@ -12,9 +12,7 @@
 }
 
 .formulario input{
-    padding-top: 23.5px;
-    padding-bottom: 23.5px;
-    padding-left: 23px;
+    padding: 23px;
 
     font-size: 18px;
 
@@ -58,4 +56,37 @@ input#cep{
 
 input#complemento{
     width: 61.25%;
+}
+
+@media (max-width: 1500px){
+    .containerFormulario{
+        width: 600px;
+    }    
+}
+
+@media (max-width: 650px){
+    .containerFormulario{
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    } 
+
+    .enderecoEntrega input{
+        flex-grow: 1;
+        /* 50% 50% pros inputs com tamanhos não especificados abaixo */
+    }
+    
+    .formulario input{
+        padding-top: 23.5px;
+        padding-bottom: 23.5px;
+        padding-left: 23px;
+    
+        font-size: 14px;
+    
+        border: 1px solid #111111;
+        border-radius: 25px;
+    }
+
 }
