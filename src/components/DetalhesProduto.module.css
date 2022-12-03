@@ -1,61 +1,47 @@
-.containerAccessibility{
+.detalhesProduto{
+    margin: 0 90px 0 30px;
+}
+.paragrafoDetalhesAberto{
+    font-size: 25px;
+
+}
+
+.paragrafoDetalhesFechado{
+    font-size: 25px;
+    
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: -webkit-box;
+    -webkit-line-clamp: 12;
+    -webkit-box-orient: vertical;
+
+}
+
+.tituloDetalhes{
+    margin: 40px 0 20px 0;
+}
+
+.caixaBotao{
+    width: 100%;
     display: flex;
-    justify-content: end;
-    position: sticky;
-    bottom: -38px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
 }
 
-
-.accessibility{
-    background-color: var(--purple-500);
-    height: 184px;
-    width: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center ;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-right: 10px;
-    position: absolute;
-    bottom: 38px;
-}
-
-.accessibility img:active{
-    transform: translateY(1px);
-    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.2));
-}
-
-.accessibility img{
-    padding: 14px;
-    cursor: pointer;
-}
-
-.linha{
-    background-color: var(--white);
-    width: 52px;
+.botao{
+    background-color: var(--purple-300);
     border: 0;
-    border-top: 1px solid var(--white);
-    align-self: center;
+    font-size: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    margin: 30px 0;
 }
 
-@media screen and (max-width: 610px) {
-    .tamFonte{
-        display: none; 
-    }
-
-    .linha{
-        display: none;
-    }
-
-    .accessibility{
-        height: 62px;
-        width: 62px;
-        border-radius: 8px;
-        margin-bottom: 52px;
-    }
-
-    .containerAccessibility{
-        align-items: flex-end;
+@media (max-width: 600px){
+    .botao{
+        margin-bottom: 60px;
     }
 }
