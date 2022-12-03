@@ -41,7 +41,7 @@ export function Carrinho(props) {
               if (card.idProduto <= 1) {
                 return (
                   <CardCompra
-                    descricao={card.descricao}
+                    titulo={card.titulo}
                     imagemPrincipal={card.imagemPrincipal}
                     valor={card.valor}
                     idProduto={card.idProduto}

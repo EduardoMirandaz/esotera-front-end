@@ -18,7 +18,7 @@ export function Breadcrumb(props) {
                 >
                     Produto
                 </Link>
-                <Typography color="text.primary">{produto[props.idProduto].descricao}</Typography>
+                <Typography color="text.primary">{produto[props.idProduto].titulo}</Typography>
             </Breadcrumbs>
             
     )

@@ -14,7 +14,7 @@
     object-fit: cover;
 }
 
-.descricao{
+.titulo{
     height: 46px;
     font-size: 20px;
     font-weight: normal;
@@ -89,7 +89,7 @@
     }
 
 
-    .descricao{
+    .titulo{
         margin-left: 0px;
     }
 

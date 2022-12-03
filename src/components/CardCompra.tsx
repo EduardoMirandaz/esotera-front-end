@@ -4,7 +4,7 @@ import semImagem from '../assets/semImagem.svg'
 
 interface CardCompra {
   imagemPrincipal?: string;
-  descricao: string;
+  titulo: string;
   valor:number;
   idProduto: number;
 }
@@ -43,7 +43,7 @@ export function CardCompra(props:CardCompra){
         }
 
         <div className={styles.informacoes}>
-          <h1 className={styles.descricao}>{props.descricao}</h1>
+          <h1 className={styles.titulo}>{props.titulo}</h1>
           <h2 className={styles.valor}>R${props.valor.toFixed(2)}</h2>
           <div className={styles.contador}>
             <button className={styles.decrementar} onClick={decrementar}>−</button>

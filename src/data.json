@@ -15,7 +15,7 @@
 	],
 	"produto":[
 		{
-			"descricao":"Kit de incenso para ambientização e reenergização por quartzo rosa",
+			"titulo":"Kit de incenso para ambientização e reenergização por quartzo rosa",
 			"valor":21.50,
 			"imagemPrincipal":"https://i.imgur.com/WiedpMF.png",
 			"categoria":"Incensos",
@@ -37,7 +37,7 @@
 			"descricaoDetalhadaMaior": "Mais uma avanço da tecnologia, feito para sua diversão. Já é sucesso em todo o mundo. Com apenas 7 Kg ele é super fácil de levar para todos os lugares. Possui duas rodas motorizadas com sistema de controle de rotação por inclinação muito preciso e eficiente. Para sua locomoção basta se inclinar para frente ou para traz, você também pode ficar parado nele ou até mesmo fazer manobras de 360° graus."
 		},
 		{
-			"descricao":"Cartas de Tarô brancas e amarelas",
+			"titulo":"Cartas de Tarô brancas e amarelas",
 			"valor":35.90,
 			"imagemPrincipal":"https://i.imgur.com/TdmGKqC.png",
 			"categoria":"Cartas",
@@ -59,7 +59,7 @@
 			"descricaoDetalhadaMaior": "Mais uma avanço da tecnologia, feito para sua diversão. Já é sucesso em todo o mundo. Com apenas 7 Kg ele é super fácil de levar para todos os lugares. Possui duas rodas motorizadas com sistema de controle de rotação por inclinação muito preciso e eficiente. Para sua locomoção basta se inclinar para frente ou para traz, você também pode ficar parado nele ou até mesmo fazer manobras de 360° graus." 
 		},
 		{
-			"descricao":"Candelabro de suporte para três velas com estrela de cinco pontas",
+			"titulo":"Candelabro de suporte para três velas com estrela de cinco pontas",
 			"valor":118.50,
 			"imagemPrincipal":"https://i.imgur.com/lF3iMsJ.png",
 			"categoria":"Artefatos",
@@ -81,7 +81,7 @@
 			"descricaoDetalhadaMaior": "Mais uma avanço da tecnologia, feito para sua diversão. Já é sucesso em todo o mundo. Com apenas 7 Kg ele é super fácil de levar para todos os lugares. Possui duas rodas motorizadas com sistema de controle de rotação por inclinação muito preciso e eficiente. Para sua locomoção basta se inclinar para frente ou para traz, você também pode ficar parado nele ou até mesmo fazer manobras de 360° graus." 
 		},
 		{
-			"descricao":"Kit de cristais da Lua (vela não inclusa)",
+			"titulo":"Kit de cristais da Lua (vela não inclusa)",
 			"valor":51.00,
 			"imagemPrincipal":"https://i.imgur.com/CaAvmhf.png",
 			"categoria":"Cristais",
@@ -103,7 +103,7 @@
 			"descricaoDetalhadaMaior": "Mais uma avanço da tecnologia, feito para sua diversão. Já é sucesso em todo o mundo. Com apenas 7 Kg ele é super fácil de levar para todos os lugares. Possui duas rodas motorizadas com sistema de controle de rotação por inclinação muito preciso e eficiente. Para sua locomoção basta se inclinar para frente ou para traz, você também pode ficar parado nele ou até mesmo fazer manobras de 360° graus." 
 		},
 		{
-			"descricao":"Conjunto de 10 cristais de quartzo ativados",
+			"titulo":"Conjunto de 10 cristais de quartzo ativados",
 			"valor":14.21,
 			"imagemPrincipal":"https://i.imgur.com/3zHhJMC.png",
 			"categoria":"Cristais",
@@ -125,7 +125,7 @@
 			"descricaoDetalhadaMaior": "Mais uma avanço da tecnologia, feito para sua diversão. Já é sucesso em todo o mundo. Com apenas 7 Kg ele é super fácil de levar para todos os lugares. Possui duas rodas motorizadas com sistema de controle de rotação por inclinação muito preciso e eficiente. Para sua locomoção basta se inclinar para frente ou para traz, você também pode ficar parado nele ou até mesmo fazer manobras de 360° graus." 
 		},
 		{
-			"descricao":"Guia de mapa astral (em inglês)",
+			"titulo":"Guia de mapa astral (em inglês)",
 			"valor":124.99,
 			"imagemPrincipal":"https://i.imgur.com/zKYxMNA.png",
 			"categoria":"Artefatos",
@@ -147,7 +147,7 @@
 			"descricaoDetalhadaMaior": "Mais uma avanço da tecnologia, feito para sua diversão. Já é sucesso em todo o mundo. Com apenas 7 Kg ele é super fácil de levar para todos os lugares. Possui duas rodas motorizadas com sistema de controle de rotação por inclinação muito preciso e eficiente. Para sua locomoção basta se inclinar para frente ou para traz, você também pode ficar parado nele ou até mesmo fazer manobras de 360° graus." 
 		},
 		{
-			"descricao":"Guia de mapa astral (em inglês)",
+			"titulo":"Guia de mapa astral (em inglês)",
 			"valor":124.99,
 			"imagemPrincipal":"https://i.imgur.com/zKYxMNA.png",
 			"categoria":"Artefatos",
@@ -169,7 +169,7 @@
 			"descricaoDetalhadaMaior": "Mais uma avanço da tecnologia, feito para sua diversão. Já é sucesso em todo o mundo. Com apenas 7 Kg ele é super fácil de levar para todos os lugares. Possui duas rodas motorizadas com sistema de controle de rotação por inclinação muito preciso e eficiente. Para sua locomoção basta se inclinar para frente ou para traz, você também pode ficar parado nele ou até mesmo fazer manobras de 360° graus." 
 		},
 		{
-			"descricao":"Guia de mapa astral (em inglês)",
+			"titulo":"Guia de mapa astral (em inglês)",
 			"valor":124.99,
 			"imagemPrincipal":"https://i.imgur.com/zKYxMNA.png",
 			"categoria":"Artefatos",
@@ -191,7 +191,7 @@
 			"descricaoDetalhadaMaior": "Mais uma avanço da tecnologia, feito para sua diversão. Já é sucesso em todo o mundo. Com apenas 7 Kg ele é super fácil de levar para todos os lugares. Possui duas rodas motorizadas com sistema de controle de rotação por inclinação muito preciso e eficiente. Para sua locomoção basta se inclinar para frente ou para traz, você também pode ficar parado nele ou até mesmo fazer manobras de 360° graus." 
 		},
 		{
-			"descricao":"Guia de mapa astral (em inglês)",
+			"titulo":"Guia de mapa astral (em inglês)",
 			"valor":124.99,
 			"imagemPrincipal":"https://i.imgur.com/zKYxMNA.png",
 			"categoria":"Artefatos",
@@ -213,7 +213,7 @@
 			"descricaoDetalhadaMaior": "Mais uma avanço da tecnologia, feito para sua diversão. Já é sucesso em todo o mundo. Com apenas 7 Kg ele é super fácil de levar para todos os lugares. Possui duas rodas motorizadas com sistema de controle de rotação por inclinação muito preciso e eficiente. Para sua locomoção basta se inclinar para frente ou para traz, você também pode ficar parado nele ou até mesmo fazer manobras de 360° graus." 
 		},
 		{
-			"descricao":"Guia de mapa astral (em inglês)",
+			"titulo":"Guia de mapa astral (em inglês)",
 			"valor":124.99,
 			"imagemPrincipal":"https://i.imgur.com/zKYxMNA.png",
 			"categoria":"Artefatos",
@@ -235,7 +235,7 @@
 			"descricaoDetalhadaMaior": "Mais uma avanço da tecnologia, feito para sua diversão. Já é sucesso em todo o mundo. Com apenas 7 Kg ele é super fácil de levar para todos os lugares. Possui duas rodas motorizadas com sistema de controle de rotação por inclinação muito preciso e eficiente. Para sua locomoção basta se inclinar para frente ou para traz, você também pode ficar parado nele ou até mesmo fazer manobras de 360° graus." 
 		},
 		{
-			"descricao":"Guia de mapa astral (em inglês)",
+			"titulo":"Guia de mapa astral (em inglês)",
 			"valor":124.99,
 			"imagemPrincipal":"https://i.imgur.com/zKYxMNA.png",
 			"categoria":"Artefatos",
@@ -257,7 +257,7 @@
 			"descricaoDetalhadaMaior": "Mais uma avanço da tecnologia, feito para sua diversão. Já é sucesso em todo o mundo. Com apenas 7 Kg ele é super fácil de levar para todos os lugares. Possui duas rodas motorizadas com sistema de controle de rotação por inclinação muito preciso e eficiente. Para sua locomoção basta se inclinar para frente ou para traz, você também pode ficar parado nele ou até mesmo fazer manobras de 360° graus." 
 		},
 		{
-			"descricao":"Guia de mapa astral (em inglês)",
+			"titulo":"Guia de mapa astral (em inglês)",
 			"valor":124.99,
 			"imagemPrincipal":"https://i.imgur.com/zKYxMNA.png",
 			"categoria":"Artefatos",
