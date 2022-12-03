@@ -8,15 +8,14 @@
 }
 
 .right{
-    width:47.6%;
-    margin-top: 125px;
+    margin-top: 43px;
     margin-right: 60px;
     height: min-content;
 }
 
 .left{
-    width: 41.6%;
-    margin-top: 125px;
+    width: 40%;
+    margin-top: 43px;
     margin-left: 60px;
     display: flex;
     flex-direction: column;
@@ -29,4 +28,25 @@
     border-radius: 20px;
     object-fit: cover;
     margin-bottom: 44px;
+}
+
+@media (max-width: 1250px){
+    .container{
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .right{
+        max-width: 700px;
+        margin: 0px;
+        height: 700px;
+    }
+
+    .left{
+        width: 100%;
+        margin: 0px;
+        margin-bottom: 40px;
+        align-items: center;
+    }
 }
