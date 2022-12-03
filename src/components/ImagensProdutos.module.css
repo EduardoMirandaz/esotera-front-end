@@ -1,0 +1,28 @@
+.imagemPrincipalProduto{
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-bottom: 44px;
+}
+
+.imagensPequenasContainer{
+  display: flex;
+  gap: 20px;
+}
+
+.imagemPequena{
+  width: 150px;
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.selectedimage{
+  width: 150px;
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 4px solid var(--purple-500);
+  padding: 2px;
+}

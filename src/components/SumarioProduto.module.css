@@ -1,7 +1,3 @@
-.containerSumario{
-    width: 47.6%;
-}
-
 .titulo{
     font-size: 44px;
     font-weight: normal;
@@ -45,7 +41,12 @@
     font-size: 23px;
     margin: 56px 0;
     text-align: justify;
-    /* height: 278px; */
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    display: -webkit-box;
+    
+    -webkit-line-clamp: 11;
+    -webkit-box-orient: vertical;
 }
 
 .botoesProduto{
