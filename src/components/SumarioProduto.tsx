@@ -5,8 +5,10 @@ import meiaEstrela from '../assets/star-half.svg'
 import carrinho from '../assets/carrinho.svg'
 import mapPin from '../assets/map-pin.svg'
 import coracaoVazio from '../assets/coracaoVazioPurple500.svg'
+import { produto } from '../data.json'
 
-export function SumarioProduto(){
+
+export function SumarioProduto(props){
     const [contador, setCount] = useState(1); 
     // useState returns a pair. 'count' is the current state. 'setCount' is a function we can use to update the state.
     
@@ -28,21 +30,21 @@ export function SumarioProduto(){
     }
     return(
         <div className={styles.containerSumario}>
-            <h1 className={styles.titulo}>Kit de incenso para ambientização e reenergização por quartzo rosa</h1>
+            <h1 className={styles.titulo}>{produto[props.idProduto].titulo}</h1>
             <div className={styles.subCategorias}>
                 <p className={styles.estoque}>Em estoque</p>
-                <p className={styles.comprados}>42 Comprados</p>
+                <p className={styles.comprados}>{produto[props.idProduto].qtdComprados} Comprados</p>
                 <div className={styles.estrelas}>
                     <img src={estrela} alt="Avaliação"/>
                     <img src={estrela} alt="Avaliação"/>
                     <img src={estrela} alt="Avaliação"/>
                     <img src={estrela} alt="Avaliação"/>
                     <img src={meiaEstrela} alt="Avaliação"/>
-                    <p className={styles.avaliacao}>4.85(36)</p>
+                    <p className={styles.avaliacao}>{produto[props.idProduto].qtdDeEstrelas}({produto[props.idProduto].qtdAvaliacoes})</p>
                 </div>
-                <p className={styles.preco}>R$ 21,50</p>
+                <p className={styles.preco}>R${produto[props.idProduto].valor}</p>
             </div>
-            <p className={styles.texto}>Conjunto de cinco cristais em formas dos Sólidos Platônicos em Quartzo Verde, acompanhados por caixa de madeira para guardar as peças. Os sólidos de platão são a base da Geometria Sagrada e representam os elementos primordiais da criação: fogo, ar, terra, água e éter.Conjunto de cinco cristais em formas dos Sólidos Platônicos em Quartzo Verde, acompanhados por caixa de madeira para guardar as peças. Os sólidos de platão são a base da Geometria Sagrada e representam os elementos primordiais da criação: fogo, ar, terra, água e éter.Conjunto de cinco cristais em formas dos Sólidos Platônicos em Quartzo Verde, acompanhados por caixa de madeira para guardar as peças. Os sólidos de platão são a base da Geometria Sagrada e representam os elementos primordiais da criação: fogo, ar, terra, água e éter.</p>
+            <p className={styles.texto}>{produto[props.idProduto].descricaoDetalhadaMenor}</p>
             <div className={styles.botoesProduto}>
                 <div className={styles.contador}>
                     <button className={styles.decrementar} onClick={decrementar}>−</button>

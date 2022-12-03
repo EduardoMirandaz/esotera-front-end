@@ -22,7 +22,7 @@ export function Produto(){
           <ImagensProdutos idProduto={0}/>
         </div>
         <div className={styles.right}>
-          <SumarioProduto/>
+          <SumarioProduto idProduto={0}/>
         </div>
       </div>
       <DetalhesProduto idProduto={0}/>
