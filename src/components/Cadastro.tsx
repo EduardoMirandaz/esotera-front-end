@@ -1,15 +1,30 @@
 import styles from './Cadastro.module.css';
-import React from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import { PrincipalLogado } from '../pages/PrincipalLogado';
+import React, { useState } from 'react';
+import { useAuthContext } from '../contexts/auth/AuthContext';
+
+
 
 export function Cadastro({showModalCad, setShowModalCad}){
-    const navigate = useNavigate();
+
+    const { usuario, setUsuario } = useAuthContext();
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+    const [senha2, setSenha2] = useState("");
+
+    const navigate = useNavigate(); 
 
     const navigateToPrincipalLogado = () => {
-      navigate('/PrincipalLogado');
+        if(senha != senha2){
+            alert("Senhas diferentes!");
+        }
+        
+        alert(usuario)
+        
+        //navigate('/PrincipalLogado');
     };
     return(
         <>
@@ -22,7 +37,15 @@ export function Cadastro({showModalCad, setShowModalCad}){
                     <form>
                         <div className={styles.inputWrapper}>
                             <label htmlFor="nome">Nome</label>
-                            <input type="text" name="nome" placeholder="Digite seu nome" aria-required="true" required/>
+                            <input 
+                                onChange={(e)=> setUsuario(e.target.value)}
+                                type="text" 
+                                name="nome" 
+                                placeholder="Digite seu nome" 
+                                aria-required="true" 
+                                required
+                            />
+                        
                         </div>
                         {/*<div className={styles.inputWrapper}>
                             <label htmlFor="celular">Celular</label>
@@ -30,15 +53,36 @@ export function Cadastro({showModalCad, setShowModalCad}){
                         </div>*/}
                         <div className={styles.inputWrapper}>
                             <label htmlFor="email">E-mail</label>
-                            <input type="email" name="email" placeholder="example@email.com" aria-required="true" required/>
+                            <input 
+                                onChange={(e)=>setEmail(e.target.value)}
+                                type="email" 
+                                name="email" 
+                                placeholder="example@email.com" 
+                                aria-required="true" 
+                                required
+                            />
                         </div>
                         <div className={styles.inputWrapper}>
                             <label htmlFor="senha">Senha</label>
-                            <input type="password" name="senha" placeholder="No mínimo 8 caractéres" aria-required="true" required/>
+                            <input 
+                                onChange={(e)=>setSenha(e.target.value)}
+                                type="password" 
+                                name="senha" 
+                                placeholder="No mínimo 8 caractéres" 
+                                aria-required="true" 
+                                required
+                            />
                         </div>
                         <div className={styles.inputWrapper}>
                             <label htmlFor="senha">Redigite sua senha</label>
-                            <input type="password" name="redigite" placeholder="Digite sua senha novamente" aria-required="true" required/>
+                            <input 
+                                onChange={(e)=>setSenha2(e.target.value)}
+                                type="password" 
+                                name="redigite" 
+                                placeholder="Digite sua senha novamente" 
+                                aria-required="true" 
+                                required
+                            />
                         </div>
                         <button type="submit" className={styles.button} onClick={navigateToPrincipalLogado}>CADASTRAR</button>
                         <div className={styles.divider}>
