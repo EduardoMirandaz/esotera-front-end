@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    gap: 2.6%;
+}
+
+.obj{
+    background-color: lawngreen;
+}
+
+.right{
+    width:47.6%;
+    margin-top: 125px;
+    margin-right: 60px;
+    height: min-content;
+}
+
+.left{
+    width: 41.6%;
+    margin-top: 125px;
+    margin-left: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+}
+
+.imagem{
+    width: 610px;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-bottom: 44px;
+}

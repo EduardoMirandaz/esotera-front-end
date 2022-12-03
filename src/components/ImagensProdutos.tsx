@@ -1,0 +1,36 @@
+import React, { useState } from 'react'
+import styles from './ImagensProdutos.module.css'
+import { produto } from "../data.json"
+import fotoProduto from "../assets/fotoProduto.png"
+
+
+export function ImagensProdutos(props) {
+  const imagens = produto[props.idProduto].imagensAlternativas;
+  const [index, setIndex] = useState(0);
+  const [image, setImage] = useState(produto[props.idProduto].imagemPrincipal);
+  return (
+    <div>
+      <div className={styles.imagemPrincipalProdutoContainer}>
+        <img src={image} className={styles.imagemPrincipalProduto} />
+      </div>
+      <div className={styles.imagensPequenasContainer}>
+        {imagens?.map((item, i) => (
+          <img
+            key={i}
+            src={item}
+            className={i === index ? styles.selectedimage : styles.imagemPequena}
+            onClick={() => {
+              setIndex(i);
+              setImage(imagens[i]);
+              console.log(i);
+            }}
+          />
+        ))}
+      </div>
+    </div>
+
+
+  )
+}
+
+export default ImagensProdutos;

@@ -10,16 +10,27 @@ import Breadcrumb from "../components/Breadcrumb";
 import { DetalhesProduto } from "../components/DetalhesProduto";
 
 
+import ImagensProdutos from "../components/ImagensProdutos"
+import fotoProduto from "../assets/fotoProduto.png"
+import styles from './Produto.module.css'
+
 
 export function Produto(){
   return(
     <>
-        <Header/>
+      <Header/>
         <Breadcrumb idProduto={0}/>
-        <SumarioProduto/>
+      <div className={styles.container}>
+        <div className={styles.left}>
+          <ImagensProdutos idProduto={0}/>
+        </div>
+        <div className={styles.right}>
+          <SumarioProduto/>
         <DetalhesProduto idProduto={0}/>
-        <Accessibility/>
-        <Footer/>
+        </div>
+      </div>
+      <Accessibility/>
+      <Footer/>
     </>
   );
 }

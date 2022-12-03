@@ -42,7 +42,7 @@ export function SumarioProduto(){
                 </div>
                 <p className={styles.preco}>R$ 21,50</p>
             </div>
-            <p className={styles.texto}>Conjunto de cinco cristais em formas dos Sólidos Platônicos em Quartzo Verde, acompanhados por caixa de madeira para guardar as peças. Os sólidos de platão são a base da Geometria Sagrada e representam os elementos primordiais da criação: fogo, ar, terra, água e éter.</p>
+            <p className={styles.texto}>Conjunto de cinco cristais em formas dos Sólidos Platônicos em Quartzo Verde, acompanhados por caixa de madeira para guardar as peças. Os sólidos de platão são a base da Geometria Sagrada e representam os elementos primordiais da criação: fogo, ar, terra, água e éter.Conjunto de cinco cristais em formas dos Sólidos Platônicos em Quartzo Verde, acompanhados por caixa de madeira para guardar as peças. Os sólidos de platão são a base da Geometria Sagrada e representam os elementos primordiais da criação: fogo, ar, terra, água e éter.Conjunto de cinco cristais em formas dos Sólidos Platônicos em Quartzo Verde, acompanhados por caixa de madeira para guardar as peças. Os sólidos de platão são a base da Geometria Sagrada e representam os elementos primordiais da criação: fogo, ar, terra, água e éter.</p>
             <div className={styles.botoesProduto}>
                 <div className={styles.contador}>
                     <button className={styles.decrementar} onClick={decrementar}>−</button>
