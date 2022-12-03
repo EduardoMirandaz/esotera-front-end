@@ -13,13 +13,13 @@ import pagSodexo from '../assets/logosPagamento/logoSodexo.svg'
 import pagGooglePay from '../assets/logosPagamento/logoGooglePay.svg'
 
 
-export function Pagamento({openModal}){
+export function Pagamento(){
     return(
         <div className={styles.containerPagamento}>
             <div className={styles.pagamento}>
                 <form>
                     <label htmlFor="pix">
-                        <input onClick={openModal} type="radio" id='pix' className="pix" value="pix" name="formaPagamento"/>
+                        <input type="radio" id='pix' className="pix" value="pix" name="formaPagamento"/>
                         <img className={styles.tamFonte} src={pagPix} alt="Pagar pelo Pix" />
                     </label>
                     <label htmlFor="mastercard">
