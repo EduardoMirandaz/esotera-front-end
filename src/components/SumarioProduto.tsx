@@ -42,7 +42,7 @@ export function SumarioProduto(props){
                     <img src={meiaEstrela} alt="Avaliação"/>
                     <p className={styles.avaliacao}>{produto[props.idProduto].qtdDeEstrelas}({produto[props.idProduto].qtdAvaliacoes})</p>
                 </div>
-                <p className={styles.preco}>R${produto[props.idProduto].valor}</p>
+                <p className={styles.preco}>R${produto[props.idProduto].valor.toFixed(2)}</p>
             </div>
             <p className={styles.texto}>{produto[props.idProduto].descricaoDetalhadaMenor}</p>
             <div className={styles.botoesProduto}>
