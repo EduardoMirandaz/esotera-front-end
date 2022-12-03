@@ -6,11 +6,13 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Vitrine } from "../components/Vitrine";
 import { SumarioProduto } from "../components/SumarioProduto";
+import Breadcrumb from "../components/Breadcrumb";
 
 export function Produto(){
   return(
     <>
         <Header/>
+        <Breadcrumb/>
         <SumarioProduto/>
         <Accessibility/>
         <Footer/>

@@ -30,7 +30,7 @@ export function Card(props:Card){
         <h1 className={styles.descricao}>{props.descricao}</h1>
         <h2 className={styles.valor}>R${props.valor.toFixed(2)}</h2>
         <div className={styles.funcoes}>
-          <a href="" className={styles.button}>VER DETALHES</a>
+          <a href="/produto" className={styles.button}>VER DETALHES</a>
           <div className={styles.coracao}>
             {isClick &&
               <img src={coracaoCheio} isClick={isClick} onClick={() => setClick(!isClick)}/>
