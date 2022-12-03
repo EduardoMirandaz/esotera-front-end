@@ -1,7 +1,6 @@
 import { Breadcrumbs, Link, Typography } from '@mui/material';
 import React from 'react';
 import 'react-responsive-modal/styles.css';
-import styles from './Breadcrumb.module.css';
 
 
 export function Breadcrumb() {
@@ -21,6 +20,7 @@ export function Breadcrumb() {
                 </Link>
                 <Typography color="text.primary">Kit de incenso para ambientização e reenergização por quartzo rosa</Typography>
             </Breadcrumbs>
+            
     )
 }
 
