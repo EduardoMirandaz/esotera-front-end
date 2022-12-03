@@ -25,7 +25,7 @@ export function Carrinho(props) {
           <h1 className={styles.titulo}>Finalizar compra</h1>
           <FormularioFinalizacaoCompra />
           <h1 className={styles.pagamentoLabel}>Decida sua forma de pagamento</h1>
-          <Pagamento openModal={openModal}/>
+          <Pagamento/>
           <div className={styles.compreEGanhe}>
             <div className={styles.compreEGanheTexto}>
               <h1 className={styles.titulo}>Compre e ganhe</h1>
@@ -74,7 +74,7 @@ export function Carrinho(props) {
               <h3 className={styles.valorTotal}>R$ 81,70</h3>
             </div>
           </div>
-          <a href="" className={styles.button}>
+          <a href="#" onClick={openModal} className={styles.button}>
             Finalizar a compra
             <img className={styles.cartao} src={cartao} />
           </a>
