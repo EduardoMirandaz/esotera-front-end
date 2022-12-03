@@ -9,10 +9,8 @@ export function ImagensProdutos(props) {
   const [index, setIndex] = useState(0);
   const [image, setImage] = useState(produto[props.idProduto].imagemPrincipal);
   return (
-    <div>
-      <div className={styles.imagemPrincipalProdutoContainer}>
-        <img src={image} className={styles.imagemPrincipalProduto} />
-      </div>
+    <>
+      <img src={image} className={styles.imagemPrincipalProduto} />
       <div className={styles.imagensPequenasContainer}>
         {imagens?.map((item, i) => (
           <img
@@ -27,9 +25,7 @@ export function ImagensProdutos(props) {
           />
         ))}
       </div>
-    </div>
-
-
+    </>
   )
 }
 

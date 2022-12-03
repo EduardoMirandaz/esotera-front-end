@@ -1,18 +1,29 @@
+.containerSumario{
+    height: 40vw;
+    display: flex;
+    flex-direction: column;
+}
+
 .titulo{
-    font-size: 44px;
+    font-size: 40px;
     font-weight: normal;
-    margin-bottom: 45px;
+    margin-bottom: 30px;
 }
 
 .subCategorias{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* flex-wrap: wrap; */
 }
 
 .estrelas{
     display: flex;
     align-items: center;
+}
+
+.estrelas img{
+    width: 18%;
 }
 
 .estoque{
@@ -28,12 +39,12 @@
 }
 
 .avaliacao{
-    font-size: 26.25px;
+    font-size: 20px;
     margin-left: 7px;
 }
 
 .preco{
-    font-size: 36px;
+    font-size: 32px;
     font-weight: bold;
 }
 
@@ -41,17 +52,18 @@
     font-size: 23px;
     margin: 56px 0;
     text-align: justify;
-    overflow: hidden; 
-    text-overflow: ellipsis; 
+    overflow: hidden;
+    text-overflow: ellipsis;
     display: -webkit-box;
-    
-    -webkit-line-clamp: 11;
+
+    -webkit-line-clamp: 8;
     -webkit-box-orient: vertical;
 }
 
 .botoesProduto{
     display: flex;
     justify-content: space-between;
+    gap: 14px;
 }
 
 .contador{
@@ -101,6 +113,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    width: fit-content;
 }
 
 .botaoCarrinho img{
@@ -111,7 +124,7 @@
 .botaoFrete{
     background-color: var(--white);
     border-radius: 8.27586px;
-    border: 3px solid var(--purple-500);    
+    border: 3px solid var(--purple-500);
     color: var(--purple-500);
     font-size: 18px;
     font-weight: bold;
@@ -129,9 +142,21 @@
 .botaoFavorito{
     background-color: var(--white);
     border-radius: 8.27586px;
-    border: 3px solid var(--purple-500);    
+    border: 3px solid var(--purple-500);
     padding: 17px;
     display: flex;
     align-items: center;
     cursor: pointer;
+}
+
+@media (max-width: 1250px){
+    .containerSumario{
+        height: 700px;
+    }
+
+    .texto{
+        overflow: visible;
+        text-overflow: initial;
+        -webkit-line-clamp: unset;
+    }
 }
