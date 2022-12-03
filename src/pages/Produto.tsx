@@ -4,7 +4,7 @@ import { Accessibility } from "../components/Accessibility";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { SumarioProduto } from "../components/SumarioProduto";
-import Breadcrumb from "../components/Breadcrumb";
+import { BreadcrumbProduto } from "../components/BreadcrumbProduto";
 import { DetalhesProduto } from "../components/DetalhesProduto";
 
 
@@ -16,7 +16,7 @@ export function Produto(){
   return(
     <>
       <Header/>
-      <Breadcrumb idProduto={0}/>
+      <BreadcrumbProduto idProduto={0}/>
       <div className={styles.container}>
         <div className={styles.left}>
           <ImagensProdutos idProduto={0}/>
