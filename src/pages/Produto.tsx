@@ -6,13 +6,13 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Vitrine } from "../components/Vitrine";
 import { SumarioProduto } from "../components/SumarioProduto";
-import Breadcrumb from "../components/Breadcrumb";
 import { DetalhesProduto } from "../components/DetalhesProduto";
 
 
 import ImagensProdutos from "../components/ImagensProdutos"
 import fotoProduto from "../assets/fotoProduto.png"
 import styles from './Produto.module.css'
+import Breadcrumb from "../components/BreadcrumbProduto";
 
 
 export function Produto(){

@@ -1,0 +1,31 @@
+.breadcrumb{
+    margin-left: 60px;
+    display: flex;
+    gap: 10px;
+}
+
+
+
+.breadcrumb span{
+    font-size: 24px;
+    color: var(--purple-800);
+}
+
+
+.titulo{
+    color: var(--purple-800);
+    font-size: 24px;
+    max-width: 22ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.home{
+    cursor: pointer;
+}
+
+.Produto{
+    cursor: pointer;
+
+}
