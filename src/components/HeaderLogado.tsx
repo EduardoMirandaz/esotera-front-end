@@ -60,7 +60,7 @@ export function HeaderLogado(){
                                 </div>
                             <div className={styles.usuario}>
                                 <img  onClick={openModal} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
-                                <div className={styles.nomeUsuario}><a href="" >Hugo</a></div>
+                                <div className={styles.nomeUsuario}><a href="" >INFERNOOOOOOOOOOOOOOOO</a></div>
                             </div>
                             <a href="">
                                 <img className={styles.coracaoImg} src={headerCoracao} alt="Ir para os favoritos" />

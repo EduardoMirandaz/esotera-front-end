@@ -19,12 +19,9 @@ export function Cadastro({showModalCad, setShowModalCad}){
 
     const navigateToPrincipalLogado = () => {
         if(senha != senha2){
-            alert("Senhas diferentes!");
+            console.log("Senhas diferentes!");
         }
-        
-        alert(usuario)
-        
-        //navigate('/PrincipalLogado');
+                
     };
     return(
         <>

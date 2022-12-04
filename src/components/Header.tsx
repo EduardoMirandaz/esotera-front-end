@@ -10,8 +10,10 @@ import Burger from './Burger'
 import Login from './Login';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import { PrincipalLogado } from '../pages/PrincipalLogado';
+import { useAuthContext } from '../contexts/auth/AuthContext';
 
 export function Header(){
+
     const [showModal, setShowModal] = useState(false)
     const openModal = () => {
         setShowModal(prev => !prev)
@@ -32,15 +34,18 @@ export function Header(){
 
       const navigate = useNavigate();
 
-      const navigateToPrincipalLogado = () => {
-        navigate('/PrincipalLogado');
+      const navigateToPrincipal = () => {
+        navigate('/');
       };
-      
+
+      const { usuario } = useAuthContext();
+
+      console.log("[" + usuario + "] <- DENTRO DO HEADER!")
     return(
         <>
                 {!isMobile &&  <header className={styles.header}>
                 <div className={styles.topHeader}>
-                    <img onClick={navigateToPrincipalLogado} className={styles.logo} src={headerLogo} alt="Logo" />
+                    <img onClick={navigateToPrincipal} className={styles.logo} src={headerLogo} alt="Logo" />
                     <div className={styles.funcoes}>
                         <div className={styles.pesquisa}>
                             <input type="text" placeholder="Pesquisar"/>
@@ -53,6 +58,7 @@ export function Header(){
                                 <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
                             </div>
                             <img  onClick={openModal} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
+                            <div className={styles.nomeUsuario}><a href="" >{usuario}</a></div>
                             <a href="">
                                 <img className={styles.coracaoImg} src={headerCoracao} alt="Ir para os favoritos" />
                             </a>
