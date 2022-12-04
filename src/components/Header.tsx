@@ -10,7 +10,7 @@ import Burger from './Burger'
 import Login from './Login';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import { PrincipalLogado } from '../pages/PrincipalLogado';
-import { useAuthContext } from '../contexts/auth/AuthContext';
+import { useAuthContext } from '../contexts/auth/AuthContext';  
 
 export function Header(){
 
@@ -39,6 +39,7 @@ export function Header(){
       };
 
       const { usuario } = useAuthContext();
+
 
       console.log("[" + usuario + "] <- DENTRO DO HEADER!")
     return(

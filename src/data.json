@@ -1,16 +1,21 @@
 {
+	"filtro": "",
 	"carrosseis":[
 		{
-			"imagem":"https://imgur.com/ugcVdDT.png"
+			"imagem":"https://imgur.com/ugcVdDT.png",
+			"alt": "Festival dos Cristais"
 		},
 		{
-			"imagem":"https://imgur.com/twbYIm3.png"
+			"imagem":"https://imgur.com/twbYIm3.png",
+			"alt": "Conexão com a natureza"
 		},
 		{
-			"imagem":"https://imgur.com/U6ibDLE.png"
+			"imagem":"https://imgur.com/U6ibDLE.png",
+			"alt": "Respire e medite"
 		},
 		{
-			"imagem":"https://imgur.com/6iv829L.png"
+			"imagem":"https://imgur.com/6iv829L.png",
+			"alt": "Aprenda tarô conosco"
 		}
 	],
 	"produto":[

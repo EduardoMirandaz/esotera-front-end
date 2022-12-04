@@ -29,7 +29,7 @@ export function Carrinho(props) {
           <div className={styles.compreEGanhe}>
             <div className={styles.compreEGanheTexto}>
               <h1 className={styles.titulo}>Compre e ganhe</h1>
-              <p>Ao finalizar essa compra você recebe 161 esoteracoins para usar em suas próximas compras :)</p>
+              <p>Ao finalizar essa compra você recebe 161 Pontos Esotera para usar em suas próximas compras :)</p>
             </div>
             <img className={styles.esoteraCoins} src={trianguloLogo} alt="Logo Esotera Coins" />
           </div>

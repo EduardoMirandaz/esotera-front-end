@@ -5,6 +5,7 @@ import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Vitrine } from "../components/Vitrine";
 import React, {useState, useEffect} from 'react';
+import { useAuthContext } from "../contexts/auth/AuthContext";
 
 export function Principal(props){
   let cards = props.produto 
@@ -20,8 +21,15 @@ export function Principal(props){
         window.addEventListener("resize", handleResize)
       })
 
-  if(props.filtro){
-    cards = cards.filter((card) => card.categoria == props.filtro)
+    const { filtro } = useAuthContext();
+
+  if(filtro){
+    if(filtro == "promocao"){
+      cards = cards.filter((card) => card.isPromocao)
+    }
+    else{
+      cards = cards.filter((card) => card.categoria == filtro)
+    }
   }
   console.log(cards) 
   
