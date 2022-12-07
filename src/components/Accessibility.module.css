@@ -5,6 +5,9 @@
     bottom: -38px;
 }
 
+#dark{
+    background-color: black;
+}
 
 .accessibility{
     background-color: var(--purple-500);
