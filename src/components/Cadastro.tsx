@@ -14,7 +14,7 @@ export function Cadastro({showModalCad, setShowModalCad}){
     const [email, setEmail] = useState("");
     const [senha, setSenha] = useState("");
     const [senha2, setSenha2] = useState("");
-
+    const { contraste } = useAuthContext();
     const navigate = useNavigate(); 
 
     const navigateToPrincipalLogado = () => {
@@ -26,8 +26,8 @@ export function Cadastro({showModalCad, setShowModalCad}){
     return(
         <>
         {showModalCad ? (
-            <Modal open={showModalCad} onClose={() => {setShowModalCad(prev => !prev)}} showModalCad={showModalCad} classNames={{ modal: styles.customModal }}  center>
-                <div className={styles.modalBody}>
+            <Modal open={showModalCad} onClose={() => {setShowModalCad(prev => !prev)}} showModalCad={showModalCad} classNames={{ modal: contraste ? styles.customModalContraste : styles.customModal }}  center>
+                <div className={styles.modalBody} id={contraste && styles.contraste}>
                     <div className={styles.modalHeader}>
                         <h2>Cadastro</h2>
                     </div>
@@ -83,7 +83,7 @@ export function Cadastro({showModalCad, setShowModalCad}){
                         </div>
                         <button type="submit" className={styles.button} onClick={navigateToPrincipalLogado}>CADASTRAR</button>
                         <div className={styles.divider}>
-                            <span role="text" aria-label="Ou cadastre-se com uma dessas opções">ou cadastre-se com</span>
+                            <span role="text" className={styles.dividerSpan} aria-label="Ou cadastre-se com uma dessas opções">ou cadastre-se com</span>
                             <hr/>
                         </div>
                         <div className={styles.socialNetworkWrapper}>
