@@ -5,8 +5,10 @@
     bottom: -38px;
 }
 
-#dark{
+#contraste{
     background-color: black;
+    border: 2px solid var(--white);
+
 }
 
 .accessibility{
