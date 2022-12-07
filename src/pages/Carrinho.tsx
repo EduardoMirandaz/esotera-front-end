@@ -19,8 +19,8 @@ export function Carrinho(props) {
     }
   return (
     <>
-      <Header />
-      <BreadcrumbProduto pagina='carrinho'/>
+      <Header isPrincipal={false}/>
+      <BreadcrumbProduto pagina='Carrinho'/>
       <div className={styles.container}>
         <div className={styles.left}>
           <h1 className={styles.titulo}>Finalizar compra</h1>

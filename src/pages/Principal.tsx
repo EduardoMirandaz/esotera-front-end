@@ -35,7 +35,7 @@ export function Principal(props){
   
     return(
       <>
-        <Header/>
+        <Header isPrincipal={true}/>
         {props.carrosseis && !isMobile &&
             <Carousel autoPlay infiniteLoop showStatus={false} showThumbs={false}>
               {props.carrosseis.map((carrossel) => {

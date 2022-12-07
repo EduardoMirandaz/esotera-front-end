@@ -18,9 +18,15 @@ export function Produto(){
   const { contraste } = useAuthContext();
   return(
     <>
+<<<<<<< HEAD
       <Header/>
       <div className={styles.containerBreadcrumb} id={contraste && styles.contraste}>
         <BreadcrumbProduto pagina='produto'/>
+=======
+      <Header isPrincipal={false}/>
+      <div className={styles.containerBreadcrumb}>
+        <BreadcrumbProduto pagina='Produto'/>
+>>>>>>> 08685cc538d5c979821e333d0bb2c54d4e0d4bf1
       </div>
       <div className={styles.container}>
         <div className={styles.left}>
