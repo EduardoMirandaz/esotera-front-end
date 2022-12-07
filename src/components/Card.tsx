@@ -16,10 +16,10 @@ export function Card(props:Card){
     return(
       <div className={styles.fundo}>
         {props.imagemPrincipal &&
-            <img className={styles.imagem} src={props.imagemPrincipal}/>
+            <img className={styles.imagem} src={props.imagemPrincipal} alt="Imagem do Produto"/>
         }
         {!props.imagemPrincipal &&
-            <img className={styles.imagem} src={semImagem}/>
+            <img className={styles.imagem} src={semImagem} alt="Imagem do Produto"/>
         }
         {props.categoria &&
             <p className={styles.categoria}>{props.categoria}</p>

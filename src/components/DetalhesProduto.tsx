@@ -4,7 +4,7 @@ import { React, useState } from 'react';
 import HTMLReactParser from "html-react-parser";
 
 export function DetalhesProduto(props) {
-    const [isClick, setClick] = useState(false);
+    const [isClick, setClick] = useState(true);
     return (
         <div className={styles.detalhesProduto}>
             <h1 className={styles.tituloDetalhes}>Detalhes do produto</h1>
