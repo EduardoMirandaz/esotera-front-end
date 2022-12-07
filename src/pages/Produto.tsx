@@ -19,7 +19,7 @@ export function Produto(){
     <>
       <Header/>
       <div className={styles.containerBreadcrumb}>
-        <BreadcrumbProduto pagina='produto'/>
+        <BreadcrumbProduto pagina='Produto'/>
       </div>
       <div className={styles.container}>
         <div className={styles.left}>

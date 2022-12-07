@@ -3,11 +3,12 @@
     margin-top: 20px;
     display: flex;
     gap: 10px;
+    font-size: 24px;
 }
 
-.breadcrumb span{
-    font-size: 24px;
-    color: var(--purple-800);
+.breadcrumb a{
+    text-decoration: none;
+    color: black;
 }
 
 .titulo{
@@ -20,9 +21,5 @@
 }
 
 .home{
-    cursor: pointer;
-}
-
-.produto{
     cursor: pointer;
 }
