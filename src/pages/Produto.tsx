@@ -18,7 +18,9 @@ export function Produto(){
   return(
     <>
       <Header/>
-      <BreadcrumbProduto idProduto={0}/>
+      <div className={styles.containerBreadcrumb}>
+        <BreadcrumbProduto idProduto={0}/>
+      </div>
       <div className={styles.container}>
         <div className={styles.left}>
           <ImagensProdutos idProduto={0}/>

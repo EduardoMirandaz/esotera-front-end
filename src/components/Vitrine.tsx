@@ -1,4 +1,5 @@
 import React from "react";
+import { useAuthContext } from "../contexts/auth/AuthContext";
 import { Card } from "./Card";
 import styles from './Vitrine.module.css'
 
@@ -10,8 +11,9 @@ interface Card {
 }
 
 export function Vitrine(props){
+    const { contraste } = useAuthContext();
     return(
-      <div className={styles.container}>
+      <div className={styles.container} id={contraste && styles.contraste}>
         {props.data.map((card) => {
                 return(
                     <Card
