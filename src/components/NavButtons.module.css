@@ -9,6 +9,21 @@
     z-index: 0;
 }
 
+#contraste.botoes{
+    background-color: black;
+}
+
+#contraste:hover{
+    background-color: black;
+}
+
+.botoes #contraste.botaoPromo {
+    background-color: black;
+    color: var(--purple-c);
+    border: 1px solid var(--white);
+
+}
+
 .botoes button {
     transition: 0.25s;
     border: none;
