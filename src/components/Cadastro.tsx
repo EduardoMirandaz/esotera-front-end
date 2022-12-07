@@ -13,13 +13,10 @@ export function atualizarUsuario(){
 
 export function Cadastro({showModalCad, setShowModalCad}){
 
-    const [nome, setNome] = useState("");
     const { setUsuario } = useAuthContext();
-
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
-    const [senha2, setSenha2] = useState("");
     const { contraste } = useAuthContext();
+
+    const [nome, setNome] = useState("");
     const navigate = useNavigate(); 
 
     const navigateToPrincipal = () => {
