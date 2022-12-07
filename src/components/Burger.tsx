@@ -6,8 +6,11 @@ import headerPerfil from '../assets/perfil.svg'
 import headerCoracao from '../assets/coracao.svg'
 import headerLogo from '../assets/logo.svg'
 import Login from './Login';
+import { useAuthContext } from '../contexts/auth/AuthContext';
 
 export function Burger(){
+    const { contraste } = useAuthContext();
+
     const [showModal, setShowModal] = useState(false)
     const openModal = () => {
         setShowModal(prev => !prev)
@@ -19,7 +22,7 @@ export function Burger(){
     const closeIcon = <CgClose className={styles.burgerIcon} size='26px' color='white' onClick={() =>setOpen(!open)}/>
     return(
         <>
-            <div className={styles.burgerBar}>
+            <div className={styles.burgerBar} id={contraste && styles.contraste}>
                 <div className={styles.burgerContainer}>
                     {open ? closeIcon : hamburgerIcon}
                 </div>
@@ -36,7 +39,7 @@ export function Burger(){
                     </a>
                 </div>
             </div>
-            {open && <div className={styles.dropMenu}>
+            {open && <div className={styles.dropMenu} id={contraste && styles.contraste}>
                 <button className={styles.botaoPromo}>Promoções</button>
                 <button className={styles.botaoRegular}>Página Inicial</button>
                 <button className={styles.botaoRegular}>Incensos</button>

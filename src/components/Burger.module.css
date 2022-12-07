@@ -55,7 +55,6 @@
     margin-left: 16px;
 }
 
-
 .dropMenu{
     /*height: 32px;*/
     width: 100%;
@@ -98,3 +97,37 @@
     color: var(--purple-500);
 }
 
+#contraste{
+    background: black;
+}
+
+#contraste .botaoPromo{
+    background: black;
+}
+
+#contraste .dropMenu{
+    background: black;
+}
+
+#contraste button{
+    background: black;
+    color: var(--purple-c);
+    border-top: 1px solid var(--white);
+}
+
+#contraste button:hover{
+    background: black;
+    color: var(--purple-c);
+}
+
+#contraste .botaoPromo {
+    background-color: black;
+}
+
+#contraste .botaoPromo:hover {
+    color: var(--purple-c);
+}
+
+#contraste .botaoRegular:hover{
+    color: var(--purple-c);
+}

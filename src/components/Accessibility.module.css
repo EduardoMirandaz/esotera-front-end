@@ -5,6 +5,11 @@
     bottom: -38px;
 }
 
+#contraste{
+    background-color: black;
+    border: 2px solid var(--white);
+
+}
 
 .accessibility{
     background-color: var(--purple-500);
