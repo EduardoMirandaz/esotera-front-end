@@ -19,7 +19,7 @@ export function Carrinho(props) {
     }
   return (
     <>
-      <Header />
+      <Header isPrincipal={false}/>
       <BreadcrumbProduto pagina='Carrinho'/>
       <div className={styles.container}>
         <div className={styles.left}>

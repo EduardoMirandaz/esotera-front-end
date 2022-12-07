@@ -17,7 +17,7 @@ import { produto } from "../data.json"
 export function Produto(){
   return(
     <>
-      <Header/>
+      <Header isPrincipal={false}/>
       <div className={styles.containerBreadcrumb}>
         <BreadcrumbProduto pagina='Produto'/>
       </div>
