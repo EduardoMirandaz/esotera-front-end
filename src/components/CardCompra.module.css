@@ -1,3 +1,7 @@
+#contraste{
+    background-color: black;
+}
+
 .fundo{
     display: flex;
     width: 100%;

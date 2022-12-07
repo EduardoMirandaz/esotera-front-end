@@ -39,14 +39,17 @@
 
     .right{
         max-width: 700px;
-        margin: 0px;
+        margin: 60px;
         height: 700px;
     }
 
     .left{
         width: 100%;
-        margin: 0px;
-        margin-bottom: 40px;
+        margin: 40px 0;
         align-items: center;
+    }
+
+    .containerBreadcrumb{
+        display: none;
     }
 }

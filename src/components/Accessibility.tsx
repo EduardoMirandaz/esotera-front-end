@@ -10,7 +10,7 @@ export function Accessibility(){
 
     return(
         <div className={styles.containerAccessibility}>
-            <div className={styles.accessibility} id={contraste && styles.dark}>
+            <div className={styles.accessibility} id={contraste && styles.contraste}>
                 <img className={styles.tamFonte} src={accessFonteAumentar} alt="Aumentar a fonte" />
                 <hr className={styles.linha}/>
                 <img className={styles.tamFonte} src={accessFonteDiminuir} alt="Diminuir a fonte" />
