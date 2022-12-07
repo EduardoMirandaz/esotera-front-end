@@ -221,7 +221,7 @@
     background-color: black;
 }
 
-.socialNetworkButton {
+#contraste .socialNetworkButton {
     background-color: black;
     color: white;
     border: 1px solid var(--purple-c);
@@ -249,4 +249,5 @@
 
 #contraste input{
     background: black;
+    color: var(--white);
 }
