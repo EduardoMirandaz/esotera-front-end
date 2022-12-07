@@ -99,3 +99,9 @@
         padding: 1rem 0.5rem;
     }
 }
+
+
+.nomeUsuario {
+    color: var(--white);
+    margin-left: 0.5rem;
+}
