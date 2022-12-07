@@ -47,10 +47,6 @@ export function Cadastro({showModalCad, setShowModalCad}){
                             />
                         
                         </div>
-                        {/*<div className={styles.inputWrapper}>
-                            <label htmlFor="celular">Celular</label>
-                            <input type="tel" name="celular" onKeyPress={(event) => {if (!/[0-9]/.test(event.key)) {event.preventDefault();}}} placeholder="" aria-required="true" required/>
-                        </div>*/}
                         <div className={styles.inputWrapper}>
                             <label htmlFor="email">E-mail</label>
                             <input 
