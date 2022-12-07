@@ -16,6 +16,7 @@ export function Cadastro({showModalCad, setShowModalCad}){
     const { setUsuario } = useAuthContext();
     const { contraste } = useAuthContext();
 
+    
     const [nome, setNome] = useState("");
     const navigate = useNavigate(); 
 
@@ -80,7 +81,7 @@ export function Cadastro({showModalCad, setShowModalCad}){
                                 required
                             />
                         </div>
-                        <button type="button" className={styles.button} onClick={() => {setUsuario(nome), navigateToPrincipal()}}>CADASTRAR</button>
+                        <button type="button" className={styles.button} onClick={() => {setUsuario(nome), navigateToPrincipal(), setShowModalCad(prev => !prev) }}>CADASTRAR</button>
                         <div className={styles.divider}>
                             <span role="text" className={styles.dividerSpan} aria-label="Ou cadastre-se com uma dessas opções">ou cadastre-se com</span>
                             <hr/>

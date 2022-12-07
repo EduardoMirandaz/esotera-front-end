@@ -104,4 +104,9 @@
 .nomeUsuario {
     color: var(--white);
     margin-left: 0.5rem;
+    max-width: 15ch;
+    text-overflow: hidden;
+    overflow: hidden;
+
+
 }

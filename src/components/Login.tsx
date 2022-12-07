@@ -16,8 +16,9 @@ export function Login({showModal, setShowModal}){
     const navigate = useNavigate();
 
     const navigateToPrincipalLogado = () => {
-      navigate('/PrincipalLogado');
+      navigate('/');
     };
+
     return(
         <>
         {showModal ? (
