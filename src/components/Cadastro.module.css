@@ -147,7 +147,8 @@
 
 .customModal {
     border-radius: 4px;
-  }
+}
+
 
 .socialNetworkButton {
     width: auto;
@@ -190,4 +191,62 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 18px;
+}
+
+.customModalContraste {
+    border-radius: 4px;
+    background: black;
+    border: 1px solid white;
+}
+
+#contraste {
+    background: black;
+}
+
+#contraste .modalHeader {
+    color: white;
+}
+
+#contraste label {
+    color: white;
+}
+
+#contraste .button{
+    background-color: black;
+    color: var(--white);
+    border: 2px solid var(--purple-c);
+}
+
+#contraste .button:hover{
+    background-color: black;
+}
+
+.socialNetworkButton {
+    background-color: black;
+    color: white;
+    border: 1px solid var(--purple-c);
+}
+
+#contraste .socialNetworkButton:hover{
+    background: black;
+}
+
+#contraste .divider {
+    color: white;
+}
+
+#contraste .dividerSpan {
+    background: black;
+}
+
+#contraste hr {
+    border-bottom: 1px solid white;
+}
+
+#contraste input::placeholder{
+    color: var(--purple-100);
+}
+
+#contraste input{
+    background: black;
 }
