@@ -7,7 +7,7 @@ export function BreadcrumbProduto(props) {
     const { contraste } = useAuthContext();
     const pagina = props.pagina;
     return(
-        <div className={styles.breadcrumb}>
+        <div className={styles.breadcrumb} id={contraste && styles.contraste}>
                 <Link to="/" className={styles.home}>Página Principal</Link>
                 <span> / </span>
                 <span className={styles.produto}>{props.pagina}</span>
