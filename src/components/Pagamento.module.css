@@ -51,18 +51,17 @@
     background-color: #e0aaff1a; /* roxo 100 com opacidade baixa */
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1250px){
     .containerPagamento{
         display: flex;
         flex-direction: column;
-        width: 345px;
+        align-content: center;
     }   
 
     .pagamento{
         width: 100%;
         align-self: flex-start;
     }
-    
 }
 
 @media (max-width: 600px){
