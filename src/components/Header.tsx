@@ -16,6 +16,7 @@ import { useAuthContext } from '../contexts/auth/AuthContext';
 export function Header() {
 
     const [showModal, setShowModal] = useState(false)
+    const [ nome, setNome] = useState("");
     const openModal = () => {
         setShowModal(prev => !prev)
     }
@@ -38,7 +39,8 @@ export function Header() {
     };
 
     useEffect(() => {
-        window.addEventListener("resize", handleResize)
+        window.addEventListener("resize", handleResize);
+        setNome(localStorage.getItem("username")?.split(" ")[0]);
     })
 
     return (
@@ -67,7 +69,9 @@ export function Header() {
                                 <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
                             </div>
                             <img onClick={openModal} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
-                            <div className={styles.nomeUsuario}>{localStorage.getItem("username")?.split(" ")[0]}</div>
+                            {
+                                nome && <div className={styles.nomeUsuario}>{nome}</div>
+                            }
                             <a href="">
                                 <img className={styles.coracaoImg} src={headerCoracao} alt="Ir para os favoritos" />
                             </a>

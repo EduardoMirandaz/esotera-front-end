@@ -13,7 +13,6 @@
     width: 400px;
     height: 400px;
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-    background: var(--white);
     position: relative;
     z-index: 1090;
     border-radius: 10px;
@@ -203,4 +202,76 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 18px;
+}
+
+.customModalContraste {
+    border-radius: 4px;
+    background: black !important;
+    border: 1px solid white;
+}
+
+#contraste {
+    background: black;
+}
+
+#contraste .modalHeader {
+    color: white;
+}
+
+#contraste label {
+    color: white;
+}
+
+#contraste .button{
+    background-color: black;
+    color: var(--white);
+    border: 2px solid var(--purple-c);
+}
+
+#contraste .button:hover{
+    background-color: black;
+}
+
+#contraste .semContaSpan {
+    color: white;
+}
+
+#contraste .cadastre{
+    color: var(--purple-c);
+}
+
+
+#contraste .socialNetworkButton {
+    background-color: black;
+    color: white;
+    border: 1px solid var(--purple-c);
+}
+
+#contraste .socialNetworkButton:hover{
+    background: black;
+}
+
+#contraste .divider {
+    color: white;
+}
+
+#contraste .dividerSpan {
+    background: black;
+}
+
+#contraste hr {
+    border-bottom: 1px solid white;
+}
+
+#contraste input::placeholder{
+    color: var(--purple-100);
+}
+
+#contraste input{
+    background: black;
+    color: var(--white);
+}
+
+#contraste .esqueceuSenha {
+    color: var(--purple-c);
 }

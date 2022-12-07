@@ -1,5 +1,5 @@
 .containerFormulario{
-    width: 720px;
+    width: 100%;
 }
 
 .formulario legend{
@@ -58,11 +58,11 @@ input#complemento{
     width: 61.25%;
 }
 
-@media (max-width: 1500px){
+/* @media (max-width: 1500px){
     .containerFormulario{
         width: 600px;
     }    
-}
+} */
 
 @media (max-width: 650px){
     .containerFormulario{

@@ -5,7 +5,8 @@ import {Routes, Route, useNavigate} from 'react-router-dom';
 import { PrincipalLogado } from '../pages/PrincipalLogado';
 import React, { useState } from 'react';
 import { useAuthContext } from '../contexts/auth/AuthContext';
-
+import { IoClose } from "react-icons/io5";
+import { IconContext } from "react-icons";
 
 export function atualizarUsuario(){
 
@@ -16,6 +17,7 @@ export function Cadastro({showModalCad, setShowModalCad}){
     const { setUsuario } = useAuthContext();
     const { contraste } = useAuthContext();
 
+    
     const [nome, setNome] = useState("");
     const navigate = useNavigate(); 
 
@@ -28,7 +30,8 @@ export function Cadastro({showModalCad, setShowModalCad}){
     return(
         <>
         {showModalCad ? (
-            <Modal open={showModalCad} onClose={() => {setShowModalCad(prev => !prev)}} showModalCad={showModalCad} classNames={{ modal: contraste ? styles.customModalContraste : styles.customModal }}  center>
+         <IconContext.Provider value={{ color: contraste ? "white" : "#11002B", size: "2em"}}>
+            <Modal open={showModalCad} onClose={() => {setShowModalCad(prev => !prev)}} showModalCad={showModalCad} classNames={{ modal: contraste ? styles.customModalContraste : styles.customModal }}  center closeIcon={<IoClose />}>
                 <div className={styles.modalBody} id={contraste && styles.contraste}>
                     <div className={styles.modalHeader}>
                         <h2>Cadastro</h2>
@@ -80,7 +83,7 @@ export function Cadastro({showModalCad, setShowModalCad}){
                                 required
                             />
                         </div>
-                        <button type="button" className={styles.button} onClick={() => {setUsuario(nome), navigateToPrincipal()}}>CADASTRAR</button>
+                        <button type="button" className={styles.button} onClick={() => {setUsuario(nome), navigateToPrincipal(), setShowModalCad(prev => !prev) }}>CADASTRAR</button>
                         <div className={styles.divider}>
                             <span role="text" className={styles.dividerSpan} aria-label="Ou cadastre-se com uma dessas opções">ou cadastre-se com</span>
                             <hr/>
@@ -95,8 +98,8 @@ export function Cadastro({showModalCad, setShowModalCad}){
                         </div>
                     </form>
                 </div>
-                
             </Modal>
+        </IconContext.Provider>
         ) : null}
         </>
     )
