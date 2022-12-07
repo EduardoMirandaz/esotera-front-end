@@ -4,28 +4,30 @@ import footerLogo from '../assets/logoFooter.svg'
 import footerTwitter from '../assets/logoTwitter.svg'
 import footerInstagram from '../assets/logoInstagram.svg'
 import footerFacebook from '../assets/logoFacebook.svg'
+import { useAuthContext } from '../contexts/auth/AuthContext'
 
 
 export function Footer(){
+    const { contraste } = useAuthContext();
     return(
         <>
-            <footer className={styles.footer}>
-                <div className={styles.container}>
+            <footer className={styles.footer}  id={contraste && styles.contraste}>
+                <div className={styles.container} id={contraste && styles.contraste}>
                     <section className={styles.marca}>
                         <img className={styles.logo} src={footerLogo} alt="Logo" />
-                        <p>A Esotera é um site de venda de produtos esotéricos desenvolvido em 2022 por um grupo de  alunos do ICMC.</p>
+                        <p className={styles.info} id={contraste && styles.contraste} >A Esotera é um site de venda de produtos esotéricos desenvolvido em 2022 por um grupo de  alunos do ICMC.</p>
                     </section>
-                    <section className={styles.informacoes}>
+                    <section className={styles.informacoes} id={contraste && styles.contraste}>
                         <h1>Informações</h1>
                         <ul>
                             <li>
-                                <a href="">Dúvidas Frequentes</a>
+                                <a className={styles.links} id={contraste && styles.contraste} href="">Dúvidas Frequentes</a>
                             </li>
                             <li>
-                                <a href="">Política de Privacidade</a>
+                                <a className={styles.links} id={contraste && styles.contraste} href="">Política de Privacidade</a>
                             </li>
                             <li>
-                                <a href="">Fale Conosco</a>
+                                <a className={styles.links} id={contraste && styles.contraste} href="">Fale Conosco</a>
                             </li>
                         </ul>    
                     </section>

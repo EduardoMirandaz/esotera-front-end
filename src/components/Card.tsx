@@ -3,7 +3,10 @@ import styles from './Card.module.css'
 import semImagem from '../assets/semImagem.svg'
 import coracaoCheio from '../assets/coracaoCheio.svg'
 import coracaoVazio from '../assets/coracaoVazio.svg'
+import coracaoCheioContraste from '../assets/coracaoCheioContraste.svg'
+import coracaoVazioContraste from '../assets/coracaoVazioContraste.svg'
 import { useAuthContext } from "../contexts/auth/AuthContext";
+import { Link } from "react-router-dom";
 
 interface Card {
   imagemPrincipal?: string;
@@ -32,12 +35,20 @@ export function Card(props:Card){
         <h1 className={styles.titulo}>{props.titulo}</h1>
         <h2 className={styles.valor} id={contraste && styles.contraste}>R${props.valor.toFixed(2)}</h2>
         <div className={styles.funcoes}>
-          <a href="/produto" className={styles.button} id={contraste && styles.contraste}>VER DETALHES</a>
+          {/* <a href="/produto" className={styles.button} id={contraste && styles.contraste}>VER DETALHES</a> */}
+          <Link to="/produto" className={styles.button} id={contraste && styles.contraste}>VER DETALHES</Link>
           <div className={styles.coracao}>
-            {isClick &&
+            
+            {isClick && contraste &&
+              <img src={coracaoCheioContraste} isClick={isClick} onClick={() => setClick(!isClick)}/>
+            }
+            {!isClick && contraste &&
+              <img src={coracaoVazioContraste} isClick={isClick} onClick={() => setClick(!isClick)}/>
+            }
+            {isClick && !contraste &&
               <img src={coracaoCheio} isClick={isClick} onClick={() => setClick(!isClick)}/>
             }
-            {!isClick &&
+            {!isClick && !contraste &&
               <img src={coracaoVazio} isClick={isClick} onClick={() => setClick(!isClick)}/>
             }
           </div>
