@@ -2,6 +2,7 @@ import styles from './Header.module.css'
 import React, { useState, useEffect } from 'react';
 import headerLogo from '../assets/logo.svg'
 import headerLupa from '../assets/lupa.svg'
+import headerLupaContraste from '../assets/lupaContraste.svg'
 import headerCarrinho from '../assets/carrinho.svg'
 import headerPerfil from '../assets/perfil.svg'
 import headerCoracao from '../assets/coracao.svg'
@@ -20,6 +21,11 @@ export function Header() {
         setShowModal(prev => !prev)
     }
 
+<<<<<<< HEAD
+=======
+    const { usuario, contraste } = useAuthContext();
+
+>>>>>>> bc14604603c78603c5180f5db775a82bcc29d8cc
     const [isMobile, setIsMobile] = useState(false)
     const handleResize = () => {
         if (window.innerWidth < 760) {
@@ -43,15 +49,24 @@ export function Header() {
     return (
         <>
             {!isMobile && <header className={styles.header}>
-                <div className={styles.topHeader}>
+                <div className={styles.topHeader} id={contraste && styles.contraste}>
                     <img onClick={navigateToPrincipal} className={styles.logo} src={headerLogo} alt="Logo" />
                     <div className={styles.funcoes}>
-                        <div className={styles.pesquisa}>
-                            <input type="text" placeholder="Pesquisar" />
-                            <a href="">
+                        {
+                            contraste &&
+                            <div className={styles.pesquisa} id={contraste && styles.contraste}>
+                                <input className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste}/>
+                                <img src={headerLupaContraste} alt="Buscar item" />
+                            </div>
+                        }
+                        {
+                            !contraste &&
+                            <div className={styles.pesquisa} id={contraste && styles.contraste}>
+                                <input className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste}/>
                                 <img src={headerLupa} alt="Buscar item" />
-                            </a>
-                        </div>
+                            </div>
+                        }
+                        
                         <div className={styles.icones}>
                             <div onClick={openModal} className={styles.carrinho}>
                                 <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />

@@ -57,6 +57,19 @@
     align-items: center;
 }
 
+#contraste.footer{
+    border-top: 2px solid var(--white);
+    background-color: black;
+}
+
+#contraste.info{
+    color: var(--white);
+}
+
+#contraste.links{
+    color: var(--purple-c);
+}
+
 .container{
     display: flex;
     gap: 30%;
