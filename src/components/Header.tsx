@@ -21,11 +21,8 @@ export function Header() {
         setShowModal(prev => !prev)
     }
 
-<<<<<<< HEAD
-=======
     const { usuario, contraste } = useAuthContext();
 
->>>>>>> bc14604603c78603c5180f5db775a82bcc29d8cc
     const [isMobile, setIsMobile] = useState(false)
     const handleResize = () => {
         if (window.innerWidth < 760) {
