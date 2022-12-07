@@ -3,6 +3,10 @@
     flex-direction: column;
 }
 
+#contraste.topHeader{
+    background-color: black;
+}
+
 .topHeader{
     height: 108px;
     width: 100%;
@@ -35,6 +39,18 @@
     align-items: center;
 }
 
+#contraste.input{
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+    
+}
+
+#contraste.input::placeholder {
+    color: var(--purple-c);
+  }
+
+
 .pesquisa input{
     box-shadow: 0 0 0 0;
     border: 0 none;
@@ -45,6 +61,7 @@
     font-size: 18px;
     color: var(--purple-700);
     padding: 16px;
+    padding-right: 70px;
 }
 
 .pesquisa img{
@@ -88,7 +105,7 @@
     display: flex;
 }
 
-@media (max-width: 1040px){
+@media (max-width: 1140px){
     .pesquisa{
         display: none;
     }
@@ -99,3 +116,16 @@
         padding: 1rem 0.5rem;
     }
 }
+
+
+.nomeUsuario {
+    color: var(--white);
+    margin-left: 0.5rem;
+    max-width: 15ch;
+    text-overflow: hidden;
+    overflow: hidden;
+
+
+}
+
+

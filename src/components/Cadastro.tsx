@@ -8,22 +8,25 @@ import { useAuthContext } from '../contexts/auth/AuthContext';
 import { IoClose } from "react-icons/io5";
 import { IconContext } from "react-icons";
 
+export function atualizarUsuario(){
+
+}
 
 export function Cadastro({showModalCad, setShowModalCad}){
 
-    const { usuario, setUsuario } = useAuthContext();
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
-    const [senha2, setSenha2] = useState("");
+    const { setUsuario } = useAuthContext();
     const { contraste } = useAuthContext();
+
+    
+    const [nome, setNome] = useState("");
     const navigate = useNavigate(); 
 
-    const navigateToPrincipalLogado = () => {
-        if(senha != senha2){
-            console.log("Senhas diferentes!");
-        }
-                
+    const navigateToPrincipal = () => {
+        localStorage.setItem("username", nome);
+        navigate("/")
     };
+
+    
     return(
         <>
         {showModalCad ? (
@@ -37,7 +40,7 @@ export function Cadastro({showModalCad, setShowModalCad}){
                         <div className={styles.inputWrapper}>
                             <label htmlFor="nome">Nome</label>
                             <input 
-                                onChange={(e)=> setUsuario(e.target.value)}
+                                onChange={(e)=> setNome(e.target.value)}
                                 type="text" 
                                 name="nome" 
                                 placeholder="Digite seu nome" 
@@ -53,7 +56,6 @@ export function Cadastro({showModalCad, setShowModalCad}){
                         <div className={styles.inputWrapper}>
                             <label htmlFor="email">E-mail</label>
                             <input 
-                                onChange={(e)=>setEmail(e.target.value)}
                                 type="email" 
                                 name="email" 
                                 placeholder="example@email.com" 
@@ -64,7 +66,6 @@ export function Cadastro({showModalCad, setShowModalCad}){
                         <div className={styles.inputWrapper}>
                             <label htmlFor="senha">Senha</label>
                             <input 
-                                onChange={(e)=>setSenha(e.target.value)}
                                 type="password" 
                                 name="senha" 
                                 placeholder="No mínimo 8 caractéres" 
@@ -75,7 +76,6 @@ export function Cadastro({showModalCad, setShowModalCad}){
                         <div className={styles.inputWrapper}>
                             <label htmlFor="senha">Redigite sua senha</label>
                             <input 
-                                onChange={(e)=>setSenha2(e.target.value)}
                                 type="password" 
                                 name="redigite" 
                                 placeholder="Digite sua senha novamente" 
@@ -83,7 +83,7 @@ export function Cadastro({showModalCad, setShowModalCad}){
                                 required
                             />
                         </div>
-                        <button type="submit" className={styles.button} onClick={navigateToPrincipalLogado}>CADASTRAR</button>
+                        <button type="button" className={styles.button} onClick={() => {setUsuario(nome), navigateToPrincipal(), setShowModalCad(prev => !prev) }}>CADASTRAR</button>
                         <div className={styles.divider}>
                             <span role="text" className={styles.dividerSpan} aria-label="Ou cadastre-se com uma dessas opções">ou cadastre-se com</span>
                             <hr/>
@@ -101,9 +101,6 @@ export function Cadastro({showModalCad, setShowModalCad}){
             </Modal>
         </IconContext.Provider>
         ) : null}
-        <Routes>
-          <Route path="/PrincipalLogado" element={<PrincipalLogado />} />
-        </Routes>
         </>
     )
 }

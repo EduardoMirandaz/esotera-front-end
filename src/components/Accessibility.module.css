@@ -44,7 +44,7 @@
     align-self: center;
 }
 
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 760px) {
     .tamFonte{
         display: none; 
     }
