@@ -14,7 +14,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* flex-wrap: wrap; */
 }
 
 .estrelas{
@@ -151,12 +150,22 @@
 
 @media (max-width: 1250px){
     .containerSumario{
-        height: 700px;
+        height: auto;
+        margin: 0;
     }
 
     .texto{
         overflow: visible;
         text-overflow: initial;
         -webkit-line-clamp: unset;
+    }
+
+    .subCategorias{
+        flex-wrap: wrap;
+    }
+
+    .botoesProduto{
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
