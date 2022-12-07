@@ -1,7 +1,9 @@
 import styles from './BreadcrumbProduto.module.css'; 
 import React from 'react';
+import { useAuthContext } from '../contexts/auth/AuthContext';
 
 export function BreadcrumbProduto(props) {
+    const { contraste } = useAuthContext();
     const pagina = props.pagina;
     if (pagina == 'produto'){
         return (

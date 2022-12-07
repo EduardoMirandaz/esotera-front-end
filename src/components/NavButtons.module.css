@@ -20,7 +20,6 @@
 .botoes #contraste.botaoPromo {
     background-color: black;
     color: var(--purple-c);
-    border: 1px solid var(--white);
 
 }
 
@@ -55,6 +54,16 @@ Por exemplo, se o user está na home, essa classe deve estar atribuida ao botão
 .botoes .botaoPromo:hover {
     color: var(--purple-800);
 } 
+
+.botoes .botaoPromo:after{
+    content: '';
+    height: 60%;
+    width: 1px;
+    position: absolute;
+    right: 0;
+    top: 20%;
+    background-color: var(--white); 
+}
 
 .botoes .botaoRegular:after{
     content: '';
