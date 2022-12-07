@@ -1,6 +1,22 @@
 .tituloConfiraTambem{
-    background-color: red;
     font-size: 48px;
     font-weight: lighter;
     margin-bottom: 40px;    
+}
+
+.cardContainer{
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+    /*  esconder barra de rolagem */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    gap: 60px;
+    margin-bottom: 140px;
+    padding: 10px;
+}
+
+/*  esconder barra de rolagem */
+.cardContainer::-webkit-scrollbar{
+    display: none;
 }
