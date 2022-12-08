@@ -10,15 +10,16 @@ import { ConfiraTambemProduto } from "../components/ConfiraTambemProduto";
 
 import ImagensProdutos from "../components/ImagensProdutos"
 import styles from './Produto.module.css'
-import { Card } from "../components/Card";
 import { produto } from "../data.json"
+import { useAuthContext } from "../contexts/auth/AuthContext";
 
 
 export function Produto(){
+  const { contraste } = useAuthContext();
   return(
     <>
-      <Header/>
-      <div className={styles.containerBreadcrumb}>
+      <Header isPrincipal={false}/>
+      <div className={styles.containerBreadcrumb} id={contraste && styles.contraste}>
         <BreadcrumbProduto pagina='produto'/>
       </div>
       <div className={styles.container}>

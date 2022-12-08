@@ -1,13 +1,24 @@
-.breadcrumb{
-    margin-left: 60px;
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
+#contraste.breadcrumb{
+    color: var(--white);
 }
 
-.breadcrumb span{
+
+#contraste.breadcrumb a{
+    text-decoration: none;
+    color: var(--white);
+}
+
+.breadcrumb{
+    margin-left: 60px;
+    padding-top: 20px;
+    display: flex;
+    gap: 10px;
     font-size: 24px;
-    color: var(--purple-800);
+}
+
+.breadcrumb a{
+    text-decoration: none;
+    color: black;
 }
 
 .titulo{
@@ -20,9 +31,5 @@
 }
 
 .home{
-    cursor: pointer;
-}
-
-.produto{
     cursor: pointer;
 }

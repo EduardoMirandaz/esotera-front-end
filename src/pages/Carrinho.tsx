@@ -23,8 +23,8 @@ export function Carrinho(props) {
   const { contraste } = useAuthContext();
   return (
     <>
-      <Header />
-      <BreadcrumbProduto pagina='carrinho'/>
+      <Header isPrincipal={false}/>
+      <BreadcrumbProduto pagina='Carrinho'/>
       <div className={styles.container} id={contraste && styles.contraste}>
         <div className={styles.left}>
           <h1 className={styles.titulo}>Finalizar compra</h1>

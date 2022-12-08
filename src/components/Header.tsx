@@ -13,8 +13,8 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import { PrincipalLogado } from '../pages/PrincipalLogado';
 import { useAuthContext } from '../contexts/auth/AuthContext';
 
-export function Header() {
-
+export function Header(props) {
+    const isPrincipal = props.isPrincipal;
     const [showModal, setShowModal] = useState(false)
     const [ nome, setNome] = useState("");
     const openModal = () => {
@@ -78,8 +78,9 @@ export function Header() {
                         </div>
                     </div>
                 </div>
-
-                <NavButtons className={styles.navButtons} />
+                {isPrincipal &&
+                    <NavButtons className={styles.navButtons} />
+                }
                 <Login showModal={showModal} setShowModal={setShowModal} />
             </header>}
             {isMobile && <Burger className={styles.burger} />}
