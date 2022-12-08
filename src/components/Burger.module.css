@@ -131,3 +131,25 @@
 #contraste .botaoRegular:hover{
     color: var(--purple-c);
 }
+
+
+.quantidade{
+    width: 18px;
+    height: 18px;
+    background-color: var(--purple-800);
+    border-radius: 50%;
+    color: var(--white);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 10px;
+    margin-left: -8px;
+    margin-top: -7px;
+}
+
+#contraste.quantidade{
+    background-color: black;
+    border: 1px solid var(--purple-c);
+    color: white;
+}

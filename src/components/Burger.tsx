@@ -20,6 +20,11 @@ export function Burger(){
 
     const hamburgerIcon = <CgMenu className={styles.burgerIcon} size='26px' color='white' onClick={() =>setOpen(!open)}/>
     const closeIcon = <CgClose className={styles.burgerIcon} size='26px' color='white' onClick={() =>setOpen(!open)}/>
+    const carrinho = [
+        {},
+        {},
+        {}
+    ]
     return(
         <>
             <div className={styles.burgerBar} id={contraste && styles.contraste}>
@@ -31,6 +36,7 @@ export function Burger(){
                     <a href="">
                         <div className={styles.carrinho}>
                             <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
+                            <div className={styles.quantidade} id={contraste && styles.contraste}>{carrinho.length}</div>
                         </div>
                     </a>
                     <img  onClick={openModal} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />

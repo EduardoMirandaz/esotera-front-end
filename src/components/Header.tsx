@@ -57,6 +57,12 @@ export function Header(props) {
         setNome(localStorage.getItem("username")?.split(" ")[0]);
     })
 
+    const carrinho = [
+        {},
+        {},
+        {}
+    ]
+
     return (
         <>
             {!isMobile && <header className={styles.header}>
@@ -81,8 +87,9 @@ export function Header(props) {
                         <div className={styles.icones}>
                             <div onClick={
                                 nome ? navigateToCarrinho : openModalLogin
-                            } className={styles.carrinho}>
+                                } className={styles.carrinho}>
                                 <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
+                                <div className={styles.quantidade} id={contraste && styles.contraste}>{carrinho.length}</div>
                             </div>
                             <img onClick={nome ? openModalLogout : openModalLogin} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
                             {
