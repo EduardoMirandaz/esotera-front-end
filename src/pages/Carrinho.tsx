@@ -24,6 +24,7 @@ export function Carrinho(props) {
   return (
     <>
       <Header isPrincipal={false}/>
+      <div className={contraste && styles.background}>
       <BreadcrumbProduto pagina='Carrinho'/>
       <div className={styles.container} id={contraste && styles.contraste}>
         <div className={styles.left}>
@@ -90,6 +91,7 @@ export function Carrinho(props) {
             <img className={styles.cartao} src={cartao} />
           </a>
         </div>
+      </div>
       </div>
       <ModalPagamentoPix showModal={showModal} setShowModal={setShowModal} />
       <Accessibility />

@@ -215,6 +215,10 @@ h2.titulo{
     background-color: var(--purple-500);
 }
 
+.background {
+    background: var(--black);
+}
+
 #contraste {
     background: var(--black);
     color: var(--white);
