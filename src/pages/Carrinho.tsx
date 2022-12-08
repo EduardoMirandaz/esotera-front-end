@@ -17,7 +17,6 @@ import { ModalCompraRealizada } from '../components/ModalCompraRealizada';
 
 export function Carrinho(props) {
   const [showModal, setShowModal] = useState(false)
-<<<<<<< HEAD
   const closeModal = () => {
     setShowModal(false);
     openModalCompraRealizada();
@@ -28,15 +27,11 @@ export function Carrinho(props) {
         setTimeout(closeModal, 20000);
     }
 
-    
-
     const [showModalCompraRealizada, setShowModalCompraRealizada] = useState(false)
+
     const openModalCompraRealizada = () => {
         setShowModalCompraRealizada(prev => !prev)
-=======
-  const openModal = () => {
-      setShowModal(prev => !prev)
-  }
+    }
 
   const [carrinhoList, setCarrinhoList] = useState(getCarrinhoList())
   function getCarrinhoList(){
@@ -44,7 +39,6 @@ export function Carrinho(props) {
     const carrinhoList = JSON.parse(carrinhoJSON);
     if(carrinhoList == null){
       return [];
->>>>>>> 0f325c0d145276a3ad1e6bc07fb580e788c40611
     }
     else{
       return carrinhoList;
