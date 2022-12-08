@@ -1,0 +1,25 @@
+.customModal{
+    border-radius: 4px;
+}
+
+.customModalContraste{
+    border-radius: 4px;
+    background: var(--black);
+    color: var(--white);
+    border: 1px solid white;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: 24px 0 8px 0;   
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0;  
+}

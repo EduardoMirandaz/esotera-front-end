@@ -13,12 +13,25 @@ import ModalPagamentoPix from '../components/ModalPagamentoPix';
 import cartao from "../assets/cartao.svg"
 import {BreadcrumbProduto} from '../components/BreadcrumbProduto'
 import { useAuthContext } from '../contexts/auth/AuthContext';
+import { ModalCompraRealizada } from '../components/ModalCompraRealizada';
 
 export function Carrinho(props) {
   const [showModal, setShowModal] = useState(false)
-  const openModal = () => {
-      setShowModal(prev => !prev)
+  const closeModal = () => {
+    setShowModal(false);
+    openModalCompraRealizada();
   }
+
+    const openModal = () => {
+        setShowModal(prev => !prev);
+        setTimeout(closeModal, 20000);
+    }
+
+    const [showModalCompraRealizada, setShowModalCompraRealizada] = useState(false)
+
+    const openModalCompraRealizada = () => {
+        setShowModalCompraRealizada(prev => !prev)
+    }
 
   const [carrinhoList, setCarrinhoList] = useState(getCarrinhoList())
   function getCarrinhoList(){
@@ -139,6 +152,7 @@ export function Carrinho(props) {
       </div>
       </div>
       <ModalPagamentoPix showModal={showModal} setShowModal={setShowModal} />
+      <ModalCompraRealizada showModal={showModalCompraRealizada} setShowModal={setShowModalCompraRealizada} />
       <Accessibility />
       <Footer />
     </>
