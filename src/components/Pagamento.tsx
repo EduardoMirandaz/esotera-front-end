@@ -13,6 +13,7 @@ import pagPicPay from '../assets/logosPagamento/logoPicPay.svg'
 import pagEtherium from '../assets/logosPagamento/logoEtherium.svg'
 import pagSodexo from '../assets/logosPagamento/logoSodexo.svg'
 import pagGooglePay from '../assets/logosPagamento/logoGooglePay.svg'
+import pagGooglePayBranco from '../assets/logosPagamento/logoGooglePayBranco.svg'
 
 
 export function Pagamento(){
@@ -61,10 +62,14 @@ export function Pagamento(){
                         <input type="radio" id='sodexo' className="sodexo" value="sodexo" name="formaPagamento"/>
                         <img className={styles.contraste} src={pagSodexo} alt="Pagar pelo Sodexo" />
                     </label>
-                    <label htmlFor="googlePay">
+                    {!contraste && <label htmlFor="googlePay">
                         <input type="radio" id='googlePay' className="googlePay" value="googlePay" name="formaPagamento"/>
                         <img className={styles.contraste} src={pagGooglePay} alt="Pagar pelo GooglePay" />
-                    </label>
+                    </label>}
+                    {contraste && <label htmlFor="googlePay">
+                        <input type="radio" id='googlePay' className="googlePay" value="googlePay" name="formaPagamento"/>
+                        <img className={styles.contraste} src={pagGooglePayBranco} alt="Pagar pelo GooglePay" />
+                    </label>}
                 </form> 
             </div>
         </div>
