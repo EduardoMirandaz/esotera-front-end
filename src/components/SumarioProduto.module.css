@@ -43,6 +43,14 @@
     -webkit-text-fill-color: transparent;
 }
 
+#contraste.stars::before{
+    content: '★★★★★';
+    letter-spacing: 6px;
+    background: linear-gradient(90deg, #FB8200 var(--percent), black var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .estrelas img{
     width: 18%;
 }
@@ -68,13 +76,18 @@
     color: var(--purple-c);
 }
 
+#contraste.naoDisponivel{
+    background-color: transparent;
+    color: var(--purple-c);
+}
+
 .comprados{
     font-size: 20px;
 }
 
 .avaliacao{
     font-size: 20px;
-    margin-left: 7px;
+    margin-left: 3px;
 }
 
 .preco{

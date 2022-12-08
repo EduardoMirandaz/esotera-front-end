@@ -27,6 +27,12 @@ export function Cadastro({showModalCad, setShowModalCad}){
         navigate("/")
     };
 
+    function cadastrar(){
+        setUsuario(nome);
+        navigateToPrincipal();
+        setShowModalCad(prev => !prev)
+    }
+
     
     return(
         <>
@@ -37,7 +43,7 @@ export function Cadastro({showModalCad, setShowModalCad}){
                     <div className={styles.modalHeader}>
                         <h2>Cadastro</h2>
                     </div>
-                    <form>
+                    <form onSubmit={(e) => {e.preventDefault(); cadastrar()}}>
                         <div className={styles.inputWrapper}>
                             <label htmlFor="nome">Nome</label>
                             <input 
@@ -63,9 +69,10 @@ export function Cadastro({showModalCad, setShowModalCad}){
                             <label htmlFor="senha">Senha</label>
                             <input 
                                 type="password" 
-                                placeholder="No mínimo 8 caractéres" 
+                                placeholder="No mínimo 8 caracteres" 
                                 aria-required="true" 
                                 required
+                                minLength={8}
                             />
                         </div>
                         <div className={styles.inputWrapper}>
@@ -75,9 +82,10 @@ export function Cadastro({showModalCad, setShowModalCad}){
                                 placeholder="Digite sua senha novamente" 
                                 aria-required="true" 
                                 required
+                                minLength={8}
                             />
                         </div>
-                        <button type="button" className={styles.button} onClick={() => {setUsuario(nome), navigateToPrincipal(), setShowModalCad(prev => !prev) }}>CADASTRAR</button>
+                        <input type="submit" className={styles.button} value="CADASTRAR"/>
                         <div className={styles.divider}>
                             <span role="text" className={styles.dividerSpan} aria-label="Ou cadastre-se com uma dessas opções">ou cadastre-se com</span>
                             <hr/>
