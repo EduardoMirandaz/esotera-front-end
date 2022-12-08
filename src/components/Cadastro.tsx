@@ -2,7 +2,6 @@ import styles from './Cadastro.module.css';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import {Routes, Route, useNavigate} from 'react-router-dom';
-import { PrincipalLogado } from '../pages/PrincipalLogado';
 import React, { useState } from 'react';
 import { useAuthContext } from '../contexts/auth/AuthContext';
 import { IoClose } from "react-icons/io5";

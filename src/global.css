@@ -23,6 +23,12 @@
     --purple-c: #E700FF;
     --green-500: #30591D;
 
+    /* Dica -> usar LG->large MD->medio SM-small (assim que as libs usam)*/
+    /* Usar rem, pois ele leva em consideração configurações de dispositivos, por exemplo*/
+    /* Existem conversores de pixel para rem na net!!! */
+    /* --font-size-1: 16;
+    --font-size-2: 16; */
+
 }
 
 * {

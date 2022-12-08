@@ -10,7 +10,6 @@ import NavButtons from './NavButtons'
 import Burger from './Burger'
 import Login from './Login';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import { PrincipalLogado } from '../pages/PrincipalLogado';
 import { useAuthContext } from '../contexts/auth/AuthContext';
 import MenuLogout from './MenuLogout';
 
@@ -24,8 +23,6 @@ export function Header(props) {
     const openModalLogin = () => {
         setShowModal(prev => !prev)
     }
-
-
 
     const openModalLogout = () => {
         setModalLogout(modalLogout => !modalLogout);
@@ -56,6 +53,7 @@ export function Header(props) {
 
     useEffect(() => {
         window.addEventListener("resize", handleResize);
+        
         setNome(localStorage.getItem("username")?.split(" ")[0]);
     })
 
@@ -106,7 +104,7 @@ export function Header(props) {
             </header>}
             {isMobile && <Burger className={styles.burger} />}
             <Routes>
-                <Route path="/PrincipalLogado" element={<PrincipalLogado />} />
+                <Route path="/"/>
             </Routes>
         </>
     )
