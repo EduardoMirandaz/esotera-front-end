@@ -4,24 +4,14 @@ import { Accessibility } from "../components/Accessibility";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Vitrine } from "../components/Vitrine";
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import styles from './Principal.module.css'
 import { useAuthContext } from "../contexts/auth/AuthContext";
 
 export function Principal(props){
   let cards = props.produto 
-  const [isMobile, setIsMobile] = useState(false)
-    const handleResize = () => {
-        if (window.innerWidth < 760) {
-            setIsMobile(true)
-        } else {
-            setIsMobile(false)
-        }
-      }
-      useEffect(() => {
-        window.addEventListener("resize", handleResize)
-      })
 
-    const { filtro } = useAuthContext();
+  const { filtro } = useAuthContext();
 
   if(filtro){
     if(filtro == "promocao"){
@@ -36,7 +26,8 @@ export function Principal(props){
     return(
       <>
         <Header isPrincipal={true}/>
-        {props.carrosseis && !isMobile &&
+        {props.carrosseis &&
+          <div className={styles.carrossel}>
             <Carousel autoPlay infiniteLoop showStatus={false} showThumbs={false}>
               {props.carrosseis.map((carrossel) => {
                 return(
@@ -46,6 +37,7 @@ export function Principal(props){
                 )
               })}
             </Carousel>
+          </div>
         }
         
         <Vitrine data={cards}/>
