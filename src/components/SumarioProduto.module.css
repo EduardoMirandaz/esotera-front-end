@@ -25,6 +25,24 @@
     align-items: center;
 }
 
+.stars {
+    --percent: calc(calc(var(--rating)/ 5 * 100%) - 3px);
+    
+    display: inline-block;
+    font-size: 26px;
+    font-family: Times;
+    line-height: 1;
+    -webkit-text-stroke: 2px #FB8200;
+}
+
+.stars::before {
+    content: '★★★★★';
+    letter-spacing: 6px;
+    background: linear-gradient(90deg, #FB8200 var(--percent), white var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .estrelas img{
     width: 18%;
 }
