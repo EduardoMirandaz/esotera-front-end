@@ -45,6 +45,9 @@ export function Header(props) {
     const closeIcon = <CgClose className={styles.burgerIcon} size='26px' color='white' onClick={() =>setOpen(!open)}/>
     const hamburgerIcon = <CgMenu className={styles.burgerIcon} size='26px' color='white' onClick={() =>setOpen(!open)}/>
     
+    useEffect(() => {
+        setNome(localStorage.getItem("username")?.split(" ")[0]);
+    })
     
     const carrinho = [
         {},
