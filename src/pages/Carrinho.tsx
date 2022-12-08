@@ -16,9 +16,34 @@ import { useAuthContext } from '../contexts/auth/AuthContext';
 
 export function Carrinho(props) {
   const [showModal, setShowModal] = useState(false)
-    const openModal = () => {
-        setShowModal(prev => !prev)
+  const openModal = () => {
+      setShowModal(prev => !prev)
+  }
+
+  const [carrinhoList, setCarrinhoList] = useState(getCarrinhoList())
+  function getCarrinhoList(){
+    const carrinhoJSON = localStorage.getItem("carrinho");
+    const carrinhoList = JSON.parse(carrinhoJSON);
+    if(carrinhoList == null){
+      return [];
     }
+    else{
+      return carrinhoList;
+    }
+  }
+
+  const atualizarQuantidadeCard = (idProduto, quantidadeProduto) => {
+    let carrinhoListTmp = carrinhoList;
+    for(let i = 0; i < carrinhoListTmp.length; i++){
+      if(carrinhoListTmp[i].idProduto == idProduto){
+        carrinhoListTmp[i].quantidade = quantidadeProduto;
+        break;
+      }
+    }
+
+    setCarrinhoList(carrinhoListTmp);
+    localStorage.setItem("carrinho", JSON.stringify(carrinhoListTmp));
+  }
 
   const { contraste } = useAuthContext();
   return (
@@ -49,17 +74,19 @@ export function Carrinho(props) {
         <div className={styles.right}>
           <h2 className={styles.titulo}>Itens do Carrinho</h2>
           <div className={styles.boxCardsCompras}>
-            {props.produto.map((card) => {
-              if (card.idProduto <= 1) {
-                return (
-                  <CardCompra
-                    titulo={card.titulo}
-                    imagemPrincipal={card.imagemPrincipal}
-                    valor={card.valor}
-                    idProduto={card.idProduto}
-                  />
-                )
-              }
+            {props.produto.filter(card => {
+              return carrinhoList.find(produto => card.idProduto == produto.idProduto) != undefined
+            }).map((card) => {
+              return (
+                <CardCompra
+                  titulo={card.titulo}
+                  imagemPrincipal={card.imagemPrincipal}
+                  valor={card.valor}
+                  idProduto={card.idProduto}
+                  quantidadeProduto={carrinhoList.find(produto => card.idProduto == produto.idProduto).quantidade}
+                  atualizarQuantidade={atualizarQuantidadeCard}
+                />
+              )
             })
             }
             <div className={styles.buttonsCards}>
@@ -72,7 +99,7 @@ export function Carrinho(props) {
             </div>
           </div>
           <div className={styles.totalCompra}>
-            <h3 className={styles.totalCompraLabel} >Total da compra</h3>
+            <h3 className={styles.totalCompraLabel}>Total da compra</h3>
             <div className={styles.valorItensBox}>
               <h4 className={styles.valorItensLabel}>valor dos itens</h4>
               <h3 className={styles.valorItens}>R$ 57,40</h3>
