@@ -105,18 +105,32 @@
     display: flex;
 }
 
+.quantidade{
+    width: 26px;
+    height: 26px;
+    background-color: var(--purple-800);
+    border-radius: 50%;
+    color: var(--white);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+    margin-left: -10px;
+    margin-top: -9px;
+}
+
+#contraste.quantidade{
+    background-color: black;
+    border: 1px solid var(--purple-c);
+    color: white;
+}
+
 @media (max-width: 1140px){
     .pesquisa{
         display: none;
     }
 }
-
-@media (max-width: 600px){
-    .topHeader{
-        padding: 1rem 0.5rem;
-    }
-}
-
 
 .nomeUsuario {
     color: var(--white);
@@ -128,4 +142,156 @@
 
 }
 
+.burgerContainer{
+    display: none;
+}
+
+
+
+.dropMenu{
+    display: none;
+}
+
+
+
+#contraste{
+    background: black;
+}
+
+#contraste .botaoPromo{
+    background: black;
+}
+
+#contraste .dropMenu{
+    background: black;
+}
+
+#contraste button{
+    background: black;
+    color: var(--purple-c);
+    border-top: 1px solid var(--white);
+}
+
+#contraste button:hover{
+    background: black;
+    color: var(--purple-c);
+}
+
+#contraste .botaoPromo {
+    background-color: black;
+}
+
+#contraste .botaoPromo:hover {
+    color: var(--purple-c);
+}
+
+#contraste .botaoRegular:hover{
+    color: var(--purple-c);
+}
+
+
+@media (max-width: 760px){
+
+    .logo{
+        padding: 0 1rem;
+        height: auto;
+        width: 20%;
+        min-width: 200px;
+        cursor: pointer;
+    }
+
+    .navButtons{
+        display: none;
+    }
+
+    .burgerContainer{
+        display: flex;
+    }
+
+    .topHeader{
+        padding: 1rem 0.5rem;
+    }
+
+    .quantidade{
+        width: 18px;
+        height: 18px;
+        background-color: var(--purple-800);
+        border-radius: 50%;
+        color: var(--white);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 10px;
+        margin-left: -8px;
+        margin-top: -7px;
+    }
+
+    #contraste.quantidade{
+        background-color: black;
+        border: 1px solid var(--purple-c);
+        color: white;
+    }
+
+
+
+    .dropMenu{
+        /*height: 32px;*/
+        left: 0;
+        width: 100% + 50px;
+        font-size: 1.5rem;
+        background: var(--purple-500);
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 85px;
+        flex-flow: column nowrap;
+
+    }
+
+    .dropMenu button {
+        padding: 10px 0;
+        transition: 0.25s;
+        border: none;
+        border-radius: 0;
+        color: var(--white);
+        background-color: transparent;
+        /*position: relative;*/
+        width: 100vw;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    .dropMenu button:hover {
+        background-color: var(--white);
+    }
+
+    .dropMenu .botaoPromo {
+        background-color: var(--purple-800);
+    }
+
+    .dropMenu .botaoPromo:hover {
+        color: var(--purple-800);
+    }
+
+    .dropMenu .botaoRegular:hover{
+        color: var(--purple-500);
+    }
+
+
+    .carrinhoImg{
+        height: 26px;
+    }
+    
+    .perfilImg{
+        height: 26px;
+        margin-left: 6px;
+        cursor: pointer;
+    }
+    
+    .coracaoImg{
+        height: 26px;
+        margin-left: 6px;
+    }
+}
 

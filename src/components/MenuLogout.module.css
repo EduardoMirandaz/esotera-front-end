@@ -50,4 +50,5 @@
     color: var(--white);
     margin-top: 5px;
     cursor: pointer;
+    border-color: var(--white);
 }

@@ -2,7 +2,6 @@ import styles from './Cadastro.module.css';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import {Routes, Route, useNavigate} from 'react-router-dom';
-import { PrincipalLogado } from '../pages/PrincipalLogado';
 import React, { useState } from 'react';
 import { useAuthContext } from '../contexts/auth/AuthContext';
 import { IoClose } from "react-icons/io5";
@@ -22,11 +21,14 @@ export function Cadastro({showModalCad, setShowModalCad}){
     const [email, setEmail] = useState("");
     const navigate = useNavigate(); 
 
-    const navigateToPrincipal = () => {
+    function cadastrar(){
+        setUsuario(nome);
         localStorage.setItem("username", nome);
         localStorage.setItem(email, nome);
-        navigate("/")
-    };
+        localStorage.setItem("carrinho", JSON.stringify([]));
+        navigate("/");
+        setShowModalCad(prev => !prev);
+    }
 
     
     return(
@@ -38,7 +40,7 @@ export function Cadastro({showModalCad, setShowModalCad}){
                     <div className={styles.modalHeader}>
                         <h2>Cadastro</h2>
                     </div>
-                    <form>
+                    <form onSubmit={(e) => {e.preventDefault(); cadastrar()}}>
                         <div className={styles.inputWrapper}>
                             <label htmlFor="nome">Nome</label>
                             <input 
@@ -64,9 +66,10 @@ export function Cadastro({showModalCad, setShowModalCad}){
                             <label htmlFor="senha">Senha</label>
                             <input 
                                 type="password" 
-                                placeholder="No mínimo 8 caractéres" 
+                                placeholder="No mínimo 8 caracteres" 
                                 aria-required="true" 
                                 required
+                                minLength={8}
                             />
                         </div>
                         <div className={styles.inputWrapper}>
@@ -76,9 +79,10 @@ export function Cadastro({showModalCad, setShowModalCad}){
                                 placeholder="Digite sua senha novamente" 
                                 aria-required="true" 
                                 required
+                                minLength={8}
                             />
                         </div>
-                        <button type="button" className={styles.button} onClick={() => {setUsuario(nome), navigateToPrincipal(), setShowModalCad(prev => !prev) }}>CADASTRAR</button>
+                        <input type="submit" className={styles.button} value="CADASTRAR"/>
                         <div className={styles.divider}>
                             <span role="text" className={styles.dividerSpan} aria-label="Ou cadastre-se com uma dessas opções">ou cadastre-se com</span>
                             <hr/>
