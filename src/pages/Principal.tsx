@@ -18,8 +18,11 @@ export function Principal(props){
         }
       }
       useEffect(() => {
-        window.addEventListener("resize", handleResize)
+        window.addEventListener("resize", handleResize);
+        window.scrollTo(0, 0);
       })
+      
+      
 
     const { filtro } = useAuthContext();
 
