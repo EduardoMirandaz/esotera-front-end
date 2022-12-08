@@ -192,6 +192,14 @@
 
 @media (max-width: 760px){
 
+    .logo{
+        padding: 0 1rem;
+        height: auto;
+        width: 20%;
+        min-width: 200px;
+        cursor: pointer;
+    }
+
     .navButtons{
         display: none;
     }
