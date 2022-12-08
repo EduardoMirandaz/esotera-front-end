@@ -7,11 +7,11 @@ import headerCarrinho from '../assets/carrinho.svg'
 import headerPerfil from '../assets/perfil.svg'
 import headerCoracao from '../assets/coracao.svg'
 import NavButtons from './NavButtons'
-import Burger from './Burger'
 import Login from './Login';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../contexts/auth/AuthContext';
 import MenuLogout from './MenuLogout';
+import {CgMenu, CgClose} from 'react-icons/cg'
 
 export function Header(props) {
     const isPrincipal = props.isPrincipal;
@@ -29,16 +29,7 @@ export function Header(props) {
     }
 
 
-    const { usuario, contraste } = useAuthContext();
-
-    const [isMobile, setIsMobile] = useState(false)
-    const handleResize = () => {
-        if (window.innerWidth < 760) {
-            setIsMobile(true)
-        } else {
-            setIsMobile(false)
-        }
-    }
+    const { contraste } = useAuthContext();
 
     const navigate = useNavigate();
 
@@ -50,13 +41,11 @@ export function Header(props) {
         navigate('/carrinho');
     };
 
-
-    useEffect(() => {
-        window.addEventListener("resize", handleResize);
-        
-        setNome(localStorage.getItem("username")?.split(" ")[0]);
-    })
-
+    const [open, setOpen] = useState(false);
+    const closeIcon = <CgClose className={styles.burgerIcon} size='26px' color='white' onClick={() =>setOpen(!open)}/>
+    const hamburgerIcon = <CgMenu className={styles.burgerIcon} size='26px' color='white' onClick={() =>setOpen(!open)}/>
+    
+    
     const carrinho = [
         {},
         {},
@@ -65,8 +54,20 @@ export function Header(props) {
 
     return (
         <>
-            {!isMobile && <header className={styles.header}>
+            <header className={styles.header}>
                 <div className={styles.topHeader} id={contraste && styles.contraste}>
+                    <div className={styles.burgerContainer}>
+                        {open ? closeIcon : hamburgerIcon}
+                    </div>
+                    {open && <div className={styles.dropMenu} id={contraste && styles.contraste}>
+                        <button className={styles.botaoPromo}>Promoções</button>
+                        <button className={styles.botaoRegular}>Página Inicial</button>
+                        <button className={styles.botaoRegular}>Incensos</button>
+                        <button className={styles.botaoRegular}>Cristais</button>
+                        <button className={styles.botaoRegular}>Signos</button>
+                        <button className={styles.botaoRegular}>Cartas</button>
+                        <button className={styles.botaoRegular}>Artefatos</button>
+                    </div>}
                     <img onClick={navigateToPrincipal} className={styles.logo} src={headerLogo} alt="Logo" />
                     <div className={styles.funcoes}>
                         {
@@ -105,14 +106,12 @@ export function Header(props) {
                     </div>
                 </div>
                 {isPrincipal &&
-                    <NavButtons className={styles.navButtons} />
+                    <div className={styles.navButtons}>
+                        <NavButtons/>
+                    </div>
                 }
                 <Login showModal={showModal} setShowModal={setShowModal} />
-            </header>}
-            {isMobile && <Burger className={styles.burger} />}
-            <Routes>
-                <Route path="/"/>
-            </Routes>
+            </header>
         </>
     )
 
