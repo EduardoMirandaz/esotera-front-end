@@ -18,7 +18,7 @@ export function Header(props) {
     const [showModal, setShowModal] = useState(false)
     const [nome, setNome] = useState("");
 
-    const { modalLogout, setModalLogout } = useAuthContext();
+    const { modalLogout, setModalLogout, qtdItensCarrinho, setQtdItensCarrinho } = useAuthContext();
 
     const openModalLogin = () => {
         setShowModal(prev => !prev)
@@ -47,13 +47,8 @@ export function Header(props) {
     
     useEffect(() => {
         setNome(localStorage.getItem("username")?.split(" ")[0]);
+        setQtdItensCarrinho(JSON.parse(localStorage.getItem("carrinho"))?.length)
     })
-    
-    const carrinho = [
-        {},
-        {},
-        {}
-    ]
 
     return (
         <>
@@ -93,7 +88,7 @@ export function Header(props) {
                                 nome ? navigateToCarrinho : openModalLogin
                                 } className={styles.carrinho}>
                                 <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
-                                <div className={styles.quantidade} id={contraste && styles.contraste}>{carrinho.length}</div>
+                                <div className={styles.quantidade} id={contraste && styles.contraste}>{qtdItensCarrinho}</div>
                             </div>
                             <img onClick={nome ? openModalLogout : openModalLogin} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
                             {
