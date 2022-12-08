@@ -12,6 +12,15 @@
     margin-top: 10px;
 }
 
+.espaco{
+    height: 70px;
+}
+
+#contraste.espaco{
+    background-color: black;
+    height: 70px;
+}
+
 .marca{
     flex-grow: 1;
     padding-top: 2.9%;

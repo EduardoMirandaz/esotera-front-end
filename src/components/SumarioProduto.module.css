@@ -1,3 +1,7 @@
+#contraste.containerSumario{
+    color: var(--white);
+}
+
 .containerSumario{
     height: 40vw;
     display: flex;
@@ -31,6 +35,11 @@
     line-height: 35px;
     border-radius: 320px;
     padding: 0 13px;
+}
+
+#contraste.estoque{
+    background-color: transparent;
+    color: var(--purple-c);
 }
 
 .comprados{
@@ -85,11 +94,22 @@
     font-size: 32px;
 }
 
+#contraste.decrementar{
+    color: var(--purple-c);
+    border: 2px solid var(--purple-c);
+    font-size: 32px;
+}
+
 .incrementar{
     color: #37833B;
     border: 2px solid #A9D3AB;
     font-size: 32px;
+}
 
+#contraste.incrementar{
+    color: var(--purple-c);
+    border: 2px solid var(--purple-c);
+    font-size: 32px;
 }
 
 .contador button{
@@ -100,6 +120,14 @@
     line-height: 0px;
     background-color: var(--white);
     cursor: pointer;
+}
+
+#contraste .contador button{
+    background-color: transparent;
+}
+
+#contraste .quantidade{
+    color: var(--white);
 }
 
 .botaoCarrinho{
@@ -115,9 +143,20 @@
     width: fit-content;
 }
 
+#contraste.botaoCarrinho{
+    background-color: transparent;
+    border: 2px solid var(--purple-c);
+}
+
 .botaoCarrinho img{
     width: 26.75px;
     margin-left: 5px;
+}
+
+#contraste.botaoFrete{
+    background-color: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
 }
 
 .botaoFrete{
@@ -146,6 +185,11 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+}
+
+#contraste.botaoFavorito{
+    background-color: transparent;
+    border: 2px solid var(--purple-c);
 }
 
 @media (max-width: 1250px){

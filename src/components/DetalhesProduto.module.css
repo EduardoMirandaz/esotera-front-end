@@ -1,5 +1,10 @@
+#contraste.detalhesProduto{
+    background-color: black;
+    color: var(--white);
+}
+
 .detalhesProduto{
-    margin: 0 60px;
+    padding: 0 60px;
 }
 .paragrafoDetalhesAberto{
     font-size: 25px;
@@ -18,7 +23,7 @@
 }
 
 .tituloDetalhes{
-    margin: 40px 0 20px 0;
+    padding: 40px 0 20px 0;
 }
 
 .caixaBotao{
@@ -26,7 +31,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 0;
+    padding: 20px 0;
 }
 
 .botao{
@@ -38,6 +43,11 @@
     cursor: pointer;
     color: white;
     margin: 30px 0;
+}
+
+#contraste.botao{
+    background-color: transparent;
+    border: 2px solid var(--purple-c);
 }
 
 @media (max-width: 600px){

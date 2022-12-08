@@ -11,8 +11,11 @@ export function Footer(){
     const { contraste } = useAuthContext();
     return(
         <>
+            <div className={styles.espaco} id={contraste && styles.contraste}></div>
             <footer className={styles.footer}  id={contraste && styles.contraste}>
+                
                 <div className={styles.container} id={contraste && styles.contraste}>
+                    
                     <section className={styles.marca}>
                         <img className={styles.logo} src={footerLogo} alt="Logo" />
                         <p className={styles.info} id={contraste && styles.contraste} >A Esotera é um site de venda de produtos esotéricos desenvolvido em 2022 por um grupo de  alunos do ICMC.</p>

@@ -24,7 +24,7 @@ export function Produto(){
       <div className={styles.containerBreadcrumb} id={contraste && styles.contraste}>
         <BreadcrumbProduto pagina='produto'/>
       </div>
-      <div className={styles.container}>
+      <div className={styles.container} id={contraste && styles.contraste}>
         <div className={styles.left}>
           <ImagensProdutos idProduto={id}/>
         </div>
@@ -33,7 +33,7 @@ export function Produto(){
         </div>
       </div>
       <DetalhesProduto idProduto={id}/>
-      <div className={styles.containerConfiraTambemProduto}>
+      <div className={styles.containerConfiraTambemProduto} id={contraste && styles.contraste}>
         <ConfiraTambemProduto produto={produto}/>
       </div>
       <Accessibility/>

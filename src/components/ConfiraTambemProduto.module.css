@@ -12,7 +12,7 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
     gap: 60px;
-    margin-bottom: 140px;
+    padding-bottom: 140px;
     padding: 10px;
 }
 
