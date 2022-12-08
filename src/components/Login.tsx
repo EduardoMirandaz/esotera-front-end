@@ -15,11 +15,18 @@ export function Login({showModal, setShowModal}){
         setShowModalCad(prev => !prev)
         setShowModal(prev => !prev)
     }
+    const [loginDigitado, setLoginDigitado] = useState("");
     const { contraste } = useAuthContext();
     const navigate = useNavigate();
 
-    const navigateToPrincipalLogado = () => {
-      navigate('/');
+    const logar = () => {
+        console.log("login digitado : " + loginDigitado)
+      let userCadastrado = localStorage.getItem(loginDigitado);
+      console.log(userCadastrado)
+      if(userCadastrado){
+        localStorage.setItem("username", userCadastrado);
+      }
+      setShowModal(prev => !prev);
     };
 
     return(
@@ -34,14 +41,16 @@ export function Login({showModal, setShowModal}){
                     <form>
                         <div className={styles.inputWrapper}>
                             <label htmlFor="email">E-mail</label>
-                            <input type="email" placeholder="Digite seu e-mail" aria-required="true" required/>
+                            <input
+                                onChange={(e)=> setLoginDigitado(e.target.value)}
+                                type="email" placeholder="Digite seu e-mail" aria-required="true" required/>
                         </div>
                         <div className={styles.inputWrapper}>
                             <label htmlFor="senha">Senha</label>
                             <input type="password" placeholder="Digite sua senha" aria-required="true" required/>
                             <a className={styles.esqueceuSenha} href="">Esqueceu sua senha?</a>
                         </div>
-                        <button type="submit" className={styles.button} onClick={navigateToPrincipalLogado}>ENTRAR</button>
+                        <button type="submit" className={styles.button} onClick={logar}>ENTRAR</button>
                         <div onClick={openModalCad} className={styles.cadastrar}>
                             <span className={styles.semContaSpan}>Não possui conta?&nbsp;&nbsp;</span>
                             <span className={styles.cadastre}>CADASTRE-SE</span>
