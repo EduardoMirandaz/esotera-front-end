@@ -7,21 +7,25 @@ import { FormularioFinalizacaoCompra } from "../components/FormularioFinalizacao
 import { Header } from "../components/Header";
 import { Pagamento } from "../components/Pagamento";
 import { CardCompra } from "../components/CardCompra"
-import trianguloLogo from "../assets/trianguloLogoRoxo.svg"
+import trianguloLogoRoxo from "../assets/trianguloLogoRoxo.svg"
+import trianguloLogoBranco from "../assets/trianguloLogoBranco.svg"
 import ModalPagamentoPix from '../components/ModalPagamentoPix';
 import cartao from "../assets/cartao.svg"
 import {BreadcrumbProduto} from '../components/BreadcrumbProduto'
+import { useAuthContext } from '../contexts/auth/AuthContext';
 
 export function Carrinho(props) {
   const [showModal, setShowModal] = useState(false)
     const openModal = () => {
         setShowModal(prev => !prev)
     }
+
+  const { contraste } = useAuthContext();
   return (
     <>
       <Header />
       <BreadcrumbProduto pagina='carrinho'/>
-      <div className={styles.container}>
+      <div className={styles.container} id={contraste && styles.contraste}>
         <div className={styles.left}>
           <h1 className={styles.titulo}>Finalizar compra</h1>
           <FormularioFinalizacaoCompra />
@@ -32,7 +36,13 @@ export function Carrinho(props) {
               <h1 className={styles.titulo}>Compre e ganhe</h1>
               <p>Ao finalizar essa compra você recebe 161 Pontos Esotera para usar em suas próximas compras :)</p>
             </div>
-            <img className={styles.esoteraCoins} src={trianguloLogo} alt="Logo Esotera Coins" />
+            {!contraste && 
+              <img className={styles.esoteraCoins} src={trianguloLogoRoxo} alt="Logo Esotera Coins" />
+            } 
+            {contraste && 
+              <img className={styles.esoteraCoins} src={trianguloLogoBranco} alt="Logo Esotera Coins" />
+            }
+
           </div>
         </div>
         <div className={styles.right}>

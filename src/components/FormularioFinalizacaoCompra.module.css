@@ -58,6 +58,19 @@ input#complemento{
     width: 61.25%;
 }
 
+#contraste legend {
+    color: var(--white);
+}
+
+#contraste input::placeholder{
+    color: var(--purple-100);
+}
+
+#contraste input{
+    background: black;
+    color: var(--white);
+    border-color: var(--white);
+}
 /* @media (max-width: 1500px){
     .containerFormulario{
         width: 600px;

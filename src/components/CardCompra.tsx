@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from './CardCompra.module.css'
 import semImagem from '../assets/semImagem.svg'
+import { useAuthContext } from '../contexts/auth/AuthContext';
 
 interface CardCompra {
   imagemPrincipal?: string;
@@ -16,6 +17,8 @@ export function CardCompra(props:CardCompra){
     const [contador, setCount] = useState(1); 
     // useState returns a pair. 'count' is the current state. 'setCount' is a function we can use to update the state.
     
+    const { contraste } = useAuthContext();
+
     function incrementar() {
       //setCount(prevCount => prevCount+=s1);
       setCount(function (prevCount) {
@@ -34,7 +37,8 @@ export function CardCompra(props:CardCompra){
     }
 
     return(
-      <div className={styles.fundo}>
+      <div id={contraste && styles.contraste}>
+      <div className={styles.fundo} >
         <div className={styles.boxImage}>
           {props.imagemPrincipal &&
               <img className={styles.imagem} src={props.imagemPrincipal}/>
@@ -54,6 +58,7 @@ export function CardCompra(props:CardCompra){
         </div>
         
       </div> 
+      </div>
     )
 }
 

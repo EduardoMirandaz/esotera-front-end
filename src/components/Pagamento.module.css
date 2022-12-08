@@ -42,6 +42,8 @@
     opacity: 0;
 }
 
+
+
 .pagamento input:hover + img{
     border: 3px solid var(--purple-500);
 }
@@ -50,6 +52,11 @@
     border: 3px solid var(--purple-500);
     background-color: #e0aaff1a; /* roxo 100 com opacidade baixa */
 }
+
+#contraste img {
+    background-color: var(--black);
+}
+
 
 @media (max-width: 1250px){
     .containerPagamento{
