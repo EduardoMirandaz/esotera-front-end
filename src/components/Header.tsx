@@ -47,7 +47,13 @@ export function Header(props) {
     
     useEffect(() => {
         setNome(localStorage.getItem("username")?.split(" ")[0]);
-        setQtdItensCarrinho(JSON.parse(localStorage.getItem("carrinho"))?.length)
+        const qtd = JSON.parse(localStorage.getItem("carrinho"))?.length
+        if(qtd == null){
+            setQtdItensCarrinho(0)
+        }
+        else{
+            setQtdItensCarrinho(qtd)
+        }
     })
 
     return (
