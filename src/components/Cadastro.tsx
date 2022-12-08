@@ -6,22 +6,19 @@ import { PrincipalLogado } from '../pages/PrincipalLogado';
 import React, { useState } from 'react';
 import { useAuthContext } from '../contexts/auth/AuthContext';
 
-
-export function atualizarUsuario(){
-
-}
-
 export function Cadastro({showModalCad, setShowModalCad}){
 
     const { setUsuario } = useAuthContext();
     const { contraste } = useAuthContext();
-
+    
     
     const [nome, setNome] = useState("");
+    const [email, setEmail] = useState("");
     const navigate = useNavigate(); 
 
     const navigateToPrincipal = () => {
         localStorage.setItem("username", nome);
+        localStorage.setItem(email, nome);
         navigate("/")
     };
 
@@ -40,7 +37,6 @@ export function Cadastro({showModalCad, setShowModalCad}){
                             <input 
                                 onChange={(e)=> setNome(e.target.value)}
                                 type="text" 
-                                name="nome" 
                                 placeholder="Digite seu nome" 
                                 aria-required="true" 
                                 required
@@ -50,8 +46,8 @@ export function Cadastro({showModalCad, setShowModalCad}){
                         <div className={styles.inputWrapper}>
                             <label htmlFor="email">E-mail</label>
                             <input 
+                                onChange={(e)=> setEmail(e.target.value)}
                                 type="email" 
-                                name="email" 
                                 placeholder="example@email.com" 
                                 aria-required="true" 
                                 required
@@ -61,7 +57,6 @@ export function Cadastro({showModalCad, setShowModalCad}){
                             <label htmlFor="senha">Senha</label>
                             <input 
                                 type="password" 
-                                name="senha" 
                                 placeholder="No mínimo 8 caractéres" 
                                 aria-required="true" 
                                 required
@@ -71,7 +66,6 @@ export function Cadastro({showModalCad, setShowModalCad}){
                             <label htmlFor="senha">Redigite sua senha</label>
                             <input 
                                 type="password" 
-                                name="redigite" 
                                 placeholder="Digite sua senha novamente" 
                                 aria-required="true" 
                                 required

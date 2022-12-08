@@ -12,14 +12,20 @@ import Login from './Login';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { PrincipalLogado } from '../pages/PrincipalLogado';
 import { useAuthContext } from '../contexts/auth/AuthContext';
+import MenuLogout from './MenuLogout';
 
 export function Header() {
 
     const [showModal, setShowModal] = useState(false)
-    const [ nome, setNome] = useState("");
-    const openModal = () => {
+    const [nome, setNome] = useState("");
+    const openModalLogin = () => {
         setShowModal(prev => !prev)
     }
+
+    const openModalLogout = () => {
+        <MenuLogout/>
+    }
+
 
     const { usuario, contraste } = useAuthContext();
 
@@ -38,6 +44,11 @@ export function Header() {
         navigate('/');
     };
 
+    const navigateToCarrinho = () => {
+        navigate('/carrinho');
+    };
+
+
     useEffect(() => {
         window.addEventListener("resize", handleResize);
         setNome(localStorage.getItem("username")?.split(" ")[0]);
@@ -52,23 +63,25 @@ export function Header() {
                         {
                             contraste &&
                             <div className={styles.pesquisa} id={contraste && styles.contraste}>
-                                <input className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste}/>
+                                <input className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste} />
                                 <img src={headerLupaContraste} alt="Buscar item" />
                             </div>
                         }
                         {
                             !contraste &&
                             <div className={styles.pesquisa} id={contraste && styles.contraste}>
-                                <input className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste}/>
+                                <input className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste} />
                                 <img src={headerLupa} alt="Buscar item" />
                             </div>
                         }
-                        
+
                         <div className={styles.icones}>
-                            <div onClick={openModal} className={styles.carrinho}>
+                            <div onClick={
+                                nome ? navigateToCarrinho : openModalLogin
+                            } className={styles.carrinho}>
                                 <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
                             </div>
-                            <img onClick={openModal} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
+                            <img onClick={nome ? openModalLogout : openModalLogin} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
                             {
                                 nome && <div className={styles.nomeUsuario}>{nome}</div>
                             }
