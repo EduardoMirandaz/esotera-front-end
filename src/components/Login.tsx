@@ -5,6 +5,9 @@ import { Modal } from 'react-responsive-modal';
 import Cadastro from './Cadastro';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 import { PrincipalLogado } from '../pages/PrincipalLogado';
+import { useAuthContext } from '../contexts/auth/AuthContext';
+import { IoClose } from "react-icons/io5";
+import { IconContext } from "react-icons";
 
 export function Login({showModal, setShowModal}){
     const [showModalCad, setShowModalCad] = useState(false)
@@ -12,7 +15,7 @@ export function Login({showModal, setShowModal}){
         setShowModalCad(prev => !prev)
         setShowModal(prev => !prev)
     }
-
+    const { contraste } = useAuthContext();
     const navigate = useNavigate();
 
     const navigateToPrincipalLogado = () => {
@@ -22,8 +25,9 @@ export function Login({showModal, setShowModal}){
     return(
         <>
         {showModal ? (
-            <Modal open={showModal} onClose={() => {setShowModal(prev => !prev)}} showModal={showModal} classNames={{ modal: styles.customModal }}  center>
-                <div className={styles.modalBody}>
+        <IconContext.Provider value={{ color: contraste ? "white" : "#11002B", size: "2em"}}>
+            <Modal open={showModal} onClose={() => {setShowModal(prev => !prev)}} showModal={showModal} classNames={{ modal: contraste ? styles.customModalContraste : styles.customModal }}  center closeIcon={<IoClose />}>
+                <div className={styles.modalBody} id={contraste && styles.contraste}>
                     <div className={styles.modalHeader}>
                         <h2>Entrar</h2>
                     </div>
@@ -39,11 +43,11 @@ export function Login({showModal, setShowModal}){
                         </div>
                         <button type="submit" className={styles.button} onClick={navigateToPrincipalLogado}>ENTRAR</button>
                         <div onClick={openModalCad} className={styles.cadastrar}>
-                            <span>Não possui conta?&nbsp;&nbsp;</span>
+                            <span className={styles.semContaSpan}>Não possui conta?&nbsp;&nbsp;</span>
                             <span className={styles.cadastre}>CADASTRE-SE</span>
                         </div>
                         <div className={styles.divider}>
-                            <span role="text" aria-label="Ou entre com uma dessas opções">ou entre com</span>
+                            <span role="text" className={styles.dividerSpan} aria-label="Ou entre com uma dessas opções">ou entre com</span>
                             <hr/>
                         </div>
                         <div className={styles.socialNetworkWrapper}>
@@ -58,7 +62,7 @@ export function Login({showModal, setShowModal}){
                 </div>
                 
             </Modal>
-            
+        </IconContext.Provider>
         ) : null}
         <Cadastro showModalCad={showModalCad} setShowModalCad={setShowModalCad} />
         <Routes>

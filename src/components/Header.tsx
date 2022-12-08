@@ -14,8 +14,8 @@ import { PrincipalLogado } from '../pages/PrincipalLogado';
 import { useAuthContext } from '../contexts/auth/AuthContext';
 import MenuLogout from './MenuLogout';
 
-export function Header() {
-
+export function Header(props) {
+    const isPrincipal = props.isPrincipal;
     const [showModal, setShowModal] = useState(false)
     const [nome, setNome] = useState("");
     const openModalLogin = () => {
@@ -91,8 +91,9 @@ export function Header() {
                         </div>
                     </div>
                 </div>
-
-                <NavButtons className={styles.navButtons} />
+                {isPrincipal &&
+                    <NavButtons className={styles.navButtons} />
+                }
                 <Login showModal={showModal} setShowModal={setShowModal} />
             </header>}
             {isMobile && <Burger className={styles.burger} />}

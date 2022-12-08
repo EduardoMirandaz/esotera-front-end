@@ -9,6 +9,20 @@
     z-index: 0;
 }
 
+#contraste.botoes{
+    background-color: black;
+}
+
+#contraste:hover{
+    background-color: black;
+}
+
+.botoes #contraste.botaoPromo {
+    background-color: black;
+    color: var(--purple-c);
+
+}
+
 .botoes button {
     transition: 0.25s;
     border: none;
@@ -40,6 +54,16 @@ Por exemplo, se o user está na home, essa classe deve estar atribuida ao botão
 .botoes .botaoPromo:hover {
     color: var(--purple-800);
 } 
+
+.botoes .botaoPromo:after{
+    content: '';
+    height: 60%;
+    width: 1px;
+    position: absolute;
+    right: 0;
+    top: 20%;
+    background-color: var(--white); 
+}
 
 .botoes .botaoRegular:after{
     content: '';

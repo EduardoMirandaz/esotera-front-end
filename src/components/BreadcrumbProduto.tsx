@@ -1,26 +1,18 @@
 import styles from './BreadcrumbProduto.module.css'; 
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useAuthContext } from '../contexts/auth/AuthContext';
 
 export function BreadcrumbProduto(props) {
+    const { contraste } = useAuthContext();
     const pagina = props.pagina;
-    if (pagina == 'produto'){
-        return (
-            <div className={styles.breadcrumb}>
-                <span className={styles.home}>Página Principal</span>
+    return(
+        <div className={styles.breadcrumb} id={contraste && styles.contraste}>
+                <Link to="/" className={styles.home}>Página Principal</Link>
                 <span> / </span>
-                <span className={styles.produto}>Produto</span>
-            </div>
-        )
-    }
-    if(pagina == 'carrinho'){
-        return (
-            <div className={styles.breadcrumb}>
-                <span className={styles.home}>Página Principal</span>
-                <span> / </span>
-                <span className={styles.produto}>Carrinho</span>
-            </div>
-        )
-    }
+                <span className={styles.produto}>{props.pagina}</span>
+        </div>
+    )
 }
 
 export default BreadcrumbProduto;

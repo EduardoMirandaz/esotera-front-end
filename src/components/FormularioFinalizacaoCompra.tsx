@@ -1,10 +1,12 @@
 import React from 'react'
 import styles from './FormularioFinalizacaoCompra.module.css'
-
+import { useAuthContext } from '../contexts/auth/AuthContext';
 
 export function FormularioFinalizacaoCompra(){
+
+    const { contraste } = useAuthContext();
     return(
-        <div className={styles.containerFormulario}>
+        <div className={styles.containerFormulario} id={contraste && styles.contraste}>
             <form className={styles.formulario}>
 
                 <fieldset className={styles.dadosPessoais}>

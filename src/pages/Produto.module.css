@@ -1,3 +1,11 @@
+#contraste.containerBreadcrumb{
+    background-color: black;
+}
+
+#contraste.container{
+    background-color: black;
+}
+
 .container{
     display: flex;
     gap: 2.6%;
@@ -26,8 +34,13 @@
     margin-bottom: 44px;
 }
 
+#contraste.containerConfiraTambemProduto{
+    background-color: black;
+    color: var(--white);
+}
+
 .containerConfiraTambemProduto{
-    margin: 0 60px;
+    padding: 0 60px;
 }
 
 @media (max-width: 1250px){

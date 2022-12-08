@@ -8,6 +8,7 @@ export function ImagensProdutos(props) {
   const imagens = produto[props.idProduto].imagensAlternativas;
   const [index, setIndex] = useState(0);
   const [image, setImage] = useState(produto[props.idProduto].imagemPrincipal);
+
   return (
     <>
       <img src={image} className={styles.imagemPrincipalProduto} />

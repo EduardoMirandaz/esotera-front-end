@@ -1,21 +1,25 @@
 import React from 'react'
 import styles from './Pagamento.module.css'
+import { useAuthContext } from '../contexts/auth/AuthContext';
 
 import pagPix from '../assets/logosPagamento/logoPix.svg'
 import pagMastercard from '../assets/logosPagamento/logoMastercard.svg'
 import pagPayPal from '../assets/logosPagamento/logoPayPal.svg'
 import pagVisa from '../assets/logosPagamento/logoVisa.svg'
 import pagApplePay from '../assets/logosPagamento/logoApplePay.svg'
+import pagApplePayBranco from '../assets/logosPagamento/logoApplePayBranco.svg'
 import pagBitcoin from '../assets/logosPagamento/logoBitcoin.svg'
 import pagPicPay from '../assets/logosPagamento/logoPicPay.svg'
 import pagEtherium from '../assets/logosPagamento/logoEtherium.svg'
 import pagSodexo from '../assets/logosPagamento/logoSodexo.svg'
 import pagGooglePay from '../assets/logosPagamento/logoGooglePay.svg'
+import pagGooglePayBranco from '../assets/logosPagamento/logoGooglePayBranco.svg'
 
 
 export function Pagamento(){
+    const { contraste } = useAuthContext();
     return(
-        <div className={styles.containerPagamento}>
+        <div className={styles.containerPagamento} id={contraste && styles.contraste}>
             <div className={styles.pagamento}>
                 <form>
                     <label htmlFor="pix">
@@ -34,10 +38,14 @@ export function Pagamento(){
                         <input type="radio" id='visa' className="visa" value="visa" name="formaPagamento"/>
                         <img className={styles.contraste} src={pagVisa} alt="Pagar pelo Visa" />
                     </label>
-                    <label htmlFor="applePay">
+                    {!contraste && <label htmlFor="applePay">
                         <input type="radio" id='applePay' className="applePay" value="applePay" name="formaPagamento"/>
                         <img className={styles.contraste} src={pagApplePay} alt="Pagar pelo ApplePay" />
-                    </label>
+                    </label>}
+                    {contraste && <label htmlFor="applePay">
+                        <input type="radio" id='applePay' className="applePay" value="applePay" name="formaPagamento"/>
+                        <img className={styles.contraste} src={pagApplePayBranco} alt="Pagar pelo ApplePay" />
+                    </label>}
                     <label htmlFor="bitcoin">
                         <input type="radio" id='bitcoin' className="bitcoin" value="bitcoin" name="formaPagamento"/>
                         <img className={styles.contraste} src={pagBitcoin} alt="Pagar pelo Bitcoin" />
@@ -54,10 +62,14 @@ export function Pagamento(){
                         <input type="radio" id='sodexo' className="sodexo" value="sodexo" name="formaPagamento"/>
                         <img className={styles.contraste} src={pagSodexo} alt="Pagar pelo Sodexo" />
                     </label>
-                    <label htmlFor="googlePay">
+                    {!contraste && <label htmlFor="googlePay">
                         <input type="radio" id='googlePay' className="googlePay" value="googlePay" name="formaPagamento"/>
                         <img className={styles.contraste} src={pagGooglePay} alt="Pagar pelo GooglePay" />
-                    </label>
+                    </label>}
+                    {contraste && <label htmlFor="googlePay">
+                        <input type="radio" id='googlePay' className="googlePay" value="googlePay" name="formaPagamento"/>
+                        <img className={styles.contraste} src={pagGooglePayBranco} alt="Pagar pelo GooglePay" />
+                    </label>}
                 </form> 
             </div>
         </div>

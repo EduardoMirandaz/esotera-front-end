@@ -2,11 +2,14 @@ import styles from './DetalhesProduto.module.css'
 import { produto } from "../data.json";
 import { React, useState } from 'react';
 import HTMLReactParser from "html-react-parser";
+import { useAuthContext } from '../contexts/auth/AuthContext';
 
 export function DetalhesProduto(props) {
     const [isClick, setClick] = useState(true);
+    const { contraste } = useAuthContext();
+  
     return (
-        <div className={styles.detalhesProduto}>
+        <div className={styles.detalhesProduto} id={contraste && styles.contraste}>
             <h1 className={styles.tituloDetalhes}>Detalhes do produto</h1>
             
             {isClick &&
@@ -17,10 +20,10 @@ export function DetalhesProduto(props) {
             }
             <div className={styles.caixaBotao}>
                 {isClick &&
-                    <button onClick={() => setClick(!isClick)} className={styles.botao}>Ver mais descrição ↓</button>
+                    <button onClick={() => setClick(!isClick)} className={styles.botao} id={contraste && styles.contraste}>Ver mais descrição ↓</button>
                 }
                 {!isClick &&
-                    <button onClick={() => setClick(!isClick)} className={styles.botao}>Ver menos descrição ↑</button>
+                    <button onClick={() => setClick(!isClick)} className={styles.botao} id={contraste && styles.contraste}>Ver menos descrição ↑</button>
                 }
             </div>
             
