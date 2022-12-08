@@ -18,7 +18,8 @@ export function Header(props) {
     const isPrincipal = props.isPrincipal;
     const [showModal, setShowModal] = useState(false)
     const [nome, setNome] = useState("");
-    const [modalLogout, setModalLogout] = useState(false);
+
+    const { modalLogout, setModalLogout } = useAuthContext();
 
     const openModalLogin = () => {
         setShowModal(prev => !prev)

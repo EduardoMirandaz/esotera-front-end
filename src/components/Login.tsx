@@ -34,11 +34,11 @@ export function Login({showModal, setShowModal}){
                     <form>
                         <div className={styles.inputWrapper}>
                             <label htmlFor="email">E-mail</label>
-                            <input type="email" name="email" placeholder="Digite seu e-mail" aria-required="true" required/>
+                            <input type="email" placeholder="Digite seu e-mail" aria-required="true" required/>
                         </div>
                         <div className={styles.inputWrapper}>
                             <label htmlFor="senha">Senha</label>
-                            <input type="password" name="senha" placeholder="Digite sua senha" aria-required="true" required/>
+                            <input type="password" placeholder="Digite sua senha" aria-required="true" required/>
                             <a className={styles.esqueceuSenha} href="">Esqueceu sua senha?</a>
                         </div>
                         <button type="submit" className={styles.button} onClick={navigateToPrincipalLogado}>ENTRAR</button>
