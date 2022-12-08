@@ -26,7 +26,7 @@
 			"categoria":"Incensos",
 			"isPromocao": true,
 			"idProduto": 0,
-			"qtdEmEstoque": 10,
+			"qtdEmEstoque": 0,
 			"qtdComprados": 5,
 			"qtdDeEstrelas": 5,
 			"qtdAvaliacoes": 36,

@@ -37,6 +37,14 @@
     padding: 0 13px;
 }
 
+.naoDisponivel{
+    background-color: #C8372D;
+    color: var(--white);
+    line-height: 35px;
+    border-radius: 320px;
+    padding: 0 13px;
+}
+
 #contraste.estoque{
     background-color: transparent;
     color: var(--purple-c);

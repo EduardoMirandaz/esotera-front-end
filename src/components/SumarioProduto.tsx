@@ -16,6 +16,7 @@ export function SumarioProduto(props){
     const [contador, setCount] = useState(1); 
     // useState returns a pair. 'count' is the current state. 'setCount' is a function we can use to update the state.
     const { contraste } = useAuthContext();
+    let temEstoque = produto[props.idProduto].qtdEmEstoque>0;
   
     function incrementar() {
       //setCount(prevCount => prevCount+=s1);
@@ -39,7 +40,12 @@ export function SumarioProduto(props){
         <div className={styles.containerSumario} id={contraste && styles.contraste}>
             <h1 className={styles.titulo}>{produto[props.idProduto].titulo}</h1>
             <div className={styles.subCategorias}>
-                <p className={styles.estoque} id={contraste && styles.contraste}>Em estoque</p>
+                {temEstoque &&
+                    <p className={styles.estoque} id={contraste && styles.contraste}>Em estoque</p>
+                }
+                {!temEstoque &&
+                    <p className={styles.naoDisponivel} id={contraste && styles.contraste}>Não disponível</p>
+                }
                 <p className={styles.comprados}>{produto[props.idProduto].qtdComprados} Comprados</p>
                 <div className={styles.estrelas}>
                     <img src={estrela} alt="Avaliação"/>
