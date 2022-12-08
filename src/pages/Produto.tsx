@@ -12,10 +12,12 @@ import ImagensProdutos from "../components/ImagensProdutos"
 import styles from './Produto.module.css'
 import { produto } from "../data.json"
 import { useAuthContext } from "../contexts/auth/AuthContext";
+import { useParams } from "react-router-dom";
 
 
 export function Produto(){
   const { contraste } = useAuthContext();
+  let {id} = useParams();
   return(
     <>
       <Header isPrincipal={false}/>
@@ -24,13 +26,13 @@ export function Produto(){
       </div>
       <div className={styles.container} id={contraste && styles.contraste}>
         <div className={styles.left}>
-          <ImagensProdutos idProduto={0}/>
+          <ImagensProdutos idProduto={id}/>
         </div>
         <div className={styles.right}>
-          <SumarioProduto idProduto={0}/>
+          <SumarioProduto idProduto={id}/>
         </div>
       </div>
-      <DetalhesProduto idProduto={0}/>
+      <DetalhesProduto idProduto={id}/>
       <div className={styles.containerConfiraTambemProduto} id={contraste && styles.contraste}>
         <ConfiraTambemProduto produto={produto}/>
       </div>
