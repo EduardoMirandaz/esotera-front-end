@@ -8,32 +8,29 @@ interface CardCompra {
   titulo: string;
   valor:number;
   idProduto: number;
+  quantidadeProduto: number;
+  atualizarQuantidade: (idProduto: number, quantidadeProduto: number) => void;
 }
 
 
 
 
 export function CardCompra(props:CardCompra){
-    const [contador, setCount] = useState(1); 
+    const [contador, setCount] = useState(props.quantidadeProduto); 
     // useState returns a pair. 'count' is the current state. 'setCount' is a function we can use to update the state.
     
     const { contraste } = useAuthContext();
 
     function incrementar() {
-      //setCount(prevCount => prevCount+=s1);
-      setCount(function (prevCount) {
-        return (prevCount += 1);
-      });
+      const novoCount = contador+1;
+      setCount(novoCount);
+      props.atualizarQuantidade(props.idProduto, novoCount);
     }
     
     function decrementar() {
-      setCount(function (prevCount) {
-        if (prevCount > 1) {
-          return (prevCount -= 1); 
-        } else {
-          return (prevCount = 1);
-        }
-      });
+      const novoCount = contador > 1 ? contador - 1 : 1;
+      setCount(novoCount);
+      props.atualizarQuantidade(props.idProduto, novoCount);
     }
 
     return(

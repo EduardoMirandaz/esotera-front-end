@@ -22,16 +22,13 @@ export function Cadastro({showModalCad, setShowModalCad}){
     const [email, setEmail] = useState("");
     const navigate = useNavigate(); 
 
-    const navigateToPrincipal = () => {
-        localStorage.setItem("username", nome);
-        localStorage.setItem(email, nome);
-        navigate("/")
-    };
-
     function cadastrar(){
         setUsuario(nome);
-        navigateToPrincipal();
-        setShowModalCad(prev => !prev)
+        localStorage.setItem("username", nome);
+        localStorage.setItem(email, nome);
+        localStorage.setItem("carrinho", JSON.stringify([]));
+        navigate("/");
+        setShowModalCad(prev => !prev);
     }
 
     
