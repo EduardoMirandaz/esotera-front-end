@@ -11,9 +11,10 @@ export default function AuthProvider(props: AuthProviderProps) {
     const [carrinho, setCarrinho] = useState("");
     const [filtro, setFiltro] = useState("");
     const [contraste, setContraste] = useState(false);
+    const [modalLogout, setModalLogout] = useState(false);
 
     return (
-        <AuthContext.Provider value={{usuario, setUsuario, carrinho, setCarrinho, filtro, setFiltro, contraste, setContraste}}>
+        <AuthContext.Provider value={{usuario, setUsuario, carrinho, setCarrinho, filtro, setFiltro, contraste, setContraste,modalLogout, setModalLogout}}>
             {props.children}
         </AuthContext.Provider>
     )

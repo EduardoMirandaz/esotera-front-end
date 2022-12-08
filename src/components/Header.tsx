@@ -18,12 +18,17 @@ export function Header(props) {
     const isPrincipal = props.isPrincipal;
     const [showModal, setShowModal] = useState(false)
     const [nome, setNome] = useState("");
+
+    const { modalLogout, setModalLogout } = useAuthContext();
+
     const openModalLogin = () => {
         setShowModal(prev => !prev)
     }
 
+
+
     const openModalLogout = () => {
-        <MenuLogout/>
+        setModalLogout(modalLogout => !modalLogout);
     }
 
 
@@ -82,6 +87,9 @@ export function Header(props) {
                                 <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
                             </div>
                             <img onClick={nome ? openModalLogout : openModalLogin} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
+                            {
+                                modalLogout && <MenuLogout/>
+                            }
                             {
                                 nome && <div className={styles.nomeUsuario}>{nome}</div>
                             }
