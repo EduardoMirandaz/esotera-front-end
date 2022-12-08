@@ -18,7 +18,7 @@ export function Header(props) {
     const [showModal, setShowModal] = useState(false)
     const [nome, setNome] = useState("");
 
-    const { modalLogout, setModalLogout } = useAuthContext();
+    const { modalLogout, setModalLogout, qtdItensCarrinho, setQtdItensCarrinho } = useAuthContext();
 
     const openModalLogin = () => {
         setShowModal(prev => !prev)
@@ -29,7 +29,7 @@ export function Header(props) {
     }
 
 
-    const { contraste } = useAuthContext();
+    const { contraste, setFiltro } = useAuthContext();
 
     const navigate = useNavigate();
 
@@ -47,13 +47,14 @@ export function Header(props) {
     
     useEffect(() => {
         setNome(localStorage.getItem("username")?.split(" ")[0]);
+        const qtd = JSON.parse(localStorage.getItem("carrinho"))?.length
+        if(qtd == null){
+            setQtdItensCarrinho(0)
+        }
+        else{
+            setQtdItensCarrinho(qtd)
+        }
     })
-    
-    const carrinho = [
-        {},
-        {},
-        {}
-    ]
 
     return (
         <>
@@ -63,13 +64,13 @@ export function Header(props) {
                         {open ? closeIcon : hamburgerIcon}
                     </div>
                     {open && <div className={styles.dropMenu} id={contraste && styles.contraste}>
-                        <button className={styles.botaoPromo}>Promoções</button>
-                        <button className={styles.botaoRegular}>Página Inicial</button>
-                        <button className={styles.botaoRegular}>Incensos</button>
-                        <button className={styles.botaoRegular}>Cristais</button>
-                        <button className={styles.botaoRegular}>Signos</button>
-                        <button className={styles.botaoRegular}>Cartas</button>
-                        <button className={styles.botaoRegular}>Artefatos</button>
+                        <button className={styles.botaoRegular} onClick={()=>{setFiltro("promocao");setOpen(false)}}>Promoções</button>
+                        <button className={styles.botaoRegular} onClick={()=>{setFiltro("");setOpen(false)}}>Página Inicial</button>
+                        <button className={styles.botaoRegular} onClick={()=>{setFiltro("Incensos");setOpen(false)}} >Incensos</button>
+                        <button className={styles.botaoRegular} onClick={()=>{setFiltro("Cristais");setOpen(false)}} >Cristais</button>
+                        <button className={styles.botaoRegular} onClick={()=>{setFiltro("Signos");setOpen(false)}} >Signos</button>
+                        <button className={styles.botaoRegular} onClick={()=>{setFiltro("Cartas");setOpen(false)}} >Cartas</button>
+                        <button className={styles.botaoRegular} onClick={()=>{setFiltro("Artefatos");setOpen(false)}} >Artefatos</button>
                     </div>}
                     <img onClick={navigateToPrincipal} className={styles.logo} src={headerLogo} alt="Logo" />
                     <div className={styles.funcoes}>
@@ -93,7 +94,7 @@ export function Header(props) {
                                 nome ? navigateToCarrinho : openModalLogin
                                 } className={styles.carrinho}>
                                 <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
-                                <div className={styles.quantidade} id={contraste && styles.contraste}>{carrinho.length}</div>
+                                <div className={styles.quantidade} id={contraste && styles.contraste}>{qtdItensCarrinho}</div>
                             </div>
                             <img onClick={nome ? openModalLogout : openModalLogin} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
                             {
