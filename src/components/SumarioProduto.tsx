@@ -48,7 +48,7 @@ export function SumarioProduto(props){
                 }
                 <p className={styles.comprados}>{produto[props.idProduto].qtdComprados} Comprados</p>
                 <div className={styles.estrelas}>
-                    <div className={styles.stars} style={{"--rating": produto[props.idProduto].qtdDeEstrelas} as React.CSSProperties} aria-label="Rating of this product is 2.3 out of 5."/>
+                    <div className={styles.stars} id={contraste && styles.contraste} style={{"--rating": produto[props.idProduto].qtdDeEstrelas} as React.CSSProperties} aria-label="Rating of this product is 2.3 out of 5."/>
                     <p className={styles.avaliacao}>{produto[props.idProduto].qtdDeEstrelas}({produto[props.idProduto].qtdAvaliacoes})</p>
                 </div>
                 <p className={styles.preco}>R${produto[props.idProduto].valor.toFixed(2)}</p>
