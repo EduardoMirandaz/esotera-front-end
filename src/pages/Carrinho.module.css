@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     max-width: auto;
-    margin: 0 60px;
+    padding: 0 60px;
     gap: 20px;
 }
 
@@ -213,6 +213,86 @@ h2.titulo{
 
 .buttonContinue:hover{
     background-color: var(--purple-500);
+}
+
+.background {
+    background: var(--black);
+}
+
+#contraste {
+    background: var(--black);
+    color: var(--white);
+}
+
+#contraste .titulo{
+    color: var(--white);
+}
+
+#contraste .pagamentoLabel{
+    color: var(--white);
+}
+
+#contraste .totalCompraLabel{
+    color: var(--white);
+}
+
+#contraste .valorItensLabel{
+    color: var(--white);
+}
+
+#contraste .valorFreteLabel{
+    color: var(--white);
+}
+
+#contraste .valorTotalLabel{
+    color: var(--white);
+}
+
+#contraste .valorItens{
+    color: var(--white);
+}
+
+#contraste .valorFrete{
+    color: var(--white);
+}
+
+#contraste .valorTotal{
+    color: var(--white);
+}
+
+#contraste .boxCardsCompras{
+    background: var(--black);
+    border: 1px solid var(--white);
+}
+
+#contraste .buttonContinue{
+    background-color: black;
+    color: var(--white);
+    border: 2px solid var(--purple-c);
+}
+
+#contraste .buttonContinue:hover{
+    background-color: black;
+}
+
+#contraste .buttonRemove{
+    background-color: black;
+    color: var(--white);
+    border: 2px solid var(--purple-c);
+}
+
+#contraste .buttonRemove:hover{
+    background-color: black;
+}
+
+#contraste .button{
+    background-color: black;
+    color: var(--white);
+    border: 2px solid var(--purple-c);
+}
+
+#contraste .button:hover{
+    background-color: black;
 }
 
 @media (max-width: 1575px){
