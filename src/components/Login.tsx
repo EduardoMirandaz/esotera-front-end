@@ -4,7 +4,6 @@ import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import Cadastro from './Cadastro';
 import {Routes, Route, useNavigate} from 'react-router-dom';
-import { PrincipalLogado } from '../pages/PrincipalLogado';
 import { useAuthContext } from '../contexts/auth/AuthContext';
 import { IoClose } from "react-icons/io5";
 import { IconContext } from "react-icons";
@@ -20,7 +19,6 @@ export function Login({showModal, setShowModal}){
     const navigate = useNavigate();
 
     const logar = () => {
-        console.log("login digitado : " + loginDigitado)
       let userCadastrado = localStorage.getItem(loginDigitado);
       console.log(userCadastrado)
       if(userCadastrado){
@@ -75,7 +73,7 @@ export function Login({showModal, setShowModal}){
         ) : null}
         <Cadastro showModalCad={showModalCad} setShowModalCad={setShowModalCad} />
         <Routes>
-          <Route path="/PrincipalLogado" element={<PrincipalLogado />} />
+          <Route path="/"/>
         </Routes>
         </>
     )

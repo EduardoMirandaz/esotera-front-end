@@ -24,25 +24,25 @@ export function Footer(){
                         <h1>Informações</h1>
                         <ul>
                             <li>
-                                <a className={styles.links} id={contraste && styles.contraste} href="">Dúvidas Frequentes</a>
+                                <a className={styles.links} id={contraste && styles.contraste} href="#">Dúvidas Frequentes</a>
                             </li>
                             <li>
-                                <a className={styles.links} id={contraste && styles.contraste} href="">Política de Privacidade</a>
+                                <a className={styles.links} id={contraste && styles.contraste} href="#">Política de Privacidade</a>
                             </li>
                             <li>
-                                <a className={styles.links} id={contraste && styles.contraste} href="">Fale Conosco</a>
+                                <a className={styles.links} id={contraste && styles.contraste} href="#">Fale Conosco</a>
                             </li>
                         </ul>    
                     </section>
                 </div>
                 <div className={styles.redes}>
-                    <a href="">
+                    <a href="#">
                         <img className={styles.twitterImg} src={footerTwitter} alt="Ir para o Twiiter de Esotera" />
                     </a>
-                    <a href="">
+                    <a href="#">
                         <img className={styles.instagramImg} src={footerInstagram} alt="Ir para o Instagram de Esotera" />
                     </a>
-                    <a href="">
+                    <a href="#">
                         <img className={styles.facebookImg} src={footerFacebook} alt="Ir para o Facebook de Esotera" />
                     </a>
                 </div>
