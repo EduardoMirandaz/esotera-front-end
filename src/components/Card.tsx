@@ -6,18 +6,20 @@ import coracaoVazio from '../assets/coracaoVazio.svg'
 import coracaoCheioContraste from '../assets/coracaoCheioContraste.svg'
 import coracaoVazioContraste from '../assets/coracaoVazioContraste.svg'
 import { useAuthContext } from "../contexts/auth/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 interface Card {
   imagemPrincipal?: string;
   categoria?: string;
   titulo: string;
   valor:number;
+  idProduto:number;
 }
 
 export function Card(props:Card){
     const [isClick, setClick] = useState(false);
     const { contraste } = useAuthContext();
+    const newUrl = "/produto/"+props.idProduto
     return(
       <div className={styles.fundo} id={contraste && styles.contraste}>
         {props.imagemPrincipal &&
@@ -36,7 +38,7 @@ export function Card(props:Card){
         <h2 className={styles.valor} id={contraste && styles.contraste}>R${props.valor.toFixed(2)}</h2>
         <div className={styles.funcoes}>
           {/* <a href="/produto" className={styles.button} id={contraste && styles.contraste}>VER DETALHES</a> */}
-          <Link to="/produto" className={styles.button} id={contraste && styles.contraste}>VER DETALHES</Link>
+          <Link to={newUrl} className={styles.button} id={contraste && styles.contraste}>VER DETALHES</Link>
           <div className={styles.coracao}>
             
             {isClick && contraste &&

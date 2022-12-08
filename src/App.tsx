@@ -14,7 +14,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Principal carrosseis={carrosseis} produto={produto} filtro={filtro}/>}/>
                 <Route path="/principallogado" element={<PrincipalLogado carrosseis={carrosseis} produto={produto}/>}/>
-                <Route path="/produto" element={<Produto/>}/>
+                <Route path="/produto/:id" element={<Produto/>}/>
                 <Route path="/carrinho" element={<Carrinho produto={produto}/>}/>
             </Routes>
             <VLibras forceOnload={true}/>
