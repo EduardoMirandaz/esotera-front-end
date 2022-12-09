@@ -12,6 +12,7 @@ interface CardCompra {
   valor:number;
   idProduto: number;
   quantidadeProduto: number;
+  descricaoImg: string;
   atualizarQuantidade: (idProduto: number, quantidadeProduto: number) => void;
 }
 
@@ -44,7 +45,7 @@ export function CardCompra(props:CardCompra){
           <Link reloadDocument to={newUrl}>
             <div className={styles.boxImage}>
               {props.imagemPrincipal &&
-                  <img alt="Imagem do produto" className={styles.imagem} src={props.imagemPrincipal}/>
+                  <img alt={props.descricaoImg ? props.descricaoImg : "Descrição indisponível para a imagem"} className={styles.imagem} src={props.imagemPrincipal}/>
                 }
               {!props.imagemPrincipal &&
                   <img alt="Produto sem imagem disponível" className={styles.imagem} src={semImagem}/>

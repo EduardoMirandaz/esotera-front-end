@@ -17,6 +17,7 @@ export function ImagensProdutos(props) {
             key={i}
             src={item}
             className={i === index ? styles.selectedimage : styles.imagemPequena}
+            alt={props.descricaoImg ? props.descricaoImg : "Descrição da imagem indisponível"}
             onClick={() => {
               setIndex(i);
               setImage(imagens[i]);

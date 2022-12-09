@@ -14,6 +14,7 @@ interface Card {
   titulo: string;
   valor:number;
   idProduto:number;
+  descricaoImg?: string;
 }
 
 export function Card(props:Card){
@@ -25,10 +26,10 @@ export function Card(props:Card){
         <Link reloadDocument to={newUrl} onClick={() => {setModalLogout(false)}}>
 
           {props.imagemPrincipal &&
-              <img className={styles.imagem} src={props.imagemPrincipal} alt="Imagem do Produto"/>
+              <img className={styles.imagem} src={props.imagemPrincipal} alt={props.descricaoImg ? props.descricaoImg : "Descrição indisponível para a imagem"}/>
           }
           {!props.imagemPrincipal &&
-              <img className={styles.imagem} src={semImagem} alt="Imagem do Produto"/>
+              <img className={styles.imagem} src={semImagem} alt="Produto sem imagem"/>
           }
         </Link>
         {props.categoria &&
