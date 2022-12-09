@@ -58,7 +58,7 @@ export function Carrinho(props) {
     setValorItens(calcularValorItens());
   }
 
-  const valorFrete = 24.30
+  const valorFrete = getCarrinhoList() != 0 ? 24.30 : 0.00;
 
   const [valorItens, setValorItens] = useState(calcularValorItens())
 
