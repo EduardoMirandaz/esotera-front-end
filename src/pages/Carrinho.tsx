@@ -25,16 +25,16 @@ export function Carrinho(props) {
     openModalCompraRealizada();
   }
 
-    const openModal = () => {
-        setShowModal(prev => !prev);
-        setTimeout(closeModal, 20000);
-    }
+  const openModal = () => {
+      setShowModal(prev => !prev);
+      setTimeout(closeModal, 20000);
+  }
 
-    const [showModalCompraRealizada, setShowModalCompraRealizada] = useState(false)
+  const [showModalCompraRealizada, setShowModalCompraRealizada] = useState(false)
 
-    const openModalCompraRealizada = () => {
-        setShowModalCompraRealizada(prev => !prev)
-    }
+  const openModalCompraRealizada = () => {
+      setShowModalCompraRealizada(prev => !prev)
+  }
 
 
   const [carrinhoList, setCarrinhoList] = useState(getCarrinhoList())
