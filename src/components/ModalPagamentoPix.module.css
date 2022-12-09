@@ -75,6 +75,8 @@
     border-radius: 4px;
   }
 
+
+
 .copyButtonIconToCopy{
     width: 12px;
     display: inline-block;
@@ -102,4 +104,26 @@
 .qrCodeContainer {
     text-align: center;
     margin-bottom: 20px
+}
+
+.customModalContraste {
+    border-radius: 4px;
+    background: var(--black);
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+
+#contraste .mainText{
+    color: var(--white) ;
+    background: var(--black);
+}
+
+#contraste .texto{
+    color: var(--white) ;
+}
+
+#contraste .button{
+    background-color: black;
+    color: var(--white);
+    border: 2px solid var(--purple-c);
 }
