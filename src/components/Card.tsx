@@ -6,7 +6,7 @@ import coracaoVazio from '../assets/coracaoVazio.svg'
 import coracaoCheioContraste from '../assets/coracaoCheioContraste.svg'
 import coracaoVazioContraste from '../assets/coracaoVazioContraste.svg'
 import { useAuthContext } from "../contexts/auth/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 interface Card {
   imagemPrincipal?: string;
@@ -21,6 +21,13 @@ export function Card(props:Card){
     const [isClick, setClick] = useState(false);
     const { contraste, setModalLogout } = useAuthContext();
     const newUrl = "/produto/"+props.idProduto
+
+    const navigate = useNavigate();
+
+    const navigateToProduto = () => {
+      setModalLogout(false);
+      navigate(newUrl);
+  };
     return(
       <div className={styles.fundo} id={contraste && styles.contraste}>
         <Link reloadDocument to={newUrl} onClick={() => {setModalLogout(false)}}>
@@ -42,7 +49,13 @@ export function Card(props:Card){
         <h2 className={styles.valor} id={contraste && styles.contraste}>R${props.valor.toFixed(2)}</h2>
         <div className={styles.funcoes}>
   
-          <Link to={newUrl} className={styles.button} onClick={() => {setModalLogout(false)}} id={contraste && styles.contraste}>VER DETALHES</Link>
+        
+
+          <a href="#" className={styles.button} 
+            onClick={navigateToProduto} id={contraste && styles.contraste}
+          >
+            VER DETALHES
+          </a>
           <div className={styles.coracao}>
             
             {isClick && contraste &&
