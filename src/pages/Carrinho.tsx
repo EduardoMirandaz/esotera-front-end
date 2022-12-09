@@ -29,8 +29,8 @@ export function Carrinho(props) {
     const inputPix = document.getElementById("pix") as HTMLInputElement; 
     if(inputPix.checked){
       setShowModalPix(prev => !prev);
+      setTimeout(closeModal, 20000);
     }
-    setTimeout(closeModal, 20000);
   }
 
   const [showModalCompraRealizada, setShowModalCompraRealizada] = useState(false)
