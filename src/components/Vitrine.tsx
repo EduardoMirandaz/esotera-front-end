@@ -22,6 +22,7 @@ export function Vitrine(props){
                       valor={card.valor}
                       categoria={card.categoria}
                       idProduto={card.idProduto}
+                      descricaoImg={card.descricaoImg}
                     />
                 )
             })}

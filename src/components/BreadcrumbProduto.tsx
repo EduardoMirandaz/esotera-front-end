@@ -5,7 +5,7 @@ import { useAuthContext } from '../contexts/auth/AuthContext';
 
 export function BreadcrumbProduto(props) {
     const { contraste } = useAuthContext();
-    const pagina = props.pagina;
+
     return(
         <div className={styles.breadcrumb} id={contraste && styles.contraste}>
                 <Link to="/" className={styles.home}>Página Principal</Link>

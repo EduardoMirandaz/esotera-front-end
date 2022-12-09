@@ -6,7 +6,7 @@ import coracaoVazio from '../assets/coracaoVazio.svg'
 import coracaoCheioContraste from '../assets/coracaoCheioContraste.svg'
 import coracaoVazioContraste from '../assets/coracaoVazioContraste.svg'
 import { useAuthContext } from "../contexts/auth/AuthContext";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface Card {
   imagemPrincipal?: string;
@@ -14,6 +14,7 @@ interface Card {
   titulo: string;
   valor:number;
   idProduto:number;
+  descricaoImg?: string;
 }
 
 export function Card(props:Card){
@@ -25,10 +26,10 @@ export function Card(props:Card){
         <Link reloadDocument to={newUrl} onClick={() => {setModalLogout(false)}}>
 
           {props.imagemPrincipal &&
-              <img className={styles.imagem} src={props.imagemPrincipal} alt="Imagem do Produto"/>
+              <img className={styles.imagem} src={props.imagemPrincipal} alt={props.descricaoImg ? props.descricaoImg : "Descrição indisponível para a imagem"}/>
           }
           {!props.imagemPrincipal &&
-              <img className={styles.imagem} src={semImagem} alt="Imagem do Produto"/>
+              <img className={styles.imagem} src={semImagem} alt="Produto sem imagem"/>
           }
         </Link>
         {props.categoria &&
@@ -40,21 +41,21 @@ export function Card(props:Card){
         <h1 className={styles.titulo}>{props.titulo}</h1>
         <h2 className={styles.valor} id={contraste && styles.contraste}>R${props.valor.toFixed(2)}</h2>
         <div className={styles.funcoes}>
-          {/* <a href="/produto" className={styles.button} id={contraste && styles.contraste}>VER DETALHES</a> */}
+  
           <Link reloadDocument to={newUrl} className={styles.button} onClick={() => {setModalLogout(false)}} id={contraste && styles.contraste}>VER DETALHES</Link>
           <div className={styles.coracao}>
             
             {isClick && contraste &&
-              <img src={coracaoCheioContraste} isClick={isClick} onClick={() => setClick(!isClick)}/>
+              <img alt="Remover produto dos favoritos" src={coracaoCheioContraste} isClick={isClick} onClick={() => setClick(!isClick)}/>
             }
             {!isClick && contraste &&
-              <img src={coracaoVazioContraste} isClick={isClick} onClick={() => setClick(!isClick)}/>
+              <img alt="Adicionar produto aos favoritos" src={coracaoVazioContraste} isClick={isClick} onClick={() => setClick(!isClick)}/>
             }
             {isClick && !contraste &&
-              <img src={coracaoCheio} isClick={isClick} onClick={() => setClick(!isClick)}/>
+              <img alt="Remover produto dos favoritos" src={coracaoCheio} isClick={isClick} onClick={() => setClick(!isClick)}/>
             }
             {!isClick && !contraste &&
-              <img src={coracaoVazio} isClick={isClick} onClick={() => setClick(!isClick)}/>
+              <img alt="Adicionar produto aos favoritos" src={coracaoVazio} isClick={isClick} onClick={() => setClick(!isClick)}/>
             }
           </div>
         </div>

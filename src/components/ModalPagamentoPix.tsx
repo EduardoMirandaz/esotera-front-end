@@ -37,7 +37,7 @@ export function ModalPagamentoPix({showModal, setShowModal}){
         <>
         {showModal ? (
         <IconContext.Provider value={{ color: contraste ? "white" : "#11002B", size: "2em"}}>
-            <Modal open={showModal} onClose={() => {setShowModal(prev => !prev)}} showModal={showModal} classNames={{ modal: contraste ? styles.customModalContraste : styles.customModal }}  center closeIcon={<IoClose />}>
+            <Modal open={showModal} onClose={() => {setShowModal(prev => !prev)}} showModal={showModal} classNames={{ modal: contraste ? styles.customModalContraste : styles.customModal }}  center closeIcon={<IoClose aria-labelledby="Fechar tela de pagar com PIX"/>}>
                 <div className={styles.modalBody} id={contraste && styles.contraste}>
                     <div className={styles.modalHeader}>
                         <h2 className={styles.texto}>Pix</h2>

@@ -39,7 +39,6 @@
 
 .enderecoEntrega input{
     flex-grow: 1;
-    /* 50% 50% pros inputs com tamanhos não especificados abaixo */
 }
 
 input#logradouro{
@@ -71,11 +70,6 @@ input#complemento{
     color: var(--white);
     border-color: var(--white);
 }
-/* @media (max-width: 1500px){
-    .containerFormulario{
-        width: 600px;
-    }    
-} */
 
 @media (max-width: 650px){
     .containerFormulario{
@@ -88,7 +82,6 @@ input#complemento{
 
     .enderecoEntrega input{
         flex-grow: 1;
-        /* 50% 50% pros inputs com tamanhos não especificados abaixo */
     }
     
     .formulario input{

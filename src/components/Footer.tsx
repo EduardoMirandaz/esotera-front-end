@@ -17,7 +17,7 @@ export function Footer(){
                 <div className={styles.container} id={contraste && styles.contraste}>
                     
                     <section className={styles.marca}>
-                        <img className={styles.logo} src={footerLogo} alt="Logo" />
+                        <img className={styles.logo} src={footerLogo} alt="Logo da Esotera" />
                         <p className={styles.info} id={contraste && styles.contraste} >A Esotera é um site de venda de produtos esotéricos desenvolvido em 2022 por um grupo de  alunos do ICMC.</p>
                     </section>
                     <section className={styles.informacoes} id={contraste && styles.contraste}>

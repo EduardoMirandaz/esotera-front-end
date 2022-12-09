@@ -26,7 +26,7 @@ export function MenuLogout() {
         <div className={styles.wrapper}>
             <div className={styles.caixaInternaDoLogout} id={contraste && styles.contraste}>
                 <p className={styles.desejaSair}>Deseja sair da conta?</p>
-                <button type="button" onClick={deslogar} className={styles.botaoSair}>SAIR</button>
+                <button type="button" onClick={deslogar} className={styles.botaoSair} aria-label="Sair da conta">SAIR</button>
             </div>
         </div>
             <div className={styles.setaDaCaixaInternaDoLogout}>

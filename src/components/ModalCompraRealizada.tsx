@@ -1,5 +1,5 @@
 import styles from './ModalCompraRealizada.module.css';
-import React, { useState } from 'react';
+import React from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import { useAuthContext } from '../contexts/auth/AuthContext';
@@ -25,11 +25,11 @@ export function ModalCompraRealizada({showModal, setShowModal}){
         <>
         {showModal ? (
         <IconContext.Provider value={{ color: contraste ? "white" : "#11002B", size: "2em"}}>
-            <Modal open={showModal} onClose={fechaModalVaiPraHome} showModal={showModal} classNames={{ modal: contraste ? styles.customModalContraste : styles.customModal  }}  center closeIcon={<IoClose />}>
+            <Modal open={showModal} onClose={fechaModalVaiPraHome} showModal={showModal} classNames={{ modal: contraste ? styles.customModalContraste : styles.customModal  }}  center closeIcon={<IoClose aria-labelledby="Fechar tela de compra realizada e voltar para a página inicial"/>}>
                 <div className={styles.modalBody}>
-                    <div className={styles.icon}>
+                    <div className={styles.icon} >
                         <IconContext.Provider value={{ color: contraste ? "white" : "#37833B", size: "4em"}}>
-                            <BsCheckCircle />
+                            <BsCheckCircle aria-labelledby="ícone de confirmação"/>
                         </IconContext.Provider>
                     </div>
                     <div className={styles.text}>

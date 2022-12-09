@@ -31,7 +31,7 @@ export function Login({showModal, setShowModal}){
         <>
         {showModal ? (
         <IconContext.Provider value={{ color: contraste ? "white" : "#11002B", size: "2em"}}>
-            <Modal open={showModal} onClose={() => {setShowModal(prev => !prev)}} showModal={showModal} classNames={{ modal: contraste ? styles.customModalContraste : styles.customModal }}  center closeIcon={<IoClose />}>
+            <Modal open={showModal} onClose={() => {setShowModal(prev => !prev)}} showModal={showModal} classNames={{ modal: contraste ? styles.customModalContraste : styles.customModal }}  center closeIcon={<IoClose aria-labelledby="Fechar tela de entrar na conta" />}>
                 <div className={styles.modalBody} id={contraste && styles.contraste}>
                     <div className={styles.modalHeader}>
                         <h2>Entrar</h2>
@@ -58,10 +58,10 @@ export function Login({showModal, setShowModal}){
                             <hr/>
                         </div>
                         <div className={styles.socialNetworkWrapper}>
-                            <button className={styles.socialNetworkButton} type="button">
+                            <button className={styles.socialNetworkButton} type="button" aria-label="Entrar com o Facebook">
                                 <span className={styles.socialButtonIconFacebook}>&nbsp;</span>Facebook
                             </button>
-                            <button type="button" className={styles.socialNetworkButton}>
+                            <button type="button" className={styles.socialNetworkButton} aria-label="Entrar com o Google">
                                 <span className={styles.socialButtonIconGoogle}>&nbsp;</span>Google
                             </button>
                         </div>
