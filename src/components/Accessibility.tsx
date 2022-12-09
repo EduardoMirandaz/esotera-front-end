@@ -12,7 +12,7 @@ export function Accessibility(){
     const aumentarFonte = () => {
         var tamanho = document.querySelector(':root').style.fontSize; 
         document.querySelector(':root').style.fontSize = 
-            (tamanho < "18px") ?  "18px" : "20px";
+            (tamanho < "18px") ?  "18px" : "22px";
     }
 
     const diminuirFonte = () => {
