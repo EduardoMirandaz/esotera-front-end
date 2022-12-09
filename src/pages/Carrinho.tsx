@@ -14,6 +14,7 @@ import cartao from "../assets/cartao.svg"
 import {BreadcrumbProduto} from '../components/BreadcrumbProduto'
 import { useAuthContext } from '../contexts/auth/AuthContext';
 import { ModalCompraRealizada } from '../components/ModalCompraRealizada';
+import { Link } from 'react-router-dom';
 
 export function Carrinho(props) {
   const { contraste, getCarrinhoList } = useAuthContext();
@@ -113,12 +114,12 @@ export function Carrinho(props) {
             })
             }
             <div className={styles.buttonsCards}>
-              <a href="" className={styles.buttonContinue}>
+              <div className={styles.buttonRemove}>
+                  Limpar carrinho
+              </div>
+              <Link to={"/"} className={styles.buttonContinue}>
                 Continuar comprando
-              </a>
-              <a href="" className={styles.buttonRemove}>
-                Remover itens
-              </a>
+              </Link>
             </div>
           </div>
           <div className={styles.totalCompra}>

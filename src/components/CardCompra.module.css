@@ -1,3 +1,15 @@
+.excluir{
+    position: absolute;
+    margin-left: 430px;
+    margin-top: 10px;
+    background-color: var(--white);
+    height: 1.5rem;
+    border-radius: 50%;
+}
+
+#contraste.excluir{
+    background-color: black;
+}
 
 .fundo{
     display: flex;
@@ -20,7 +32,7 @@
     height: 46px;
     font-size: 20px;
     font-weight: normal;
-    margin-top: 30px;
+    margin-top: 40px;
     padding: 0 15px;
     text-align: center;
     overflow: hidden; 
@@ -31,7 +43,7 @@
 }
 
 .valor{
-    margin-top: 15px;
+    margin-top: 10px;
     padding: 0 15px;
     font-size: 24px;
     color: var(--purple-800);
@@ -93,10 +105,7 @@
     border: 1px solid var(--white);
 }
 
-#contraste .imagem{
-    height: 168px;
-    width: 168px;
-}
+
 
 #contraste .valor{
     color: var(--white);
@@ -127,12 +136,16 @@
     .imagem{
         height: 125px;
         width: 100%;
-        border-radius: 10px;
         object-fit: cover;
     }
 
     .descricao{
         margin-top: 15px;
+    }
+
+    .excluir{
+        margin-left: 205px;
+        margin-top: 10px;
     }
 }
 

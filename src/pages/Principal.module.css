@@ -1,7 +1,23 @@
+.filtro{
+  display: none;
+}
 
 @media (max-width: 760px){
   .carrossel{
     display: none;
   }
+
+  .filtro{
+    display: block;
+    text-align: center;
+    padding-top: 30px;
+    color: var(--purple-700);
+  }
+
+  #contraste.filtro{
+    background-color: black;
+    color: var(--white);
+  }
+
 }
 

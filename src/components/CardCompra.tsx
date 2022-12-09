@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styles from './CardCompra.module.css'
 import semImagem from '../assets/semImagem.svg'
 import { useAuthContext } from '../contexts/auth/AuthContext';
+import { IoClose } from "react-icons/io5";
+import { IconContext } from "react-icons";
 
 interface CardCompra {
   imagemPrincipal?: string;
@@ -35,26 +37,31 @@ export function CardCompra(props:CardCompra){
 
     return(
       <div id={contraste && styles.contraste}>
-      <div className={styles.fundo} >
-        <div className={styles.boxImage}>
-          {props.imagemPrincipal &&
-              <img className={styles.imagem} src={props.imagemPrincipal}/>
-          }
-          {!props.imagemPrincipal &&
-              <img className={styles.imagem} src={semImagem}/>
-          }
-        </div>
-        <div className={styles.informacoes}>
-          <h1 className={styles.titulo}>{props.titulo}</h1>
-          <h2 className={styles.valor}>R${props.valor.toFixed(2)}</h2>
-          <div className={styles.contador}>
-            <button className={styles.decrementar} onClick={decrementar}>−</button>
-            <h1>{contador}</h1>
-            <button className={styles.incrementar} onClick={incrementar}>+</button>
-          </div>
-        </div>
-        
-      </div> 
+        <IconContext.Provider value={{ color: contraste ? "white" : "#11002B", size: "1.5em"}}>
+          <div className={styles.fundo} >
+            <div className={styles.boxImage}>
+              {props.imagemPrincipal &&
+                  <img className={styles.imagem} src={props.imagemPrincipal}/>
+                }
+              {!props.imagemPrincipal &&
+                  <img className={styles.imagem} src={semImagem}/>
+                }
+            </div>
+            <div  id={contraste && styles.contraste} className={styles.excluir}>
+              <IoClose/>
+            </div>
+            <div className={styles.informacoes}>
+              <h1 className={styles.titulo}>{props.titulo}</h1>
+              <h2 className={styles.valor}>R${props.valor.toFixed(2)}</h2>
+              <div className={styles.contador}>
+                <button className={styles.decrementar} onClick={decrementar}>−</button>
+                <h1>{contador}</h1>
+                <button className={styles.incrementar} onClick={incrementar}>+</button>
+              </div>
+            </div>
+            
+          </div> 
+        </IconContext.Provider>
       </div>
     )
 }
