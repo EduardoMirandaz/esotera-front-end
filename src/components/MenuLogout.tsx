@@ -19,7 +19,8 @@ export function MenuLogout() {
     const deslogar = () => {
         setModalLogout(prev => !prev);
         localStorage.removeItem("username");
-        localStorage.setItem("carrinho", "[]"); setCarrinhoList([]);
+        localStorage.setItem("carrinho", "[]"); 
+        setCarrinhoList([]);
         navigateToPrincipal();
     }
 
