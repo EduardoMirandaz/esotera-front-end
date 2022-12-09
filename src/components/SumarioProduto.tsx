@@ -8,10 +8,11 @@ import coracaoCheio from '../assets/coracaoCheio.svg'
 import coracaoVazio from '../assets/coracaoVazio.svg'
 import coracaoCheioContraste from '../assets/coracaoCheioContraste.svg'
 import coracaoVazioContraste from '../assets/coracaoVazioContraste.svg'
+import { ModalPrecisaLogar } from '../components/ModalPrecisaLogar';
 
 export function SumarioProduto(props){
     const [contador, setCount] = useState(1); 
- 
+    const [nome, setNome] = useState("");
     const { contraste, getCarrinhoList, setQtdItensCarrinho, qtdItensCarrinho } = useAuthContext();
     let temEstoque = produto[props.idProduto].qtdEmEstoque>0;
   
@@ -58,9 +59,16 @@ export function SumarioProduto(props){
 
       setQtdItensCarrinho(carrinhoList.length);
     }
+
+    const [showModalPrecisaLogar, setShowModalPrecisaLogar] = useState(false)
+
+
     const [onClickBtnAddItem, setOnClickBtnAddItem] = useState(() => {
-      if(inCarrinho || !temEstoque){
+      if(inCarrinho || !temEstoque ){
         return () => {};
+      }
+      else if(!nome){
+        return () => {setShowModalPrecisaLogar(prev => !prev)};
       }
       else{
         return addItemCarrinho;
@@ -68,6 +76,8 @@ export function SumarioProduto(props){
     });
 
     const [imgBtnAddItem, setImgBtnAddItem] = useState(inCarrinho ? checkIcon : carrinho);
+
+    
 
     return(
         <div className={styles.containerSumario} id={contraste && styles.contraste}>
@@ -167,6 +177,8 @@ export function SumarioProduto(props){
                   }
                 </button>
             </div>
+            <ModalPrecisaLogar showModal={showModalPrecisaLogar} setShowModal={setShowModalPrecisaLogar} />
         </div>
+        
     )
 }

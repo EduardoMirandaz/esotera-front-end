@@ -1,0 +1,59 @@
+.customModal{
+    border-radius: 4px;
+    max-width: 350px;
+}
+
+.customModalContraste{
+    max-width: 350px;
+    border-radius: 4px;
+    background: var(--black);
+    color: var(--white);
+    border: 1px solid white;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 0 16px 0;   
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0;  
+    text-align: center;
+}
+
+.button{
+    font-size: 0.875rem;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    display: inline-block;
+    background-color: var(--purple-600);
+    border-radius: 4px;
+    width: 100%;
+    padding: 0.75em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white);
+    transition: 0.2s;
+    cursor: pointer;
+    border: none;
+}
+
+.button:hover{
+    background-color: var(--purple-500);
+}
+
+#contraste .button{
+    background-color: black;
+    color: var(--white);
+    border: 2px solid var(--purple-c);
+}

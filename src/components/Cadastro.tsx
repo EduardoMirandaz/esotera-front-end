@@ -82,7 +82,7 @@ export function Cadastro({showModalCad, setShowModalCad}){
                                 minLength={8}
                             />
                         </div>
-                        <input type="submit" className={styles.button} value="CADASTRAR"/>
+                        <input type="submit" className={styles.button} aria-label="botão cadastrar" value="CADASTRAR"/>
                         <div className={styles.divider}>
                             <span role="text" className={styles.dividerSpan} aria-label="Ou cadastre-se com uma dessas opções">ou cadastre-se com</span>
                             <hr/>
