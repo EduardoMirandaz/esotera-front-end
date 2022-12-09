@@ -113,7 +113,7 @@ export function SumarioProduto(props){
                         return {};
                       }
                     })()} onClick={temEstoque ? decrementar : () => {}} id={contraste && styles.contraste}>−</button>
-                    <h1 className={styles.quantidade} id={contraste && styles.contraste}>{contador}</h1>
+                    <input type="number" className={styles.quantidade} id={contraste && styles.contraste} value={contador} defaultValue={1} onChange={(e)=>{if(e.target.value != "0" && e.target.value != "")setCount(parseInt(e.target.value))}}/>
                     <button className={styles.incrementar} style={(() => {
                       if(!temEstoque){
                         return {

@@ -16,7 +16,8 @@
 
 .subCategorias{
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
+    gap: 15px;
     align-items: center;
 }
 
@@ -109,8 +110,8 @@
 
 .botoesProduto{
     display: flex;
-    justify-content: space-between;
-    gap: 14px;
+    justify-content: left;
+    gap: 20px;
 }
 
 .contador{
@@ -120,11 +121,13 @@
     gap: 14px;
 }
 
-.contador h1{
+.contador input{
     color: var(--purple-800);
     font-size: 1.688rem;
     text-align: center;
     font-weight: lighter;
+    border: none;
+    width: 50px;
 }
 
 .decrementar{
@@ -243,8 +246,14 @@
         -webkit-line-clamp: unset;
     }
 
+    .titulo{
+        text-align: center;
+    }
+
     .subCategorias{
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
 
     .botoesProduto{
