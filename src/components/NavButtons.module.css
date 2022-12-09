@@ -91,10 +91,10 @@
 
 .botoes .botaoPromoSelecionado {
     background-color: var(--purple-800);
-    border-width: 0 0 2px 0;
+    border-width: 0 0 4px 0;
     border-color: var(--white);
     border-style: solid;
-    margin-bottom: 8px;
+    padding-bottom: 8px;
     width: 160px;
 }
 
