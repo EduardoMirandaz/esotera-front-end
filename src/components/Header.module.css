@@ -94,6 +94,7 @@
 .coracaoImg{
     height: 32px;
     margin-left: 16px;
+    margin-top: 5px;
 }
 
 
@@ -294,8 +295,9 @@
     }
     
     .coracaoImg{
-        height: 26px;
-        margin-left: 6px;
+        height: 24px;
+        margin-left: 10px;
+        
     }
 }
 

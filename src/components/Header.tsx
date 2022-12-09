@@ -77,10 +77,10 @@ export function Header(props) {
                     <div className={styles.funcoes}>
                         {
                             contraste &&
-                            <div className={styles.pesquisa} id={contraste && styles.contraste}>
+                            <form className={styles.pesquisa} id={contraste && styles.contraste}>
                                 <input className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste} />
                                 <img src={headerLupaContraste} alt="Buscar item" />
-                            </div>
+                            </form>
                         }
                         {
                             !contraste &&
