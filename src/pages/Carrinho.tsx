@@ -24,21 +24,21 @@ export function Carrinho(props) {
     setShowModal(false);
     openModalCompraRealizada();
   }
-
+  
   const openModal = () => {
-      setShowModal(prev => !prev);
-      setTimeout(closeModal, 20000);
+    setShowModal(prev => !prev);
+    setTimeout(closeModal, 20000);
   }
-
+  
   const [showModalCompraRealizada, setShowModalCompraRealizada] = useState(false)
-
+  
   const openModalCompraRealizada = () => {
-      setShowModalCompraRealizada(prev => !prev)
+    setShowModalCompraRealizada(prev => !prev)
   }
-
-
+  
+  
   const [carrinhoList, setCarrinhoList] = useState(getCarrinhoList())
-
+  
   const atualizarQuantidadeCard = (idProduto, quantidadeProduto) => {
     let carrinhoListTmp = carrinhoList;
     for(let i = 0; i < carrinhoListTmp.length; i++){
@@ -52,16 +52,16 @@ export function Carrinho(props) {
         break;
       }
     }
-
+    
     setCarrinhoList(carrinhoListTmp);
     localStorage.setItem("carrinho", JSON.stringify(carrinhoListTmp));
     setValorItens(calcularValorItens());
   }
-
+  
   const valorFrete = 24.30
-
+  
   const [valorItens, setValorItens] = useState(calcularValorItens())
-
+  
   function calcularValorItens(){
     const carrinhoListTmp = getCarrinhoList();
     const soma = carrinhoListTmp.reduce(
@@ -70,13 +70,18 @@ export function Carrinho(props) {
           produto => produto.idProduto == currProduto.idProduto
           ).valor
         }, 0
-    );
+        );
+        
+        return soma;
+      }
+      
+      const [finalizarCompra, setFinalizarCompra] = useState(carrinhoList.length != 0)
 
-    return soma;
-  }
 
-  return (
-    <>
+
+
+      return (
+        <>
       <Header isPrincipal={false}/>
       <div className={contraste && styles.background}>
       <BreadcrumbProduto pagina='Carrinho'/>
@@ -138,17 +143,28 @@ export function Carrinho(props) {
             </div>
             <div className={styles.valorFreteBox}>
               <h4 className={styles.valorFreteLabel}>valor do frete</h4>
-              <h3 className={styles.valorFrete}>R$ {valorFrete.toFixed(2)}</h3>
+              <h3 className={styles.valorFrete}>R$ {(valorFrete*(carrinhoList.length != 0)).toFixed(2)}</h3>
             </div>
             <div className={styles.valorTotalBox}>
               <h4 className={styles.valorTotalLabel}>valor total</h4>
-              <h3 className={styles.valorTotal}>R$ {(valorItens+valorFrete).toFixed(2)}</h3>
+              <h3 className={styles.valorTotal}>R$ {(valorItens+(valorFrete*(carrinhoList.length != 0))).toFixed(2)}</h3>
             </div>
           </div>
-          <a href="#" onClick={openModal} className={styles.button}>
-            Finalizar a compra
-            <img className={styles.cartao} src={cartao} />
-          </a>
+          {
+            !finalizarCompra &&
+            <div className={styles.button} id={styles.bloqueado}>
+              Finalizar a compra
+              <img className={styles.cartao} src={cartao} />
+            </div>
+          }
+          {
+            finalizarCompra &&
+            <a href="#" onClick={openModal} className={styles.button} id={styles.liberado}>
+              Finalizar a compra
+              <img className={styles.cartao} src={cartao} />
+            </a>
+          }
+          
         </div>
       </div>
       </div>
