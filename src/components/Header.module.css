@@ -98,6 +98,7 @@
 .coracaoImg{
     height: 32px;
     margin-left: 16px;
+    margin-top: 5px;
 }
 
 
@@ -196,6 +197,10 @@
 
 @media (max-width: 760px){
 
+    .topHeader{
+        height: 55px;
+    }
+
     .logo{
         padding: 0 1rem;
         height: auto;
@@ -248,7 +253,7 @@
         display: flex;
         align-items: center;
         position: fixed;
-        top: 85px;
+        top: 55px;
         flex-flow: column nowrap;
 
     }
@@ -294,8 +299,9 @@
     }
     
     .coracaoImg{
-        height: 26px;
-        margin-left: 6px;
+        height: 24px;
+        margin-left: 10px;
+        
     }
 }
 

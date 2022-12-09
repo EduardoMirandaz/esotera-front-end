@@ -13,24 +13,31 @@ import ModalPagamentoPix from '../components/ModalPagamentoPix';
 import cartao from "../assets/cartao.svg"
 import {BreadcrumbProduto} from '../components/BreadcrumbProduto'
 import { useAuthContext } from '../contexts/auth/AuthContext';
+import { ModalCompraRealizada } from '../components/ModalCompraRealizada';
+import { Link } from 'react-router-dom';
 
 export function Carrinho(props) {
+  const { contraste, getCarrinhoList } = useAuthContext();
+
   const [showModal, setShowModal] = useState(false)
-  const openModal = () => {
-      setShowModal(prev => !prev)
+  const closeModal = () => {
+    setShowModal(false);
+    openModalCompraRealizada();
   }
 
+    const openModal = () => {
+        setShowModal(prev => !prev);
+        /*setTimeout(closeModal, 20000);*/
+    }
+
+    const [showModalCompraRealizada, setShowModalCompraRealizada] = useState(false)
+
+    const openModalCompraRealizada = () => {
+        setShowModalCompraRealizada(prev => !prev)
+    }
+
+
   const [carrinhoList, setCarrinhoList] = useState(getCarrinhoList())
-  function getCarrinhoList(){
-    const carrinhoJSON = localStorage.getItem("carrinho");
-    const carrinhoList = JSON.parse(carrinhoJSON);
-    if(carrinhoList == null){
-      return [];
-    }
-    else{
-      return carrinhoList;
-    }
-  }
 
   const atualizarQuantidadeCard = (idProduto, quantidadeProduto) => {
     let carrinhoListTmp = carrinhoList;
@@ -63,7 +70,6 @@ export function Carrinho(props) {
     return soma;
   }
 
-  const { contraste } = useAuthContext();
   return (
     <>
       <Header isPrincipal={false}/>
@@ -108,12 +114,12 @@ export function Carrinho(props) {
             })
             }
             <div className={styles.buttonsCards}>
-              <a href="" className={styles.buttonContinue}>
+              <div className={styles.buttonRemove}>
+                  Limpar carrinho
+              </div>
+              <Link to={"/"} className={styles.buttonContinue}>
                 Continuar comprando
-              </a>
-              <a href="" className={styles.buttonRemove}>
-                Remover itens
-              </a>
+              </Link>
             </div>
           </div>
           <div className={styles.totalCompra}>
@@ -139,6 +145,7 @@ export function Carrinho(props) {
       </div>
       </div>
       <ModalPagamentoPix showModal={showModal} setShowModal={setShowModal} />
+      <ModalCompraRealizada showModal={showModalCompraRealizada} setShowModal={setShowModalCompraRealizada} />
       <Accessibility />
       <Footer />
     </>

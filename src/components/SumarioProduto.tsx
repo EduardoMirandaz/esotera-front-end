@@ -3,6 +3,7 @@ import styles from './SumarioProduto.module.css'
 import estrela from '../assets/star.svg'
 import meiaEstrela from '../assets/star-half.svg'
 import carrinho from '../assets/carrinho.svg'
+import checkIcon from '../assets/check.png'
 import map from '../assets/mapa.svg'
 import mapContraste from '../assets/mapaContraste.svg'
 import { produto } from '../data.json'
@@ -15,7 +16,7 @@ import coracaoVazioContraste from '../assets/coracaoVazioContraste.svg'
 export function SumarioProduto(props){
     const [contador, setCount] = useState(1); 
     // useState returns a pair. 'count' is the current state. 'setCount' is a function we can use to update the state.
-    const { contraste } = useAuthContext();
+    const { contraste, getCarrinhoList, setQtdItensCarrinho, qtdItensCarrinho } = useAuthContext();
     let temEstoque = produto[props.idProduto].qtdEmEstoque>0;
   
     function incrementar() {
@@ -36,6 +37,42 @@ export function SumarioProduto(props){
         }
       });
     }
+
+    let inCarrinho = getCarrinhoList().find(
+        produto => produto.idProduto == props.idProduto
+      ) != undefined;
+
+    const textosBtnAddItem = {
+      'inCarrinho': "Item no carrinho!",
+      'notInCarrinho': "Adicionar ao carrinho"
+    };
+    const [textoBtnAddItem, setTextoBtnAddItem] = useState(inCarrinho ? textosBtnAddItem.inCarrinho : textosBtnAddItem.notInCarrinho);
+
+    function addItemCarrinho(idProduto, quantidadeProduto){
+      const carrinhoList = getCarrinhoList();
+
+      carrinhoList.push({"idProduto": idProduto, "quantidade": quantidadeProduto});
+
+      const carrinhoJSON = JSON.stringify(carrinhoList);
+      localStorage.setItem("carrinho", carrinhoJSON);
+
+      setOnClickBtnAddItem(() => () => {});
+      setTextoBtnAddItem(textosBtnAddItem.inCarrinho);
+      setImgBtnAddItem(checkIcon);
+
+      setQtdItensCarrinho(qtdItensCarrinho+1);
+    }
+    const [onClickBtnAddItem, setOnClickBtnAddItem] = useState(() => {
+      if(inCarrinho || !temEstoque){
+        return () => {};
+      }
+      else{
+        return addItemCarrinho;
+      }
+    });
+
+    const [imgBtnAddItem, setImgBtnAddItem] = useState(inCarrinho ? checkIcon : carrinho);
+
     return(
         <div className={styles.containerSumario} id={contraste && styles.contraste}>
             <h1 className={styles.titulo}>{produto[props.idProduto].titulo}</h1>
@@ -55,13 +92,72 @@ export function SumarioProduto(props){
             </div>
             <p className={styles.texto}>{produto[props.idProduto].descricaoDetalhadaMenor}</p>
             <div className={styles.botoesProduto}>
-                <div className={styles.contador}>
-                    <button className={styles.decrementar} onClick={decrementar} id={contraste && styles.contraste}>−</button>
+                <div className={styles.contador} 
+                  style={(() => {
+                    if(!temEstoque){
+                      return {
+                        cursor: "not-allowed",
+                        opacity: 0.6,
+                      };
+                    }
+                    else if(inCarrinho){
+                      return {display: "none"};
+                    }
+                    else{
+                      return {};
+                    }
+                  })()}>
+                    <button className={styles.decrementar} style={(() => {
+                      if(!temEstoque){
+                        return {
+                          cursor: "not-allowed"
+                        };
+                      }
+                      else{
+                        return {};
+                      }
+                    })()} onClick={temEstoque ? decrementar : () => {}} id={contraste && styles.contraste}>−</button>
                     <h1 className={styles.quantidade} id={contraste && styles.contraste}>{contador}</h1>
-                    <button className={styles.incrementar} onClick={incrementar} id={contraste && styles.contraste}>+</button>
+                    <button className={styles.incrementar} style={(() => {
+                      if(!temEstoque){
+                        return {
+                          cursor: "not-allowed"
+                        };
+                      }
+                      else{
+                        return {};
+                      }
+                    })()} onClick={temEstoque ? incrementar : () => {}} id={contraste && styles.contraste}>+</button>
                 </div> 
-                <button className={styles.botaoCarrinho} id={contraste && styles.contraste}>Adicionar ao carrinho<img src={carrinho} alt="Adicionar ao carrinho"/></button>
-                <button className={styles.botaoFrete} id={contraste && styles.contraste}>Calcular o frete
+                <button 
+                  onClick={() => {
+                    onClickBtnAddItem(props.idProduto, contador)
+                  }} 
+                  className={styles.botaoCarrinho} 
+                  id={contraste && styles.contraste}
+                  style={(() => {
+                    if(!temEstoque){
+                      return {
+                        cursor: "not-allowed",
+                        opacity: 0.6,
+                      };
+                    }
+                    else if(inCarrinho){
+                      return {cursor: "default"};
+                    }
+                    else{
+                      return {cursor: "pointer"};
+                    }
+                  })()}
+                  >
+                    {textoBtnAddItem}
+                  <img 
+                    src={imgBtnAddItem} 
+                    alt={textoBtnAddItem}
+                  />
+                </button>
+                {/*
+                  <button className={styles.botaoFrete} id={contraste && styles.contraste}>Calcular o frete
                   {
                     contraste &&
                     <img src={mapContraste} alt="Calcular o frete"/>
@@ -71,6 +167,7 @@ export function SumarioProduto(props){
                     <img src={map} alt="Calcular o frete"/>
                   }
                 </button>
+                */}
                 <button className={styles.botaoFavorito} id={contraste && styles.contraste} onClick={() => setClick(!isClick)}>
                   {isClick && contraste &&
                     <img src={coracaoCheioContraste}/>

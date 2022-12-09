@@ -15,6 +15,7 @@ export function ConfiraTambemProduto(props){
                 imagemPrincipal={card.imagemPrincipal}
                 valor={card.valor}
                 categoria={card.categoria}
+                idProduto={card.idProduto}
               />
             )
           })}

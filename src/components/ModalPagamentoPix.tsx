@@ -2,12 +2,13 @@ import styles from './ModalPagamentoPix.module.css';
 import React, { useState } from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
-
+import { useAuthContext } from '../contexts/auth/AuthContext';
+import { IoClose } from "react-icons/io5";
+import { IconContext } from "react-icons";
 import qrCode from '../assets/QRCodePix.png'
 
 export function ModalPagamentoPix({showModal, setShowModal}){
     const codPix = '00020126580014BR.GOV.BCB.PIX01362f5104fa-bc8f-4018-827c-f44423fbf5da520400005303986540543.005802BR5925Joao Pedro Ribeiro da Sil6009SAO PAULO61080540900062070503***6304AF63';
-
 
     const btnCopyBeforeText = "Copiar código do QR Code";
     const btnCopyAfterText = "Código copiado";
@@ -15,6 +16,7 @@ export function ModalPagamentoPix({showModal, setShowModal}){
     const btnCopyBeforeIcon = styles.copyButtonIconToCopy;
     const btnCopyAfterIcon = styles.copyButtonIconCopied;
 
+    const { contraste } = useAuthContext();
 
     const [btnCopyText, setBtnCopyText] = useState(btnCopyBeforeText);
     const [btnCopyIcon, setBtnCopyIcon] = useState(btnCopyBeforeIcon);
@@ -30,14 +32,16 @@ export function ModalPagamentoPix({showModal, setShowModal}){
         }, 2000);
     }
 
+
     return(
         <>
         {showModal ? (
-            <Modal open={showModal} onClose={() => {setShowModal(prev => !prev)}} showModal={showModal} classNames={{ modal: styles.customModal }}  center>
-                <div className={styles.modalBody}>
+        <IconContext.Provider value={{ color: contraste ? "white" : "#11002B", size: "2em"}}>
+            <Modal open={showModal} onClose={() => {setShowModal(prev => !prev)}} showModal={showModal} classNames={{ modal: contraste ? styles.customModalContraste : styles.customModal }}  center closeIcon={<IoClose />}>
+                <div className={styles.modalBody} id={contraste && styles.contraste}>
                     <div className={styles.modalHeader}>
-                        <h2>Pix</h2>
-                        <span role="text">Escaneie o <span lang='en'>QR Code</span> abaixo para prosseguir com o pagamento via Pix</span>
+                        <h2 className={styles.texto}>Pix</h2>
+                        <span className={styles.texto} role="text">Escaneie o <span className={styles.texto} lang='en'>QR Code</span> abaixo para prosseguir com o pagamento via Pix</span>
                     </div>
                     <div>
                         <div className={styles.qrCodeContainer}>
@@ -54,7 +58,7 @@ export function ModalPagamentoPix({showModal, setShowModal}){
                 </div>
                 
             </Modal>
-            
+        </IconContext.Provider>
         ) : null}
         </>
     )

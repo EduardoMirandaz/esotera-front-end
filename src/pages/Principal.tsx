@@ -4,17 +4,17 @@ import { Accessibility } from "../components/Accessibility";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Vitrine } from "../components/Vitrine";
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './Principal.module.css'
 import { useAuthContext } from "../contexts/auth/AuthContext";
 
 export function Principal(props){
   let cards = props.produto 
 
-  const { filtro } = useAuthContext();
+  const { filtro, contraste } = useAuthContext();
 
   if(filtro){
-    if(filtro == "promocao"){
+    if(filtro == "Promoções"){
       cards = cards.filter((card) => card.isPromocao)
     }
     else{
@@ -39,7 +39,14 @@ export function Principal(props){
               </Carousel>
             </div>
           }
-
+        {
+          filtro &&
+          <h1 className={styles.filtro} id={contraste && styles.contraste}>{filtro}</h1>
+        }
+        {
+          !filtro &&
+          <h1 className={styles.filtro} id={contraste && styles.contraste}>Página Inicial</h1>
+}
         <Vitrine data={cards}/>
         <Accessibility/>
         <Footer/>

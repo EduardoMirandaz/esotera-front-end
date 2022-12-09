@@ -24,7 +24,7 @@ export function Header(props) {
         setShowModal(prev => !prev)
     }
 
-    const openModalLogout = () => {
+    const changeStateModalLogout = () => {
         setModalLogout(modalLogout => !modalLogout);
     }
 
@@ -38,6 +38,7 @@ export function Header(props) {
     };
 
     const navigateToCarrinho = () => {
+        setModalLogout(false);
         navigate('/carrinho');
     };
 
@@ -75,7 +76,7 @@ export function Header(props) {
                         {open ? closeIcon : hamburgerIcon}
                     </div>
                     {open && <div className={styles.dropMenu} id={contraste && styles.contraste}>
-                        <button className={styles.botaoRegular} onClick={()=>{setFiltro("promocao");setOpen(false)}}>Promoções</button>
+                        <button className={styles.botaoRegular} onClick={()=>{setFiltro("Promoções");setOpen(false)}}>Promoções</button>
                         <button className={styles.botaoRegular} onClick={()=>{setFiltro("");setOpen(false)}}>Página Inicial</button>
                         <button className={styles.botaoRegular} onClick={()=>{setFiltro("Incensos");setOpen(false)}} >Incensos</button>
                         <button className={styles.botaoRegular} onClick={()=>{setFiltro("Cristais");setOpen(false)}} >Cristais</button>
@@ -87,10 +88,10 @@ export function Header(props) {
                     <div className={styles.funcoes}>
                         {
                             contraste &&
-                            <div className={styles.pesquisa} id={contraste && styles.contraste}>
+                            <form className={styles.pesquisa} id={contraste && styles.contraste}>
                                 <input className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste} />
                                 <img src={headerLupaContraste} alt="Buscar item" />
-                            </div>
+                            </form>
                         }
                         {
                             !contraste &&
@@ -107,7 +108,7 @@ export function Header(props) {
                                 <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
                                 <div className={styles.quantidade} id={contraste && styles.contraste}>{qtdItensCarrinho}</div>
                             </div>
-                            <img onClick={nome ? openModalLogout : openModalLogin} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
+                            <img onClick={nome ? changeStateModalLogout : openModalLogin} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
                             {
                                 modalLogout && <MenuLogout/>
                             }

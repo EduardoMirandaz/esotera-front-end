@@ -20,9 +20,37 @@
 
 .botoes #contraste.botaoPromo {
     background-color: black;
-    color: var(--purple-c);
-
 }
+
+.botoes #contraste.botaoPromoSelecionado {
+    background-color: black;
+    color: var(--purple-c);
+}
+
+.botoes #contraste.botaoPromo:after {
+    content: '';
+    height: 60%;
+    width: 1px;
+    position: absolute;
+    right: 0;
+    top: 20%;
+    background-color: var(--white); 
+}
+
+.botoes #contraste.botaoPromoSelecionado:after {
+    content: '';
+    height: 60%;
+    width: 1px;
+    position: absolute;
+    right: 0;
+    top: 20%;
+    background-color: var(--white); 
+}
+
+.botoes #contraste.selecionado {
+    color: var(--purple-c);
+}
+
 
 .botoes button {
     transition: 0.25s;
@@ -40,13 +68,30 @@
     background-color: var(--white);
 }
 
-/*isso precisa ser ativado quando a página estiver sendo visulizada
-Por exemplo, se o user está na home, essa classe deve estar atribuida ao botão home*/
-.botoes button:active {
+
+.botoes .selecionado {
     border-width: 0 0 2px 0;
     border-color: var(--white);
     border-style: solid;
 }
+
+.botoes .selecionado:after {
+    content: '';
+    height: 70%;
+    width: 1px;
+    position: absolute;
+    right: 0;
+    top: 20%;
+    background-color: var(--white); 
+}
+
+.botoes .botaoPromoSelecionado {
+    background-color: var(--purple-800);
+    border-width: 0 0 2px 0;
+    border-color: var(--white);
+    border-style: solid;
+}
+
 
 .botoes .botaoPromo {
     background-color: var(--purple-800);
@@ -56,15 +101,6 @@ Por exemplo, se o user está na home, essa classe deve estar atribuida ao botão
     color: var(--purple-800);
 } 
 
-.botoes .botaoPromo:after{
-    content: '';
-    height: 60%;
-    width: 1px;
-    position: absolute;
-    right: 0;
-    top: 20%;
-    background-color: var(--white); 
-}
 
 .botoes .botaoRegular:after{
     content: '';
@@ -78,6 +114,22 @@ Por exemplo, se o user está na home, essa classe deve estar atribuida ao botão
 
 .botoes .botaoRegular:hover{
     color: var(--purple-500);
+}
+
+.botoes .selecionado:hover {
+    color: var(--purple-500);
+}
+
+.botoes .botaoPromoSelecionado:hover {
+    color: var(--purple-800);
+}
+
+#contraste .botaoRegular:hover{
+    color: var(--white); 
+}
+
+#contraste .botaoPromoSelecionado:hover {
+    color: var(--purple-c);
 }
 
 /*@media(max-width: 1200px){
