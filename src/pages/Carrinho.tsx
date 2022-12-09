@@ -145,7 +145,7 @@ export function Carrinho(props) {
               <h3 className={styles.valorTotal}>R$ {(valorItens+valorFrete).toFixed(2)}</h3>
             </div>
           </div>
-          <a href="#" onClick={openModal} className={styles.button}>
+          <a href={ getCarrinhoList() != 0 ? "#" : "#!"} onClick={ () => { if(getCarrinhoList() != 0) openModal } } className={ getCarrinhoList() != 0 ? styles.button : styles.buttonApagado}>
             Finalizar a compra
             <img className={styles.cartao} src={cartao} />
           </a>
