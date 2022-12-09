@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../contexts/auth/AuthContext';
 import MenuLogout from './MenuLogout';
 import {CgMenu, CgClose} from 'react-icons/cg'
+import { ModalPrecisaLogar } from '../components/ModalPrecisaLogar';
 
 export function Header(props) {
     const isPrincipal = props.isPrincipal;
@@ -23,6 +24,10 @@ export function Header(props) {
     const openModalLogin = () => {
         setShowModal(prev => !prev)
     }
+
+    const [showModalPrecisaLogar, setShowModalPrecisaLogar] = useState(false);
+
+    const precisaLogar = () => {setShowModalPrecisaLogar(prev => !prev)};
 
     const changeStateModalLogout = () => {
         setModalLogout(modalLogout => !modalLogout);
@@ -109,7 +114,7 @@ export function Header(props) {
                     
                         <div className={styles.icones}>
                             <div onClick={
-                                nome ? navigateToCarrinho : openModalLogin
+                                nome ? navigateToCarrinho : precisaLogar
                                 } className={styles.carrinho}>
                                 <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
                                 <div className={styles.quantidade} id={contraste && styles.contraste}>{qtdItensCarrinho}</div>
@@ -133,6 +138,7 @@ export function Header(props) {
                     </div>
                 }
                 <Login showModal={showModal} setShowModal={setShowModal} />
+                <ModalPrecisaLogar showModal={showModalPrecisaLogar} setShowModal={setShowModalPrecisaLogar} />
             </header>
         </>
     )
