@@ -65,7 +65,7 @@ export function Header(props) {
                         {open ? closeIcon : hamburgerIcon}
                     </div>
                     {open && <div className={styles.dropMenu} id={contraste && styles.contraste}>
-                        <button className={styles.botaoRegular} onClick={()=>{setFiltro("promocao");setOpen(false)}}>Promoções</button>
+                        <button className={styles.botaoRegular} onClick={()=>{setFiltro("Promoções");setOpen(false)}}>Promoções</button>
                         <button className={styles.botaoRegular} onClick={()=>{setFiltro("");setOpen(false)}}>Página Inicial</button>
                         <button className={styles.botaoRegular} onClick={()=>{setFiltro("Incensos");setOpen(false)}} >Incensos</button>
                         <button className={styles.botaoRegular} onClick={()=>{setFiltro("Cristais");setOpen(false)}} >Cristais</button>
@@ -77,10 +77,10 @@ export function Header(props) {
                     <div className={styles.funcoes}>
                         {
                             contraste &&
-                            <div className={styles.pesquisa} id={contraste && styles.contraste}>
+                            <form className={styles.pesquisa} id={contraste && styles.contraste}>
                                 <input className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste} />
                                 <img src={headerLupaContraste} alt="Buscar item" />
-                            </div>
+                            </form>
                         }
                         {
                             !contraste &&
