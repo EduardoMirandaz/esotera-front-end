@@ -9,7 +9,7 @@ import { IconContext } from "react-icons";
 import { useNavigate } from 'react-router-dom';
 
 export function ModalCompraRealizada({showModal, setShowModal}){
-    const { contraste, getCarrinhoList } = useAuthContext();
+    
 
     const navigate = useNavigate();
 
@@ -17,12 +17,10 @@ export function ModalCompraRealizada({showModal, setShowModal}){
         navigate('/');
     };
 
-    const [ setCarrinhoList] = useState(getCarrinhoList());
-
+    
     const fechaModalVaiPraHome = () => {
             setShowModal(prev => !prev);
-            localStorage.setItem("carrinho", "[]"); 
-            setCarrinhoList([]);
+            
             navigateToPrincipal();
         }
     return(
