@@ -80,6 +80,8 @@ export function Header(props) {
         prevScrollpos = currentScrollPos;
     }
 
+    
+
     return (
         <>
             <header className={styles.header} id={"header"}>
@@ -98,8 +100,9 @@ export function Header(props) {
                     </div>}
                     <img onClick={navigateToPrincipal} className={styles.logo} src={headerLogo} alt="Logo" />
                     <div className={styles.funcoes}>
-                        <form className={styles.pesquisa} id={contraste && styles.contraste}>
-                            <input onSubmit={buscar} className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste} onChange={(e)=> setBuscaLocal(e.target.value)} />
+                        <form onSubmit={(event) => {event.preventDefault();buscar()}}
+                         className={styles.pesquisa} id={contraste && styles.contraste}>
+                            <input className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste} onChange={(e)=> {setBuscaLocal(e.target.value);buscar()}}/>
                             
                             {
                                 contraste &&                

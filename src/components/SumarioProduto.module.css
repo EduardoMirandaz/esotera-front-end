@@ -114,8 +114,8 @@
 
 .botoesProduto{
     display: flex;
-    justify-content: left;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 14px;
 }
 
 .contador{
@@ -125,6 +125,11 @@
     gap: 14px;
 }
 
+#contraste .contador input{
+    background-color: black;
+}
+
+
 .contador input{
     color: var(--purple-800);
     font-size: 1.688rem;
@@ -132,6 +137,16 @@
     font-weight: lighter;
     border: none;
     width: 50px;
+}
+
+.contador input::-webkit-outer-spin-button,
+.contador input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.contador input[type=number] {
+    -moz-appearance:textfield;
 }
 
 .decrementar{
