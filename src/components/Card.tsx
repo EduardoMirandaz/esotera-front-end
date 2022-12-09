@@ -39,17 +39,18 @@ export function Card(props:Card){
               <img className={styles.imagem} src={semImagem} alt="Produto sem imagem"/>
           }
         </a>
-        {props.categoria &&
-            <p className={styles.categoria} id={contraste && styles.contraste}>{props.categoria}</p>
-        }
-        {!props.categoria &&
-            <p className={styles.categoria} id={contraste && styles.contraste}>Outros</p>
-        }
-        <h1 className={styles.titulo}>{props.titulo}</h1>
-        <h2 className={styles.valor} id={contraste && styles.contraste}>R${props.valor.toFixed(2)}</h2>
-        <div className={styles.funcoes}>
-  
-        
+        <div className={styles.conteudoCard}>
+          {props.categoria &&
+              <p className={styles.categoria} id={contraste && styles.contraste}>{props.categoria}</p>
+          }
+          {!props.categoria &&
+              <p className={styles.categoria} id={contraste && styles.contraste}>Outros</p>
+          }
+          <h1 className={styles.titulo}>{props.titulo}</h1>
+          <h2 className={styles.valor} id={contraste && styles.contraste}>R${props.valor.toFixed(2)}</h2>
+          <div className={styles.funcoes}>
+    
+          
 
           <a href="#" className={styles.button} 
             onClick={navigateToProduto} id={contraste && styles.contraste}
@@ -73,5 +74,6 @@ export function Card(props:Card){
           </div>
         </div>
       </div>
-    )
+    </div>
+  )
 }
