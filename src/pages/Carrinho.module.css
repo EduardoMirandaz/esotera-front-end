@@ -103,7 +103,7 @@ h2.titulo{
     /* margin-bottom: 52px; */
 }
 
-#liberado.button:hover{
+.button:hover{
     background-color: var(--purple-500);
 }
 
@@ -436,10 +436,4 @@ h2.titulo{
     .button{
         margin-bottom: 100px;
     }
-}
-
-
-#bloqueado{
-    cursor: "not-allowed";
-    opacity: 0.6;
 }
