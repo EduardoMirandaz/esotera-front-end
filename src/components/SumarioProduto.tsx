@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import styles from './SumarioProduto.module.css'
 import carrinho from '../assets/carrinho.svg'
 import checkIcon from '../assets/check.png'
@@ -12,10 +12,11 @@ import { ModalPrecisaLogar } from '../components/ModalPrecisaLogar';
 
 export function SumarioProduto(props){
     const [contador, setCount] = useState(1); 
-    const [nome, setNome] = useState("");
+
     const { contraste, getCarrinhoList, setQtdItensCarrinho, qtdItensCarrinho } = useAuthContext();
     let temEstoque = produto[props.idProduto].qtdEmEstoque>0;
-  
+
+
     function incrementar() {
 
       setCount(function (prevCount) {
@@ -38,7 +39,7 @@ export function SumarioProduto(props){
     let inCarrinho = getCarrinhoList().find(
         produto => produto.idProduto == props.idProduto
       ) != undefined;
-
+    
     const textosBtnAddItem = {
       'inCarrinho': "Item no carrinho!",
       'notInCarrinho': "Adicionar ao carrinho"
@@ -62,18 +63,19 @@ export function SumarioProduto(props){
 
     const [showModalPrecisaLogar, setShowModalPrecisaLogar] = useState(false)
 
-
     const [onClickBtnAddItem, setOnClickBtnAddItem] = useState(() => {
       if(inCarrinho || !temEstoque ){
         return () => {};
       }
-      else if(!nome){
+      else if(!localStorage.getItem("username")?.split(" ")[0]){
         return () => {setShowModalPrecisaLogar(prev => !prev)};
       }
       else{
         return addItemCarrinho;
       }
     });
+
+    
 
     const [imgBtnAddItem, setImgBtnAddItem] = useState(inCarrinho ? checkIcon : carrinho);
 
