@@ -30,7 +30,7 @@ export function Card(props:Card){
   };
     return(
       <div className={styles.fundo} id={contraste && styles.contraste}>
-        <Link reloadDocument to={newUrl} onClick={() => {setModalLogout(false)}}>
+        <a href="#" onClick={navigateToProduto}>
 
           {props.imagemPrincipal &&
               <img className={styles.imagem} src={props.imagemPrincipal} alt={props.descricaoImg ? props.descricaoImg : "Descrição indisponível para a imagem"}/>
@@ -38,7 +38,7 @@ export function Card(props:Card){
           {!props.imagemPrincipal &&
               <img className={styles.imagem} src={semImagem} alt="Produto sem imagem"/>
           }
-        </Link>
+        </a>
         {props.categoria &&
             <p className={styles.categoria} id={contraste && styles.contraste}>{props.categoria}</p>
         }
