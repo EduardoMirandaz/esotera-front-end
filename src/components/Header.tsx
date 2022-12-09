@@ -24,7 +24,7 @@ export function Header(props) {
         setShowModal(prev => !prev)
     }
 
-    const openModalLogout = () => {
+    const changeStateModalLogout = () => {
         setModalLogout(modalLogout => !modalLogout);
     }
 
@@ -38,6 +38,7 @@ export function Header(props) {
     };
 
     const navigateToCarrinho = () => {
+        setModalLogout(false);
         navigate('/carrinho');
     };
 
@@ -96,7 +97,7 @@ export function Header(props) {
                                 <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
                                 <div className={styles.quantidade} id={contraste && styles.contraste}>{qtdItensCarrinho}</div>
                             </div>
-                            <img onClick={nome ? openModalLogout : openModalLogin} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
+                            <img onClick={nome ? changeStateModalLogout : openModalLogin} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
                             {
                                 modalLogout && <MenuLogout/>
                             }
