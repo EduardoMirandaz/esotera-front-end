@@ -4,6 +4,7 @@ import semImagem from '../assets/semImagem.svg'
 import { useAuthContext } from '../contexts/auth/AuthContext';
 import { IoClose } from "react-icons/io5";
 import { IconContext } from "react-icons";
+import { Link } from "react-router-dom";
 
 interface CardCompra {
   imagemPrincipal?: string;
@@ -33,11 +34,14 @@ export function CardCompra(props:CardCompra){
       setCount(novoCount);
       props.atualizarQuantidade(props.idProduto, novoCount);
     }
+    
+    const newUrl = "/produto/"+props.idProduto
 
     return(
       <div id={contraste && styles.contraste}>
         <IconContext.Provider value={{ color: contraste ? "white" : "#11002B", size: "1.5em"}}>
           <div className={styles.fundo} >
+          <Link reloadDocument to={newUrl}>
             <div className={styles.boxImage}>
               {props.imagemPrincipal &&
                   <img alt="Imagem do produto" className={styles.imagem} src={props.imagemPrincipal}/>
@@ -46,6 +50,7 @@ export function CardCompra(props:CardCompra){
                   <img alt="Produto sem imagem disponível" className={styles.imagem} src={semImagem}/>
                 }
             </div>
+          </Link>
             <div id={contraste && styles.contraste} className={styles.excluir} onClick={() => {props.atualizarQuantidade(props.idProduto, 0)}}>
               <IoClose/>
             </div>
