@@ -116,13 +116,14 @@ export function Carrinho(props) {
                     idProduto={card.idProduto}
                     quantidadeProduto={carrinhoList.find(produto => card.idProduto == produto.idProduto).quantidade}
                     atualizarQuantidade={atualizarQuantidadeCard}
+                    descricaoImg={card.descricaoImg}
                   />
                 )
               })
               }
             </div>
             <div className={styles.buttonsCards}>
-              <div onClick={() => {localStorage.setItem("carrinho", "[]"); setCarrinhoList([])}} className={ getCarrinhoList().length != 0 ? styles.buttonRemove : styles.buttonRemoveApagado }>
+              <div onClick={() => {localStorage.setItem("carrinho", "[]"); setCarrinhoList([]); setValorItens(calcularValorItens());}} className={ getCarrinhoList().length != 0 ? styles.buttonRemove : styles.buttonRemoveApagado }>
                   Limpar carrinho
               </div>
               <Link to={"/"} className={styles.buttonContinue}>
