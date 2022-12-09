@@ -61,6 +61,7 @@ export function Header(props) {
     function buscar(){
         setBusca(buscaLocal)
         setFiltro("")
+        navigate('/');
     }
     
     var prevScrollpos = window.pageYOffset;
@@ -93,17 +94,17 @@ export function Header(props) {
                     <img onClick={navigateToPrincipal} className={styles.logo} src={headerLogo} alt="Logo" />
                     <div className={styles.funcoes}>
                         <form className={styles.pesquisa} id={contraste && styles.contraste}>
-                            <input className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste} onChange={(e)=> setBuscaLocal(e.target.value)} />
-                            <Link to={"/"}>
-                                {
-                                    contraste &&                
-                                    <img src={headerLupaContraste} alt="Buscar item" onClick={()=>buscar()}/>
-                                }
-                                {
-                                    !contraste &&
-                                    <img src={headerLupa} alt="Buscar item" onClick={()=>buscar()} />
-                                }
-                            </Link>
+                            <input onSubmit={buscar} className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste} onChange={(e)=> setBuscaLocal(e.target.value)} />
+                            
+                            {
+                                contraste &&                
+                                <img className={styles.busca} src={headerLupaContraste} alt="Buscar item" onClick={()=>buscar()}/>
+                            }
+                            {
+                                !contraste &&
+                                <img className={styles.busca} src={headerLupa} alt="Buscar item" onClick={()=>buscar()} />
+                            }
+                            
                         </form>
                     
                         <div className={styles.icones}>

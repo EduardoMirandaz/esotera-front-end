@@ -103,21 +103,24 @@ export function Carrinho(props) {
         <div className={styles.right}>
           <h2 className={styles.titulo}>Itens do Carrinho</h2>
           <div className={styles.boxCardsCompras}>
-            {props.produto.filter(card => {
-              return carrinhoList.find(produto => card.idProduto == produto.idProduto) != undefined
-            }).map((card) => {
-              return (
-                <CardCompra
-                  titulo={card.titulo}
-                  imagemPrincipal={card.imagemPrincipal}
-                  valor={card.valor}
-                  idProduto={card.idProduto}
-                  quantidadeProduto={carrinhoList.find(produto => card.idProduto == produto.idProduto).quantidade}
-                  atualizarQuantidade={atualizarQuantidadeCard}
-                />
-              )
-            })
-            }
+            <div className={styles.scroll}>
+
+              {props.produto.filter(card => {
+                return carrinhoList.find(produto => card.idProduto == produto.idProduto) != undefined
+              }).map((card) => {
+                return (
+                  <CardCompra
+                    titulo={card.titulo}
+                    imagemPrincipal={card.imagemPrincipal}
+                    valor={card.valor}
+                    idProduto={card.idProduto}
+                    quantidadeProduto={carrinhoList.find(produto => card.idProduto == produto.idProduto).quantidade}
+                    atualizarQuantidade={atualizarQuantidadeCard}
+                  />
+                )
+              })
+              }
+            </div>
             <div className={styles.buttonsCards}>
               <div className={styles.buttonRemove}>
                   Limpar carrinho

@@ -7,6 +7,10 @@
     top: 0px;
 }
 
+.busca{
+    cursor: pointer;
+}
+
 #contraste.topHeader{
     background-color: black;
 }
