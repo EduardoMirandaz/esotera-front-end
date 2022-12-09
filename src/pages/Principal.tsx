@@ -27,6 +27,7 @@ export function Principal(props){
     return(
       <>
         <Header isPrincipal={true}/>
+        
           {props.carrosseis &&
             <div className={styles.carrossel} id={"headerCarrossel"}>
               <Carousel autoPlay infiniteLoop showStatus={false} showThumbs={false}>
