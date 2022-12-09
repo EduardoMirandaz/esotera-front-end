@@ -16,6 +16,8 @@ import { useAuthContext } from '../contexts/auth/AuthContext';
 import { ModalCompraRealizada } from '../components/ModalCompraRealizada';
 
 export function Carrinho(props) {
+  const { contraste, getCarrinhoList } = useAuthContext();
+
   const [showModal, setShowModal] = useState(false)
   const closeModal = () => {
     setShowModal(false);
@@ -35,16 +37,6 @@ export function Carrinho(props) {
 
 
   const [carrinhoList, setCarrinhoList] = useState(getCarrinhoList())
-  function getCarrinhoList(){
-    const carrinhoJSON = localStorage.getItem("carrinho");
-    const carrinhoList = JSON.parse(carrinhoJSON);
-    if(carrinhoList == null){
-      return [];
-    }
-    else{
-      return carrinhoList;
-    }
-  }
 
   const atualizarQuantidadeCard = (idProduto, quantidadeProduto) => {
     let carrinhoListTmp = carrinhoList;
@@ -77,7 +69,6 @@ export function Carrinho(props) {
     return soma;
    }
 
-  const { contraste } = useAuthContext();
   return (
     <>
       <Header isPrincipal={false}/>
