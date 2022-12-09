@@ -42,7 +42,7 @@ export function Card(props:Card){
         <h2 className={styles.valor} id={contraste && styles.contraste}>R${props.valor.toFixed(2)}</h2>
         <div className={styles.funcoes}>
   
-          <Link reloadDocument to={newUrl} className={styles.button} onClick={() => {setModalLogout(false)}} id={contraste && styles.contraste}>VER DETALHES</Link>
+          <Link to={newUrl} className={styles.button} onClick={() => {setModalLogout(false)}} id={contraste && styles.contraste}>VER DETALHES</Link>
           <div className={styles.coracao}>
             
             {isClick && contraste &&
