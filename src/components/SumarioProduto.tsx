@@ -60,7 +60,7 @@ export function SumarioProduto(props){
       setTextoBtnAddItem(textosBtnAddItem.inCarrinho);
       setImgBtnAddItem(checkIcon);
 
-      setQtdItensCarrinho(qtdItensCarrinho+1);
+      setQtdItensCarrinho(carrinhoList.length);
     }
     const [onClickBtnAddItem, setOnClickBtnAddItem] = useState(() => {
       if(inCarrinho || !temEstoque){

@@ -47,7 +47,7 @@ export function CardCompra(props:CardCompra){
                   <img className={styles.imagem} src={semImagem}/>
                 }
             </div>
-            <div  id={contraste && styles.contraste} className={styles.excluir}>
+            <div id={contraste && styles.contraste} className={styles.excluir} onClick={() => {props.atualizarQuantidade(props.idProduto, 0)}}>
               <IoClose/>
             </div>
             <div className={styles.informacoes}>

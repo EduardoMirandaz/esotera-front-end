@@ -27,7 +27,7 @@ export function Carrinho(props) {
 
     const openModal = () => {
         setShowModal(prev => !prev);
-        /*setTimeout(closeModal, 20000);*/
+        setTimeout(closeModal, 20000);
     }
 
     const [showModalCompraRealizada, setShowModalCompraRealizada] = useState(false)
@@ -43,7 +43,12 @@ export function Carrinho(props) {
     let carrinhoListTmp = carrinhoList;
     for(let i = 0; i < carrinhoListTmp.length; i++){
       if(carrinhoListTmp[i].idProduto == idProduto){
-        carrinhoListTmp[i].quantidade = quantidadeProduto;
+        if(quantidadeProduto == 0){
+          carrinhoListTmp.splice(i, 1);
+        }
+        else{
+          carrinhoListTmp[i].quantidade = quantidadeProduto;
+        }
         break;
       }
     }
