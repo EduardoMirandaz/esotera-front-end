@@ -19,15 +19,18 @@ import { Link } from 'react-router-dom';
 export function Carrinho(props) {
   const { contraste, getCarrinhoList } = useAuthContext();
 
-  const [showModal, setShowModal] = useState(false)
+  const [showModalPix, setShowModalPix] = useState(false)
   const closeModal = () => {
-    setShowModal(false);
+    setShowModalPix(false);
     openModalCompraRealizada();
   }
 
-  const openModal = () => {
-    setShowModal(prev => !prev);
-    setTimeout(closeModal, 20000);
+  const openModalDePagamento = () => {
+    const inputPix = document.getElementById("pix") as HTMLInputElement; 
+    if(inputPix.checked){
+      setShowModalPix(prev => !prev);
+      setTimeout(closeModal, 20000);
+    }
   }
 
   const [showModalCompraRealizada, setShowModalCompraRealizada] = useState(false)
@@ -146,14 +149,14 @@ export function Carrinho(props) {
               <h3 className={styles.valorTotal}>R$ {(valorItens+valorFrete).toFixed(2)}</h3>
             </div>
           </div>
-          <a href={ getCarrinhoList().length != 0 ? "#" : "#!"} onClick={ () => { if(getCarrinhoList().length != 0) openModal() } } className={ getCarrinhoList().length != 0 ? styles.button : styles.buttonApagado}>
+          <a href={ getCarrinhoList().length != 0 ? "#" : "#!"} onClick={ () => { if(getCarrinhoList().length != 0) openModalDePagamento() } } className={ getCarrinhoList().length != 0 ? styles.button : styles.buttonApagado}>
             Finalizar a compra
             <img className={styles.cartao} src={cartao} />
           </a>
         </div>
       </div>
       </div>
-      <ModalPagamentoPix showModal={showModal} setShowModal={setShowModal} />
+      <ModalPagamentoPix showModal={showModalPix} setShowModal={setShowModalPix} />
       <ModalCompraRealizada showModal={showModalCompraRealizada} setShowModal={setShowModalCompraRealizada} />
       <Accessibility />
       <Footer />
