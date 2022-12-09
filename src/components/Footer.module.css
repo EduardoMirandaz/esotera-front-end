@@ -1,7 +1,7 @@
 .footer{
     height: 228px;
     width: 100%;
-    font-size: 14px;
+    font-size: 0.875rem;
     color: var(--purple-100);
     background: var(--purple-500);
     justify-content: space-between;
@@ -53,7 +53,7 @@
 
 .informacoes h1{
     color: var(--white);
-    font-size: 20px;
+    font-size: 1.25rem;
     padding-bottom: 12px;
 }
 

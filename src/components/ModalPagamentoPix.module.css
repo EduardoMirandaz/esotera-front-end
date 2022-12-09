@@ -6,7 +6,7 @@
 }
 
 .modalBody h2 { 
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .modalHeader {
@@ -15,7 +15,7 @@
 }
 
 .button{
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-right: 16px;
     margin-bottom: 16px;
     display: inline-block;
@@ -51,7 +51,7 @@
 }
 
 .divider .mainText {
-    font-size: 14px;
+    font-size: 0.875rem;
     background: #fff;
     position: relative;
     display: inline-block;

@@ -17,6 +17,8 @@ import { ModalCompraRealizada } from '../components/ModalCompraRealizada';
 import { Link } from 'react-router-dom';
 
 export function Carrinho(props) {
+  const { contraste, getCarrinhoList } = useAuthContext();
+
   const [showModal, setShowModal] = useState(false)
   const closeModal = () => {
     setShowModal(false);
@@ -25,7 +27,7 @@ export function Carrinho(props) {
 
     const openModal = () => {
         setShowModal(prev => !prev);
-        /*setTimeout(closeModal, 20000);*/
+        setTimeout(closeModal, 20000);
     }
 
     const [showModalCompraRealizada, setShowModalCompraRealizada] = useState(false)
@@ -36,22 +38,17 @@ export function Carrinho(props) {
 
 
   const [carrinhoList, setCarrinhoList] = useState(getCarrinhoList())
-  function getCarrinhoList(){
-    const carrinhoJSON = localStorage.getItem("carrinho");
-    const carrinhoList = JSON.parse(carrinhoJSON);
-    if(carrinhoList == null){
-      return [];
-    }
-    else{
-      return carrinhoList;
-    }
-  }
 
   const atualizarQuantidadeCard = (idProduto, quantidadeProduto) => {
     let carrinhoListTmp = carrinhoList;
     for(let i = 0; i < carrinhoListTmp.length; i++){
       if(carrinhoListTmp[i].idProduto == idProduto){
-        carrinhoListTmp[i].quantidade = quantidadeProduto;
+        if(quantidadeProduto == 0){
+          carrinhoListTmp.splice(i, 1);
+        }
+        else{
+          carrinhoListTmp[i].quantidade = quantidadeProduto;
+        }
         break;
       }
     }
@@ -65,7 +62,7 @@ export function Carrinho(props) {
 
   const [valorItens, setValorItens] = useState(calcularValorItens())
 
-   function calcularValorItens(){
+  function calcularValorItens(){
     const carrinhoListTmp = getCarrinhoList();
     const soma = carrinhoListTmp.reduce(
       (acc, currProduto) => {
@@ -76,9 +73,8 @@ export function Carrinho(props) {
     );
 
     return soma;
-   }
+  }
 
-  const { contraste } = useAuthContext();
   return (
     <>
       <Header isPrincipal={false}/>

@@ -37,7 +37,7 @@
     padding-left: 35px;
 }
 .modalBody h2 { 
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .subtitle {
@@ -75,12 +75,12 @@
 .esqueceuSenha {
     color: var(--purple-800);
     text-decoration: none;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: bold;
 }
 
 .button{
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-right: 16px;
     margin-bottom: 16px;
     display: inline-block;
@@ -117,7 +117,7 @@
 }
 
 .divider span {
-    font-size: 14px;
+    font-size: 0.875rem;
     background: #fff;
     position: relative;
     display: inline-block;
@@ -154,7 +154,7 @@
     width: auto;
     text-transform: capitalize;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 0.938rem;
     line-height: 20px;
     padding: 0;
     height: 40px;

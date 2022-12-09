@@ -26,7 +26,7 @@
 }
 
 .categoria{
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--purple-800);
     font-weight: bold;
     margin: 16px 0;
@@ -34,7 +34,7 @@
 }
 
 .titulo{
-    font-size: 20px;
+    font-size: 1.25rem;
     text-align: center;
     margin: 16px;
     height: 46px;
@@ -51,7 +51,7 @@
 }
 
 .valor{
-    font-size: 24px;
+    font-size: 1.5rem;
     color: var(--purple-800);
     font-weight: bold;
     margin: 16px 0;
@@ -80,7 +80,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
+    font-size: 0.75;
     font-weight: bold;
     text-align: center;
     text-decoration: none;

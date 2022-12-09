@@ -15,8 +15,19 @@ export default function AuthProvider(props: AuthProviderProps) {
     const [modalLogout, setModalLogout] = useState(false);
     const [qtdItensCarrinho, setQtdItensCarrinho] = useState(0);
 
+    const getCarrinhoList = () => {
+        const carrinhoJSON = localStorage.getItem("carrinho");
+        const carrinhoList = JSON.parse(carrinhoJSON);
+        if(carrinhoList == null){
+          return [];
+        }
+        else{
+          return carrinhoList;
+        }
+      }
+
     return (
-        <AuthContext.Provider value={{usuario, setUsuario, carrinho, setCarrinho, filtro, setFiltro, busca, setBusca, contraste, setContraste,modalLogout, setModalLogout, qtdItensCarrinho, setQtdItensCarrinho}}>
+        <AuthContext.Provider value={{usuario, setUsuario, carrinho, setCarrinho, filtro, setFiltro, busca, setBusca, contraste, setContraste,modalLogout, setModalLogout, qtdItensCarrinho, setQtdItensCarrinho, getCarrinhoList}}>
             {props.children}
         </AuthContext.Provider>
     )
