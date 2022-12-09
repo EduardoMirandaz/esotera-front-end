@@ -7,12 +7,12 @@
     padding: 0 60px;
 }
 .paragrafoDetalhesAberto{
-    font-size: 25px;
+    font-size: 1.563rem;
 
 }
 
 .paragrafoDetalhesFechado{
-    font-size: 25px;
+    font-size: 1.563rem;
     
     overflow: hidden; 
     text-overflow: ellipsis; 
@@ -37,7 +37,7 @@
 .botao{
     background-color: var(--purple-300);
     border: 0;
-    font-size: 25px;
+    font-size: 1.563rem;
     padding: 20px;
     border-radius: 10px;
     cursor: pointer;

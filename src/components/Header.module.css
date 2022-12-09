@@ -58,7 +58,7 @@
     border-radius: 100px;
     width: 600px;
     height: 60px;
-    font-size: 18px;
+    font-size: 1.125rem;
     color: var(--purple-700);
     padding: 16px;
     padding-right: 70px;
@@ -115,7 +115,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 14px;
+    font-size: 0.875rem;
     margin-left: -10px;
     margin-top: -9px;
 }
@@ -222,7 +222,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        font-size: 10px;
+        font-size: 0.625rem;
         margin-left: -8px;
         margin-top: -7px;
     }

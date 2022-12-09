@@ -6,7 +6,7 @@
     border-radius: 10px;
     margin-top:130px;
     z-index: 1;
-    font-size: 18px;
+    font-size: 1.125rem;
     text-align: center;
     color: var(--purple-600);
     padding-top: 12px;
@@ -34,7 +34,7 @@
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 22px;
     text-align: center;
     color: var(--purple-600);

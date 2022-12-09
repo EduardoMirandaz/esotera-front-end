@@ -14,7 +14,7 @@
 .formulario input{
     padding: 23px;
 
-    font-size: 18px;
+    font-size: 1.125rem;
 
     border: 1px solid #111111;
     border-radius: 25px;
@@ -96,7 +96,7 @@ input#complemento{
         padding-bottom: 23.5px;
         padding-left: 23px;
     
-        font-size: 14px;
+        font-size: 0.875rem;
     
         border: 1px solid #111111;
         border-radius: 25px;

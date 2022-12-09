@@ -2,7 +2,6 @@
     color: var(--white);
 }
 
-
 #contraste.breadcrumb a{
     text-decoration: none;
     color: var(--white);
@@ -13,7 +12,7 @@
     padding-top: 20px;
     display: flex;
     gap: 10px;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .breadcrumb a{
@@ -23,7 +22,7 @@
 
 .titulo{
     color: var(--purple-800);
-    font-size: 24px;
+    font-size: 1.5rem;
     max-width: 40%;
     white-space: nowrap;
     overflow: hidden;
