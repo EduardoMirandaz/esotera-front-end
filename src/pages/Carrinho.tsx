@@ -13,12 +13,25 @@ import ModalPagamentoPix from '../components/ModalPagamentoPix';
 import cartao from "../assets/cartao.svg"
 import {BreadcrumbProduto} from '../components/BreadcrumbProduto'
 import { useAuthContext } from '../contexts/auth/AuthContext';
+import { ModalCompraRealizada } from '../components/ModalCompraRealizada';
 
 export function Carrinho(props) {
   const [showModal, setShowModal] = useState(false)
-  const openModal = () => {
-      setShowModal(prev => !prev)
+  const closeModal = () => {
+    setShowModal(false);
+    openModalCompraRealizada();
   }
+
+    const openModal = () => {
+        setShowModal(prev => !prev);
+        setTimeout(closeModal, 20000);
+    }
+
+    const [showModalCompraRealizada, setShowModalCompraRealizada] = useState(false)
+
+    const openModalCompraRealizada = () => {
+        setShowModalCompraRealizada(prev => !prev)
+    }
 
   const [carrinhoList, setCarrinhoList] = useState(getCarrinhoList())
   function getCarrinhoList(){
@@ -43,7 +56,25 @@ export function Carrinho(props) {
 
     setCarrinhoList(carrinhoListTmp);
     localStorage.setItem("carrinho", JSON.stringify(carrinhoListTmp));
+    setValorItens(calcularValorItens());
   }
+
+  const valorFrete = 24.30
+
+  const [valorItens, setValorItens] = useState(calcularValorItens())
+
+   function calcularValorItens(){
+    const carrinhoListTmp = getCarrinhoList();
+    const soma = carrinhoListTmp.reduce(
+      (acc, currProduto) => {
+        return acc + currProduto.quantidade * props.produto.find(
+          produto => produto.idProduto == currProduto.idProduto
+          ).valor
+        }, 0
+    );
+
+    return soma;
+   }
 
   const { contraste } = useAuthContext();
   return (
@@ -102,15 +133,15 @@ export function Carrinho(props) {
             <h3 className={styles.totalCompraLabel}>Total da compra</h3>
             <div className={styles.valorItensBox}>
               <h4 className={styles.valorItensLabel}>valor dos itens</h4>
-              <h3 className={styles.valorItens}>R$ 57,40</h3>
+              <h3 className={styles.valorItens}>R$ {valorItens.toFixed(2)}</h3>
             </div>
             <div className={styles.valorFreteBox}>
               <h4 className={styles.valorFreteLabel}>valor do frete</h4>
-              <h3 className={styles.valorFrete}>R$ 24,30</h3>
+              <h3 className={styles.valorFrete}>R$ {valorFrete.toFixed(2)}</h3>
             </div>
             <div className={styles.valorTotalBox}>
               <h4 className={styles.valorTotalLabel}>valor total</h4>
-              <h3 className={styles.valorTotal}>R$ 81,70</h3>
+              <h3 className={styles.valorTotal}>R$ {(valorItens+valorFrete).toFixed(2)}</h3>
             </div>
           </div>
           <a href="#" onClick={openModal} className={styles.button}>
@@ -121,6 +152,7 @@ export function Carrinho(props) {
       </div>
       </div>
       <ModalPagamentoPix showModal={showModal} setShowModal={setShowModal} />
+      <ModalCompraRealizada showModal={showModalCompraRealizada} setShowModal={setShowModalCompraRealizada} />
       <Accessibility />
       <Footer />
     </>

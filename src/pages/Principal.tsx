@@ -4,12 +4,25 @@ import { Accessibility } from "../components/Accessibility";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Vitrine } from "../components/Vitrine";
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './Principal.module.css'
 import { useAuthContext } from "../contexts/auth/AuthContext";
 
 export function Principal(props){
   let cards = props.produto 
+  const [isMobile, setIsMobile] = useState(false)
+    const handleResize = () => {
+        if (window.innerWidth < 760) {
+            setIsMobile(true)
+        } else {
+            setIsMobile(false)
+        }
+      }
+
+      useEffect(() => {
+        window.addEventListener("resize", handleResize);
+        window.scrollTo(0, 0);
+      })
 
   const { filtro } = useAuthContext();
 

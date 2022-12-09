@@ -1,14 +1,22 @@
 import styles from './MenuLogout.module.css'; 
 import React from 'react';
 import { useAuthContext } from '../contexts/auth/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 export function MenuLogout() {
 
     const { setModalLogout } = useAuthContext();
 
+    const navigate = useNavigate();
+
+    const navigateToPrincipal = () => {
+        navigate('/');
+    };
+
     const deslogar = () => {
         setModalLogout(prev => !prev);
-        localStorage.removeItem("username")
+        localStorage.removeItem("username");
+        navigateToPrincipal();
     }
 
     return (

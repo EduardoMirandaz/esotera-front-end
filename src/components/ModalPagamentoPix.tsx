@@ -30,6 +30,7 @@ export function ModalPagamentoPix({showModal, setShowModal}){
         }, 2000);
     }
 
+
     return(
         <>
         {showModal ? (
