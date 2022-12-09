@@ -8,7 +8,7 @@ import headerPerfil from '../assets/perfil.svg'
 import headerCoracao from '../assets/coracao.svg'
 import NavButtons from './NavButtons'
 import Login from './Login';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, Link } from 'react-router-dom';
 import { useAuthContext } from '../contexts/auth/AuthContext';
 import MenuLogout from './MenuLogout';
 import {CgMenu, CgClose} from 'react-icons/cg'
@@ -29,7 +29,7 @@ export function Header(props) {
     }
 
 
-    const { contraste, setFiltro } = useAuthContext();
+    const { contraste, setFiltro, setBusca } = useAuthContext();
 
     const navigate = useNavigate();
 
@@ -43,6 +43,7 @@ export function Header(props) {
     };
 
     const [open, setOpen] = useState(false);
+    const [buscaLocal, setBuscaLocal] = useState("");
     const closeIcon = <CgClose className={styles.burgerIcon} size='26px' color='white' onClick={() =>setOpen(!open)}/>
     const hamburgerIcon = <CgMenu className={styles.burgerIcon} size='26px' color='white' onClick={() =>setOpen(!open)}/>
     
@@ -56,6 +57,11 @@ export function Header(props) {
             setQtdItensCarrinho(qtd)
         }
     })
+
+    function buscar(){
+        setBusca(buscaLocal)
+        setFiltro("")
+    }
 
     return (
         <>
@@ -75,21 +81,20 @@ export function Header(props) {
                     </div>}
                     <img onClick={navigateToPrincipal} className={styles.logo} src={headerLogo} alt="Logo" />
                     <div className={styles.funcoes}>
-                        {
-                            contraste &&
-                            <form className={styles.pesquisa} id={contraste && styles.contraste}>
-                                <input className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste} />
-                                <img src={headerLupaContraste} alt="Buscar item" />
-                            </form>
-                        }
-                        {
-                            !contraste &&
-                            <div className={styles.pesquisa} id={contraste && styles.contraste}>
-                                <input className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste} />
-                                <img src={headerLupa} alt="Buscar item" />
-                            </div>
-                        }
-
+                        <form className={styles.pesquisa} id={contraste && styles.contraste}>
+                            <input className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste} onChange={(e)=> setBuscaLocal(e.target.value)} />
+                            <Link to={"/"}>
+                                {
+                                    contraste &&                
+                                    <img src={headerLupaContraste} alt="Buscar item" onClick={()=>buscar()}/>
+                                }
+                                {
+                                    !contraste &&
+                                    <img src={headerLupa} alt="Buscar item" onClick={()=>buscar()} />
+                                }
+                            </Link>
+                        </form>
+                    
                         <div className={styles.icones}>
                             <div onClick={
                                 nome ? navigateToCarrinho : openModalLogin

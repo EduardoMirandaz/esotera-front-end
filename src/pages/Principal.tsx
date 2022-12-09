@@ -11,8 +11,11 @@ import { useAuthContext } from "../contexts/auth/AuthContext";
 export function Principal(props){
   let cards = props.produto 
 
-  const { filtro, contraste } = useAuthContext();
-
+  const { filtro, contraste, busca } = useAuthContext();
+  
+  if(busca){
+    cards = cards.filter((card) => card.indexOf(busca) != -1)
+  }
   if(filtro){
     if(filtro == "Promoções"){
       cards = cards.filter((card) => card.isPromocao)
@@ -21,7 +24,6 @@ export function Principal(props){
       cards = cards.filter((card) => card.categoria == filtro)
     }
   }
-  console.log(cards) 
   
     return(
       <>
