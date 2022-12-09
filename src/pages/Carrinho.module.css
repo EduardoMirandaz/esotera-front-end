@@ -103,6 +103,26 @@ h2.titulo{
     /* margin-bottom: 52px; */
 }
 
+.buttonApagado{
+    background-color: rgb(60,09,108,0.5);
+    border-radius: 8px;
+    width: 530px;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white);
+    transition: 0.2s;
+    cursor: not-allowed;
+    /* margin-bottom: 52px; */
+}
+
+
 .button:hover{
     background-color: var(--purple-500);
 }
