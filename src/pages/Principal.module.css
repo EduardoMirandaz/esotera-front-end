@@ -1,3 +1,7 @@
+#contraste.carrossel{
+  background: black;
+}
+
 .carrossel{
   position: relative;
   z-index: -1;

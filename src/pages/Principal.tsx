@@ -29,7 +29,7 @@ export function Principal(props){
         <Header isPrincipal={true}/>
         
           {props.carrosseis &&
-            <div className={styles.carrossel} id={"headerCarrossel"}>
+            <div className={styles.carrossel} id={contraste && styles.contraste}>
               <Carousel autoPlay infiniteLoop showStatus={false} showThumbs={false}>
                 {props.carrosseis.map((carrossel) => {
                   return(

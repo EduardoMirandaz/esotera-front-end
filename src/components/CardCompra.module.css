@@ -22,6 +22,11 @@
     border-radius: 20px;
 }
 
+#contraste.imagem{
+    height: 166px;
+    width: 166px; 
+}
+
 .imagem{
     height: 170px;
     width: 170px;
