@@ -74,6 +74,8 @@
     border-width: 0 0 2px 0;
     border-color: var(--white);
     border-style: solid;
+    margin-bottom: 8px;
+    width: 160px;
 }
 
 .botoes .selecionado:after {
@@ -91,6 +93,8 @@
     border-width: 0 0 2px 0;
     border-color: var(--white);
     border-style: solid;
+    margin-bottom: 8px;
+    width: 160px;
 }
 
 
