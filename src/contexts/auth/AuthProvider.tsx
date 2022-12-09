@@ -26,6 +26,7 @@ export default function AuthProvider(props: AuthProviderProps) {
         }
       }
 
+
     return (
         <AuthContext.Provider value={{usuario, setUsuario, carrinho, setCarrinho, filtro, setFiltro, busca, setBusca, contraste, setContraste,modalLogout, setModalLogout, qtdItensCarrinho, setQtdItensCarrinho, getCarrinhoList}}>
             {props.children}

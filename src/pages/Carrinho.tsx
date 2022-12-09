@@ -58,7 +58,7 @@ export function Carrinho(props) {
     setValorItens(calcularValorItens());
   }
 
-  const valorFrete = getCarrinhoList() != 0 ? 24.30 : 0.00;
+  const valorFrete = getCarrinhoList().length != 0 ? 24.30 : 0.00;
 
   const [valorItens, setValorItens] = useState(calcularValorItens())
 
@@ -122,7 +122,7 @@ export function Carrinho(props) {
               }
             </div>
             <div className={styles.buttonsCards}>
-              <div className={styles.buttonRemove}>
+              <div onClick={() => {localStorage.setItem("carrinho", "[]"); setCarrinhoList([])}} className={ getCarrinhoList().length != 0 ? styles.buttonRemove : styles.buttonRemoveApagado }>
                   Limpar carrinho
               </div>
               <Link to={"/"} className={styles.buttonContinue}>
@@ -145,7 +145,7 @@ export function Carrinho(props) {
               <h3 className={styles.valorTotal}>R$ {(valorItens+valorFrete).toFixed(2)}</h3>
             </div>
           </div>
-          <a href={ getCarrinhoList() != 0 ? "#" : "#!"} onClick={ () => { if(getCarrinhoList() != 0) openModal } } className={ getCarrinhoList() != 0 ? styles.button : styles.buttonApagado}>
+          <a href={ getCarrinhoList().length != 0 ? "#" : "#!"} onClick={ () => { if(getCarrinhoList().length != 0) openModal } } className={ getCarrinhoList().length != 0 ? styles.button : styles.buttonApagado}>
             Finalizar a compra
             <img className={styles.cartao} src={cartao} />
           </a>
