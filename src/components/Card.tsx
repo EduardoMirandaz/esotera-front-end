@@ -45,13 +45,13 @@ export function Card(props:Card){
           <div className={styles.coracao}>
             
             {isClick && contraste &&
-              <img alt="Produto adicionado aos favoritos" src={coracaoCheioContraste} isClick={isClick} onClick={() => setClick(!isClick)}/>
+              <img alt="Remover produto dos favoritos" src={coracaoCheioContraste} isClick={isClick} onClick={() => setClick(!isClick)}/>
             }
             {!isClick && contraste &&
               <img alt="Adicionar produto aos favoritos" src={coracaoVazioContraste} isClick={isClick} onClick={() => setClick(!isClick)}/>
             }
             {isClick && !contraste &&
-              <img alt="Produto adicionado aos favoritos" src={coracaoCheio} isClick={isClick} onClick={() => setClick(!isClick)}/>
+              <img alt="Remover produto dos favoritos" src={coracaoCheio} isClick={isClick} onClick={() => setClick(!isClick)}/>
             }
             {!isClick && !contraste &&
               <img alt="Adicionar produto aos favoritos" src={coracaoVazio} isClick={isClick} onClick={() => setClick(!isClick)}/>

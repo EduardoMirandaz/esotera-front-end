@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styles from './ImagensProdutos.module.css'
 import { produto } from "../data.json"
-import fotoProduto from "../assets/fotoProduto.png"
 
 
 export function ImagensProdutos(props) {

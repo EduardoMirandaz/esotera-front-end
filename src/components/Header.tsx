@@ -8,7 +8,7 @@ import headerPerfil from '../assets/perfil.svg'
 import headerCoracao from '../assets/coracao.svg'
 import NavButtons from './NavButtons'
 import Login from './Login';
-import { Routes, Route, useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../contexts/auth/AuthContext';
 import MenuLogout from './MenuLogout';
 import {CgMenu, CgClose} from 'react-icons/cg'
@@ -114,7 +114,7 @@ export function Header(props) {
                                 <img className={styles.carrinhoImg} src={headerCarrinho} alt="Ir para o carrinho" />
                                 <div className={styles.quantidade} id={contraste && styles.contraste}>{qtdItensCarrinho}</div>
                             </div>
-                            <img onClick={nome ? changeStateModalLogout : openModalLogin} className={styles.perfilImg} src={headerPerfil} alt="Entrar no Perfil" />
+                            <img onClick={nome ? changeStateModalLogout : openModalLogin} className={styles.perfilImg} src={headerPerfil} alt={modalLogout ? "Você está autenticado em sua conta" : "Entrar no Perfil" } />
                             {
                                 modalLogout && <MenuLogout/>
                             }

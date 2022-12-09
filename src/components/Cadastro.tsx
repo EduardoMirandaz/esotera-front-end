@@ -35,7 +35,7 @@ export function Cadastro({showModalCad, setShowModalCad}){
         <>
         {showModalCad ? (
          <IconContext.Provider value={{ color: contraste ? "white" : "#11002B", size: "2em"}}>
-            <Modal open={showModalCad} onClose={() => {setShowModalCad(prev => !prev)}} showModalCad={showModalCad} classNames={{ modal: contraste ? styles.customModalContraste : styles.customModal }}  center closeIcon={<IoClose />}>
+            <Modal open={showModalCad} onClose={() => {setShowModalCad(prev => !prev)}} showModalCad={showModalCad} classNames={{ modal: contraste ? styles.customModalContraste : styles.customModal }}  center closeIcon={<IoClose aria-labelledby="Fechar tela de cadastro"/>}>
                 <div className={styles.modalBody} id={contraste && styles.contraste}>
                     <div className={styles.modalHeader}>
                         <h2>Cadastro</h2>

@@ -1,11 +1,7 @@
 import React, { useState } from 'react'
 import styles from './SumarioProduto.module.css'
-import estrela from '../assets/star.svg'
-import meiaEstrela from '../assets/star-half.svg'
 import carrinho from '../assets/carrinho.svg'
 import checkIcon from '../assets/check.png'
-import map from '../assets/mapa.svg'
-import mapContraste from '../assets/mapaContraste.svg'
 import { produto } from '../data.json'
 import { useAuthContext } from '../contexts/auth/AuthContext'
 import coracaoCheio from '../assets/coracaoCheio.svg'
@@ -15,12 +11,12 @@ import coracaoVazioContraste from '../assets/coracaoVazioContraste.svg'
 
 export function SumarioProduto(props){
     const [contador, setCount] = useState(1); 
-    // useState returns a pair. 'count' is the current state. 'setCount' is a function we can use to update the state.
+ 
     const { contraste, getCarrinhoList, setQtdItensCarrinho, qtdItensCarrinho } = useAuthContext();
     let temEstoque = produto[props.idProduto].qtdEmEstoque>0;
   
     function incrementar() {
-      //setCount(prevCount => prevCount+=s1);
+
       setCount(function (prevCount) {
         return (prevCount += 1);
       });
@@ -156,30 +152,18 @@ export function SumarioProduto(props){
                     alt={textoBtnAddItem}
                   />
                 </button>
-                {/*
-                  <button className={styles.botaoFrete} id={contraste && styles.contraste}>Calcular o frete
-                  {
-                    contraste &&
-                    <img src={mapContraste} alt="Calcular o frete"/>
-                  }
-                  {
-                    !contraste &&
-                    <img src={map} alt="Calcular o frete"/>
-                  }
-                </button>
-                */}
                 <button className={styles.botaoFavorito} id={contraste && styles.contraste} onClick={() => setClick(!isClick)}>
                   {isClick && contraste &&
-                    <img src={coracaoCheioContraste}/>
+                    <img src={coracaoCheioContraste} alt="Remover produto dos favoritos" />
                   }
                   {!isClick && contraste &&
-                    <img src={coracaoVazioContraste}/>
+                    <img src={coracaoVazioContraste} alt="Adicionar produto aos favoritos"/>
                   }
                   {isClick && !contraste &&
-                    <img src={coracaoCheio}/>
+                    <img src={coracaoCheio} alt="Remover produto dos favoritos" />
                   }
                   {!isClick && !contraste &&
-                    <img src={coracaoVazio}/>
+                    <img src={coracaoVazio} alt="Adicionar produto aos favoritos"/>
                   }
                 </button>
             </div>

@@ -20,7 +20,7 @@ export function DetalhesProduto(props) {
             }
             <div className={styles.caixaBotao}>
                 {isClick &&
-                    <button onClick={() => setClick(!isClick)} className={styles.botao} id={contraste && styles.contraste}>Ver mais descrição ↓</button>
+                    <button onClick={() => setClick(!isClick)} className={styles.botao} id={contraste && styles.contraste}>Ver descrição completa ↓</button>
                 }
                 {!isClick &&
                     <button onClick={() => setClick(!isClick)} className={styles.botao} id={contraste && styles.contraste}>Ver menos descrição ↑</button>
