@@ -18,6 +18,7 @@ import pagGooglePayBranco from '../assets/logosPagamento/logoGooglePayBranco.svg
 
 export function Pagamento(){
     const { contraste } = useAuthContext();
+    
     return(
         <div className={styles.containerPagamento} id={contraste && styles.contraste}>
             <div className={styles.pagamento}>
