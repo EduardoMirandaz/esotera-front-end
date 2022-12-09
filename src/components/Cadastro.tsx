@@ -1,7 +1,7 @@
 import styles from './Cadastro.module.css';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
-import {Routes, Route, useNavigate} from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import React, { useState } from 'react';
 import { useAuthContext } from '../contexts/auth/AuthContext';
 import { IoClose } from "react-icons/io5";
@@ -88,10 +88,10 @@ export function Cadastro({showModalCad, setShowModalCad}){
                             <hr/>
                         </div>
                         <div className={styles.socialNetworkWrapper}>
-                            <button className={styles.socialNetworkButton} type="button">
+                            <button className={styles.socialNetworkButton} type="button" aria-label="Entrar com sua conta do Facebook">
                                 <span className={styles.socialButtonIconFacebook}>&nbsp;</span>Facebook
                             </button>
-                            <button type="button" className={styles.socialNetworkButton}>
+                            <button type="button" className={styles.socialNetworkButton}  aria-label="Entrar com sua conta do Google">
                                 <span className={styles.socialButtonIconGoogle}>&nbsp;</span>Google
                             </button>
                         </div>

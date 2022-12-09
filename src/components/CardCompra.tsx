@@ -19,7 +19,6 @@ interface CardCompra {
 
 export function CardCompra(props:CardCompra){
     const [contador, setCount] = useState(props.quantidadeProduto); 
-    // useState returns a pair. 'count' is the current state. 'setCount' is a function we can use to update the state.
     
     const { contraste } = useAuthContext();
 
@@ -41,10 +40,10 @@ export function CardCompra(props:CardCompra){
           <div className={styles.fundo} >
             <div className={styles.boxImage}>
               {props.imagemPrincipal &&
-                  <img className={styles.imagem} src={props.imagemPrincipal}/>
+                  <img alt="Imagem do produto" className={styles.imagem} src={props.imagemPrincipal}/>
                 }
               {!props.imagemPrincipal &&
-                  <img className={styles.imagem} src={semImagem}/>
+                  <img alt="Produto sem imagem disponível" className={styles.imagem} src={semImagem}/>
                 }
             </div>
             <div id={contraste && styles.contraste} className={styles.excluir} onClick={() => {props.atualizarQuantidade(props.idProduto, 0)}}>
@@ -54,9 +53,9 @@ export function CardCompra(props:CardCompra){
               <h1 className={styles.titulo}>{props.titulo}</h1>
               <h2 className={styles.valor}>R${props.valor.toFixed(2)}</h2>
               <div className={styles.contador}>
-                <button className={styles.decrementar} onClick={decrementar}>−</button>
+                <button className={styles.decrementar} onClick={decrementar} aria-label="Diminuir quantidade de produtos selecionados">−</button>
                 <h1>{contador}</h1>
-                <button className={styles.incrementar} onClick={incrementar}>+</button>
+                <button className={styles.incrementar} onClick={incrementar} aria-label="Aumentar quantidade de produtos selecionados">+</button>
               </div>
             </div>
             
