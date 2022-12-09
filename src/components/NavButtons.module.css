@@ -59,7 +59,8 @@
     color: var(--white);
     background-color: transparent;
     position: relative;
-    width: 120px;
+    min-width: 120px;
+    padding: 0 10px;
     height: 100%;
     cursor: pointer;
     font-size: 1rem;
@@ -74,6 +75,8 @@
     border-width: 0 0 2px 0;
     border-color: var(--white);
     border-style: solid;
+    margin-bottom: 8px;
+    width: 160px;
 }
 
 .botoes .selecionado:after {
@@ -91,6 +94,8 @@
     border-width: 0 0 2px 0;
     border-color: var(--white);
     border-style: solid;
+    margin-bottom: 8px;
+    width: 160px;
 }
 
 
