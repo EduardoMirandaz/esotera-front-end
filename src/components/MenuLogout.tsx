@@ -1,5 +1,5 @@
 import styles from './MenuLogout.module.css'; 
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthContext } from '../contexts/auth/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,13 +13,16 @@ export function MenuLogout() {
         navigate('/');
     };
 
+    const { contraste, getCarrinhoList } = useAuthContext();
+    const [ setCarrinhoList] = useState(getCarrinhoList());
+    
     const deslogar = () => {
         setModalLogout(prev => !prev);
         localStorage.removeItem("username");
+        localStorage.setItem("carrinho", "[]"); setCarrinhoList([]);
         navigateToPrincipal();
     }
 
-    const { contraste } = useAuthContext();
 
     return (
         <>

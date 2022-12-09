@@ -114,8 +114,8 @@
 
 .botoesProduto{
     display: flex;
-    justify-content: space-between;
-    gap: 14px;
+    justify-content: left;
+    gap: 20px;
 }
 
 .contador{

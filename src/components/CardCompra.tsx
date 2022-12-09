@@ -45,10 +45,10 @@ export function CardCompra(props:CardCompra){
           <Link reloadDocument to={newUrl}>
             <div className={styles.boxImage}>
               {props.imagemPrincipal &&
-                  <img alt={props.descricaoImg ? props.descricaoImg : "Descrição indisponível para a imagem"} className={styles.imagem} src={props.imagemPrincipal}/>
+                  <img alt={props.descricaoImg ? props.descricaoImg : "Descrição indisponível para a imagem"} className={styles.imagem} src={props.imagemPrincipal} id={contraste && styles.contraste}/>
                 }
               {!props.imagemPrincipal &&
-                  <img alt="Produto sem imagem disponível" className={styles.imagem} src={semImagem}/>
+                  <img alt="Produto sem imagem disponível" className={styles.imagem} src={semImagem} id={contraste && styles.contraste}/>
                 }
             </div>
           </Link>
