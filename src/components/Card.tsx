@@ -22,12 +22,15 @@ export function Card(props:Card){
     const newUrl = "/produto/"+props.idProduto
     return(
       <div className={styles.fundo} id={contraste && styles.contraste}>
-        {props.imagemPrincipal &&
-            <img className={styles.imagem} src={props.imagemPrincipal} alt="Imagem do Produto"/>
-        }
-        {!props.imagemPrincipal &&
-            <img className={styles.imagem} src={semImagem} alt="Imagem do Produto"/>
-        }
+        <Link reloadDocument to={newUrl} onClick={() => {setModalLogout(false)}}>
+
+          {props.imagemPrincipal &&
+              <img className={styles.imagem} src={props.imagemPrincipal} alt="Imagem do Produto"/>
+          }
+          {!props.imagemPrincipal &&
+              <img className={styles.imagem} src={semImagem} alt="Imagem do Produto"/>
+          }
+        </Link>
         {props.categoria &&
             <p className={styles.categoria} id={contraste && styles.contraste}>{props.categoria}</p>
         }
