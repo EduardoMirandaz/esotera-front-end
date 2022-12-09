@@ -40,7 +40,22 @@ h2.titulo{
     margin-bottom: 29px;
 }
 
+.scroll::-webkit-scrollbar{
+    display: none;
+}
+
+.scroll{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    gap: 21px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    margin-bottom: 21px;
+}
+
 .boxCardsCompras{
+    
     width: 530px;
     height: 720px;
     background-color: rgb(224, 170, 255, 0.6);
@@ -49,8 +64,10 @@ h2.titulo{
     display: flex;
     justify-content: first baseline;
     flex-direction: column;
-    gap: 21px;
+    
 }
+
+
 
 .compreEGanheTexto p{
     width: 400px;
@@ -167,6 +184,7 @@ h2.titulo{
 }
 
 .buttonsCards{
+    display: flex;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

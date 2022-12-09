@@ -1,7 +1,8 @@
 .excluir{
-    position: absolute;
-    margin-left: 430px;
-    margin-top: 10px;
+    display: flex;
+    position: relative;
+    left: 265px;
+    top: 8px;
     background-color: var(--white);
     height: 1.5rem;
     border-radius: 50%;
@@ -145,8 +146,13 @@
     }
 
     .excluir{
-        margin-left: 205px;
-        margin-top: 10px;
+        top: -115px;
+        left: 205px;
+        margin-right: 215px;
+    }
+
+    .informacoes{
+        margin-top: -30px;
     }
 }
 

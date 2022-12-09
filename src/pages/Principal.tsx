@@ -12,9 +12,8 @@ export function Principal(props){
   let cards = props.produto 
 
   const { filtro, contraste, busca } = useAuthContext();
-  
   if(busca){
-    cards = cards.filter((card) => card.indexOf(busca) != -1)
+    cards = cards.filter((card) => (card.titulo.toUpperCase().indexOf(busca.toUpperCase()) != -1))
   }
   if(filtro){
     if(filtro == "Promoções"){
