@@ -56,9 +56,20 @@ export function Header(props) {
         }
     })
 
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos >= currentScrollPos) {
+            document.getElementById("header").style.top = "0";
+        } else {
+            document.getElementById("header").style.top = "-140px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
     return (
         <>
-            <header className={styles.header}>
+            <header className={styles.header} id={"header"}>
                 <div className={styles.topHeader} id={contraste && styles.contraste}>
                     <div className={styles.burgerContainer}>
                         {open ? closeIcon : hamburgerIcon}

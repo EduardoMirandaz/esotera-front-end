@@ -50,7 +50,7 @@ export function Carrinho(props) {
 
   const [valorItens, setValorItens] = useState(calcularValorItens())
 
-   function calcularValorItens(){
+  function calcularValorItens(){
     const carrinhoListTmp = getCarrinhoList();
     const soma = carrinhoListTmp.reduce(
       (acc, currProduto) => {
@@ -61,7 +61,7 @@ export function Carrinho(props) {
     );
 
     return soma;
-   }
+  }
 
   const { contraste } = useAuthContext();
   return (
