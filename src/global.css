@@ -55,10 +55,10 @@ body,input,textarea,button{
 }
 
 ::-webkit-scrollbar-track{
-    background-color: #202024;
+    background-color: var(--purple-800);
 }
 
 ::-webkit-scrollbar-thumb{
-    background-color: #29292e;
+    background-color: var(--purple-600);
     border-radius: 5px;
 }

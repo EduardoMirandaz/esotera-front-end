@@ -10,24 +10,11 @@ import { useAuthContext } from "../contexts/auth/AuthContext";
 
 export function Principal(props){
   let cards = props.produto 
-  const [isMobile, setIsMobile] = useState(false)
-    const handleResize = () => {
-        if (window.innerWidth < 760) {
-            setIsMobile(true)
-        } else {
-            setIsMobile(false)
-        }
-      }
 
-      useEffect(() => {
-        window.addEventListener("resize", handleResize);
-        window.scrollTo(0, 0);
-      })
-
-  const { filtro } = useAuthContext();
+  const { filtro, contraste } = useAuthContext();
 
   if(filtro){
-    if(filtro == "promocao"){
+    if(filtro == "Promoções"){
       cards = cards.filter((card) => card.isPromocao)
     }
     else{
@@ -39,20 +26,27 @@ export function Principal(props){
     return(
       <>
         <Header isPrincipal={true}/>
-        {props.carrosseis &&
-          <div className={styles.carrossel}>
-            <Carousel autoPlay infiniteLoop showStatus={false} showThumbs={false}>
-              {props.carrosseis.map((carrossel) => {
-                return(
-                    <div>
-                      <img src={carrossel.imagem} />
-                    </div>
-                )
-              })}
-            </Carousel>
-          </div>
+          {props.carrosseis &&
+            <div className={styles.carrossel} id={"headerCarrossel"} style={{"position": "relative", "z-index": "-1", "padding-top": "140px", "background": "var(--purple-500)"} as React.CSSProperties}>
+              <Carousel autoPlay infiniteLoop showStatus={false} showThumbs={false}>
+                {props.carrosseis.map((carrossel) => {
+                  return(
+                      <div>
+                        <img src={carrossel.imagem} />
+                      </div>
+                  )
+                })}
+              </Carousel>
+            </div>
+          }
+        {
+          filtro &&
+          <h1 className={styles.filtro} id={contraste && styles.contraste}>{filtro}</h1>
         }
-        
+        {
+          !filtro &&
+          <h1 className={styles.filtro} id={contraste && styles.contraste}>Página Inicial</h1>
+}
         <Vitrine data={cards}/>
         <Accessibility/>
         <Footer/>

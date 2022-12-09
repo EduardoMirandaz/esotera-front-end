@@ -57,15 +57,26 @@ export function Header(props) {
         }
     })
 
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos >= currentScrollPos) {
+            document.getElementById("header").style.top = "0";
+        } else {
+            document.getElementById("header").style.top = "-140px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
     return (
         <>
-            <header className={styles.header}>
+            <header className={styles.header} id={"header"}>
                 <div className={styles.topHeader} id={contraste && styles.contraste}>
                     <div className={styles.burgerContainer}>
                         {open ? closeIcon : hamburgerIcon}
                     </div>
                     {open && <div className={styles.dropMenu} id={contraste && styles.contraste}>
-                        <button className={styles.botaoRegular} onClick={()=>{setFiltro("promocao");setOpen(false)}}>Promoções</button>
+                        <button className={styles.botaoRegular} onClick={()=>{setFiltro("Promoções");setOpen(false)}}>Promoções</button>
                         <button className={styles.botaoRegular} onClick={()=>{setFiltro("");setOpen(false)}}>Página Inicial</button>
                         <button className={styles.botaoRegular} onClick={()=>{setFiltro("Incensos");setOpen(false)}} >Incensos</button>
                         <button className={styles.botaoRegular} onClick={()=>{setFiltro("Cristais");setOpen(false)}} >Cristais</button>
@@ -77,10 +88,10 @@ export function Header(props) {
                     <div className={styles.funcoes}>
                         {
                             contraste &&
-                            <div className={styles.pesquisa} id={contraste && styles.contraste}>
+                            <form className={styles.pesquisa} id={contraste && styles.contraste}>
                                 <input className={styles.input} type="text" placeholder="Pesquisar" id={contraste && styles.contraste} />
                                 <img src={headerLupaContraste} alt="Buscar item" />
-                            </div>
+                            </form>
                         }
                         {
                             !contraste &&

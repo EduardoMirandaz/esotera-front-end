@@ -19,10 +19,12 @@ export function MenuLogout() {
         navigateToPrincipal();
     }
 
+    const { contraste } = useAuthContext();
+
     return (
         <>
-            <div className={styles.caixaInternaDoLogout}>
-                Você já está logade!
+            <div className={styles.caixaInternaDoLogout} id={contraste && styles.contraste}>
+                <p className={styles.desejaSair}>Deseja sair da conta?</p>
                 <button type="button" onClick={deslogar} className={styles.botaoSair}>SAIR</button>
             </div>
             <div className={styles.setaDaCaixaInternaDoLogout}>
