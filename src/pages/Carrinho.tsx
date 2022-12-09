@@ -26,8 +26,8 @@ export function Carrinho(props) {
   }
 
   const openModal = () => {
-      setShowModal(prev => !prev);
-      setTimeout(closeModal, 20000);
+    setShowModal(prev => !prev);
+    setTimeout(closeModal, 20000);
   }
 
   const [showModalCompraRealizada, setShowModalCompraRealizada] = useState(false)
@@ -145,7 +145,7 @@ export function Carrinho(props) {
               <h3 className={styles.valorTotal}>R$ {(valorItens+valorFrete).toFixed(2)}</h3>
             </div>
           </div>
-          <a href={ getCarrinhoList().length != 0 ? "#" : "#!"} onClick={ () => { if(getCarrinhoList().length != 0) openModal } } className={ getCarrinhoList().length != 0 ? styles.button : styles.buttonApagado}>
+          <a href={ getCarrinhoList().length != 0 ? "#" : "#!"} onClick={ () => { if(getCarrinhoList().length != 0) openModal() } } className={ getCarrinhoList().length != 0 ? styles.button : styles.buttonApagado}>
             Finalizar a compra
             <img className={styles.cartao} src={cartao} />
           </a>
