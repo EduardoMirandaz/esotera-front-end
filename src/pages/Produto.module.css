@@ -60,9 +60,16 @@
         width: 100%;
         margin: 40px 0;
         align-items: center;
+        padding-top: 108px;
     }
 
     .containerBreadcrumb{
         display: none;
+    }
+}
+
+@media (max-width: 760px){
+    .left{
+        padding-top: 55px;
     }
 }

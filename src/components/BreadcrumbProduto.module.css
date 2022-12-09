@@ -9,7 +9,7 @@
 
 .breadcrumb{
     margin-left: 60px;
-    padding-top: 160px;
+    padding-top: 143px;
     display: flex;
     gap: 10px;
     font-size: 1.5rem;
@@ -31,4 +31,10 @@
 
 .home{
     cursor: pointer;
+}
+
+@media (max-width: 760px){
+    .breadcrumb{
+        padding-top: 90px;
+    }
 }

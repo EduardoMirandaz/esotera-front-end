@@ -1,3 +1,10 @@
+.carrossel{
+  position: relative;
+  z-index: -1;
+  padding-top: 140px;
+  background: var(--purple-500);
+}
+
 .filtro{
   display: none;
 }
@@ -10,7 +17,7 @@
   .filtro{
     display: block;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 85px;
     color: var(--purple-700);
   }
 
