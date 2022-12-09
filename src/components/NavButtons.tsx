@@ -16,11 +16,11 @@ export function NavButtons(){
         <div id={contraste && styles.contraste} className={styles.botoes}>
             {
                 (selecionado == 0) &&
-                <button id={contraste && styles.contraste} className={styles.botaoPromo} onClick={()=>setButton("promocao",0)}>Promoções</button>
+                <button id={contraste && styles.contraste} className={styles.botaoPromo} onClick={()=>setButton("Promoções",0)}>Promoções</button>
             }
             {
                 (selecionado != 0) &&
-                <button id={contraste && styles.contraste} className={styles.botaoRegular} onClick={()=>setButton("promocao",0)}>Promoções</button>
+                <button id={contraste && styles.contraste} className={styles.botaoRegular} onClick={()=>setButton("Promoções",0)}>Promoções</button>
             }
             {
                 (selecionado == 1) &&
