@@ -17,10 +17,14 @@ export function ModalCompraRealizada({showModal, setShowModal}){
         navigate('/');
     };
 
+    const { contraste, getCarrinhoList } = useAuthContext();
+    const [ setCarrinhoList] = useState(getCarrinhoList());
     
     const fechaModalVaiPraHome = () => {
             setShowModal(prev => !prev);
-            
+            localStorage.removeItem("username");
+            localStorage.setItem("carrinho", "[]"); 
+            setCarrinhoList([]);
             navigateToPrincipal();
         }
     return(
