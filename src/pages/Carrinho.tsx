@@ -17,7 +17,7 @@ import { ModalCompraRealizada } from '../components/ModalCompraRealizada';
 import { Link } from 'react-router-dom';
 
 export function Carrinho(props) {
-  const { contraste, getCarrinhoList } = useAuthContext();
+  const { contraste, getCarrinhoList, canFinalizar } = useAuthContext();
 
   const [showModalPix, setShowModalPix] = useState(false)
   const closeModal = () => {
@@ -149,7 +149,7 @@ export function Carrinho(props) {
               <h3 className={styles.valorTotal}>R$ {(valorItens+valorFrete).toFixed(2)}</h3>
             </div>
           </div>
-          <a href={ getCarrinhoList().length != 0 ? "#" : "#!"} onClick={ () => { if(getCarrinhoList().length != 0) openModalDePagamento() } } className={ getCarrinhoList().length != 0 ? styles.button : styles.buttonApagado}>
+          <a href={ getCarrinhoList().length != 0 && canFinalizar ? "#" : "#!"} onClick={ () => { if(getCarrinhoList().length != 0 && canFinalizar) openModalDePagamento() } } className={ getCarrinhoList().length != 0 && canFinalizar ? styles.button : styles.buttonApagado}>
             Finalizar a compra
             <img className={styles.cartao} src={cartao} />
           </a>

@@ -13,6 +13,7 @@ export default function AuthProvider(props: AuthProviderProps) {
     const [busca, setBusca] = useState("");
     const [contraste, setContraste] = useState(false);
     const [modalLogout, setModalLogout] = useState(false);
+    const [canFinalizar, setCanFinalizar] = useState(false);
     const [qtdItensCarrinho, setQtdItensCarrinho] = useState(0);
 
     const getCarrinhoList = () => {
@@ -28,7 +29,7 @@ export default function AuthProvider(props: AuthProviderProps) {
 
 
     return (
-        <AuthContext.Provider value={{usuario, setUsuario, carrinho, setCarrinho, filtro, setFiltro, busca, setBusca, contraste, setContraste,modalLogout, setModalLogout, qtdItensCarrinho, setQtdItensCarrinho, getCarrinhoList}}>
+        <AuthContext.Provider value={{usuario, setUsuario, carrinho, setCarrinho, filtro, setFiltro, busca, setBusca, contraste, setContraste,modalLogout, setModalLogout, qtdItensCarrinho, setQtdItensCarrinho, getCarrinhoList, canFinalizar, setCanFinalizar}}>
             {props.children}
         </AuthContext.Provider>
     )

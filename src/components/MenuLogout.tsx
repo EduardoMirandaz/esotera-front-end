@@ -21,6 +21,7 @@ export function MenuLogout() {
         setModalLogout(prev => !prev);
         localStorage.removeItem("username");
         localStorage.setItem("carrinho", "[]"); setCarrinhoList([]);
+        navigateToPrincipal();
     }
 
 

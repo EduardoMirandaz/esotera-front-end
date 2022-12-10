@@ -1,5 +1,5 @@
 import styles from './ModalCompraRealizada.module.css';
-import React from 'react';
+import React, { useState } from 'react';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import { useAuthContext } from '../contexts/auth/AuthContext';
@@ -9,7 +9,7 @@ import { IconContext } from "react-icons";
 import { useNavigate } from 'react-router-dom';
 
 export function ModalCompraRealizada({showModal, setShowModal}){
-    const { contraste } = useAuthContext();
+    
 
     const navigate = useNavigate();
 
@@ -17,8 +17,10 @@ export function ModalCompraRealizada({showModal, setShowModal}){
         navigate('/');
     };
 
+    
     const fechaModalVaiPraHome = () => {
             setShowModal(prev => !prev);
+            
             navigateToPrincipal();
         }
     return(

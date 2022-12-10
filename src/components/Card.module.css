@@ -14,11 +14,19 @@
 }
 
 .imagem{
-    height: 360px;
+    height: calc(360px - 2rem);
+    max-height: 360px;
     width: 360px;
     background: no-repeat center;
     border-radius: 20px 20px 0px 0px;
     object-fit: cover;
+}
+
+.conteudoCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(572px - calc(360px - 2rem) - 26px);
 }
 
 #contraste.categoria{
@@ -36,8 +44,7 @@
 .titulo{
     font-size: 1.25rem;
     text-align: center;
-    margin: 16px;
-    height: 46px;
+    margin: 0 16px;
     max-width: 350px;
     overflow: hidden; 
     text-overflow: ellipsis; 
@@ -54,7 +61,6 @@
     font-size: 1.5rem;
     color: var(--purple-800);
     font-weight: bold;
-    margin: 16px 0;
     text-align: center;
 }
 
