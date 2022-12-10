@@ -51,6 +51,7 @@ h2.titulo{
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
     margin-bottom: 21px;
+    height: 100%;
 }
 
 .boxCardsCompras{
