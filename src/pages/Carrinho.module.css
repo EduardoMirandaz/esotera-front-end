@@ -438,6 +438,10 @@ h2.titulo{
         color: var(--white);
         transition: 0.2s;
     }
+
+    .buttonApagado{
+        width: 300px;
+    }
     
     .button:hover{
         background-color: var(--purple-500);

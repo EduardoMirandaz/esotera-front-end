@@ -129,7 +129,7 @@ export function Header(props) {
                             {
                                 nome && <div className={styles.nomeUsuario}>{nome}</div>
                             }
-                            <a href="">
+                            <a href="#">
                                 <img className={styles.coracaoImg} src={headerCoracao} alt="Ir para os favoritos" />
                             </a>
                         </div>
